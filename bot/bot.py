@@ -1,5 +1,5 @@
 from telegram import Update
-from telegram.ext import Updater, CommandHandler, CallbackContext
+from telegram.ext import Updater, CommandHandler, MessageHandler, CallbackContext, ConversationHandler, Filters
 from bot.decorator import CollectionCommand
 from db.db_handler import DataUsers
 
@@ -40,20 +40,6 @@ class History(TelebotHandler):
         update.message.reply_text(data)
 
 
-# @CollectionCommand('lowprice', TelebotHandler.COMMANDS)
-# class LowPrice(TelebotHandler):
-#     def __str__(self) -> str:
-#         """ Описание команды """
-#         return 'Поиск отелей по минимальной цене'
-#
-#     def __call__(self, update: Update, context: CallbackContext):
-#         send_msg = 'Введите город, в который вы хотите поехать'
-#         update.message.reply_text(send_msg)
-#         city = update.message.text
-#         print(city)
-
-
-
 @CollectionCommand('help', TelebotHandler.COMMANDS)
 class Help(TelebotHandler):
     """ Класс команды help - печать списка команд и их описание """
@@ -68,3 +54,52 @@ class Help(TelebotHandler):
         send_msg = '\n'.join(send_msg)
 
         return update.message.reply_text(send_msg)
+
+
+class BaseSearchHotel(TelebotHandler):
+    """ Базовый класс для команд поиска отелей """
+    CITY, CHECKIN, CHECKOUT, COUNT_PEOPLE, COUNT_HOTEL, COUNT_PHOTO = range(6)
+    # TODO продумать как использовать м.б. в сеттинг?
+
+    # TODO доделать и реализовать все запросы в текстовом формате
+    #  CITY, CHECKIN, CHECKOUT, COUNT_PEOPLE, COUNT_HOTEL, COUNT_PHOTO
+
+    @staticmethod
+    def city(update: Update, context: CallbackContext):
+        print('City run')
+        city = update.message.text
+        print(city)
+        send_msg = 'Введите дату начала поездки'
+        update.message.reply_text(send_msg)
+        return BaseSearchHotel.CHECKIN
+
+    @staticmethod
+    def check_in(update: Update, context: CallbackContext):
+        print('Check in run')
+        check_in = update.message.text
+        print(check_in)
+        return ConversationHandler.END
+
+    @staticmethod
+    def cancel(update: Update, context: CallbackContext):
+        return ConversationHandler.END
+
+    def __call__(self, update: Update, context: CallbackContext):
+        print(self.__class__.__name__, 'run')
+        send_msg = '{} запущен. \nВведите город, в который вы хотите поехать'.format(self.__class__.__name__)
+        update.message.reply_text(send_msg)
+        return self.CITY
+
+
+@CollectionCommand('lowprice', TelebotHandler.COMMANDS)
+class LowPrice(BaseSearchHotel):
+    def __str__(self) -> str:
+        """ Описание команды """
+        return 'Поиск отелей по минимальной цене'
+
+
+@CollectionCommand('highprice', TelebotHandler.COMMANDS)
+class HighPrice(BaseSearchHotel):
+    def __str__(self) -> str:
+        """ Описание команды """
+        return 'Поиск отелей по максимальной цене'

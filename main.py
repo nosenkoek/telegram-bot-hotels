@@ -1,3 +1,5 @@
+from settings import STATES_BASE
+
 from abc import ABC, abstractmethod
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, Filters, ConversationHandler
@@ -10,16 +12,11 @@ from db.db_handler import DatabaseFactory
 TOKEN = '5113338503:AAFtsZUu5UYQGTFl2PC6SfpoTbrsrGNa6EY'
 
 
-
 class AbstractFactory(ABC):
     """ Абстрактная фабрика для сбора слоев приложения"""
     @abstractmethod
     def create_telebot(self):
         pass
-
-    # @abstractmethod
-    # def create_database(self):
-    #     pass
 
 
 class TeleBot():
@@ -35,19 +32,27 @@ class TeleBot():
         """ Регистрация обработчиков команд бота """
         dispatcher = self.updater.dispatcher
 
-        for commands, commands_obj in self.handler.COMMANDS.items():
+        for commands, commands_cls in self.handler.COMMANDS.items():
+            commands_obj = commands_cls()
+
             if commands in ['lowprice', 'highprice']:
+                """ Добавление функции разговора при запросах 'lowprice', 'highprice' """
                 dispatcher.add_handler(ConversationHandler(
-                    entry_points=[CommandHandler(commands, commands_obj())],
+                    entry_points=[CommandHandler(commands, commands_cls())],
                     states={
-                        commands_obj.CITY: [MessageHandler(Filters.text, commands_obj.city)],
-                        commands_obj.CHECKIN: [MessageHandler(Filters.text, commands_obj.check_in)]
+                        STATES_BASE['city']: [MessageHandler(Filters.text, commands_obj.city)],
+                        STATES_BASE['check_in']: [MessageHandler(Filters.text, commands_obj.check_in)],
+                        STATES_BASE['check_out']: [MessageHandler(Filters.text, commands_obj.check_out)],
+                        STATES_BASE['count_people']: [MessageHandler(Filters.text, commands_obj.people)],
+                        STATES_BASE['count_hotel']: [MessageHandler(Filters.text, commands_obj.hotel)],
+                        STATES_BASE['count_photo']: [MessageHandler(Filters.text, commands_obj.photo)]
                     },
-                    fallbacks=[CommandHandler(commands, commands_obj.cancel)]
+                    # todo подумать как можно использовать
+                    fallbacks=[CommandHandler('cancel', commands_obj.cancel)]
                 ))
             else:
-                dispatcher.add_handler(CommandHandler(commands, commands_obj()))
-
+                """ Добавление обработки остальных реализованных команд """
+                dispatcher.add_handler(CommandHandler(commands, commands_cls()))
 
     def start(self) -> None:
         """ Запуск бота """

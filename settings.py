@@ -23,6 +23,16 @@ BASE_REQUEST_HOTELS_API = {
     'currency': 'RUB',
 }
 
+COUNT_MAX_HOTEL = 10
+
 COUNT_MAX_PHOTO = 5
 
+STATES_BASE = {
+    'city': 0,
+    'check_in': 1,
+    'check_out': 2,
+    'count_people': 3,
+    'count_hotel': 4,
+    'count_photo': 5
+}
 

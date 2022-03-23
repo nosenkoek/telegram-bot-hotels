@@ -1,3 +1,5 @@
+from settings import STATES_BASE
+
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, CallbackContext, ConversationHandler, Filters
 from bot.decorator import CollectionCommand
@@ -13,12 +15,7 @@ class TelebotHandler():
 
 @CollectionCommand('start', TelebotHandler.COMMANDS)
 class Welcome(TelebotHandler):
-    """ Класс команды start - печатать приветствия """
-    # TODO docstring описание
-    def __str__(self) -> str:
-        """ Описание команды """
-        return 'Начало работы'
-
+    """ Начало работы """
     def __call__(self, update: Update, context: CallbackContext):
         send_msg = 'Привет {}! Здесь ты найдешь лучшие предложения по поиску отелей ' \
                    'Для начала посмотри, что я умею /help'.format(update.message.from_user.first_name)
@@ -29,12 +26,7 @@ class Welcome(TelebotHandler):
 
 @CollectionCommand('history', TelebotHandler.COMMANDS)
 class History(TelebotHandler):
-    """ Класс команды history - печать истории действий (последних 5) """
-    # сейчас печатается начало работы с ботом (дата первой команды start)
-    def __str__(self) -> str:
-        """ Описание команды """
-        return 'Показать историю (последние 5 действия)'
-
+    """ Показать историю (последние 5 действия) """
     def __call__(self, update: Update, context: CallbackContext) -> None:
         data = database.read(update.message.from_user.id)
         update.message.reply_text(data)
@@ -42,13 +34,9 @@ class History(TelebotHandler):
 
 @CollectionCommand('help', TelebotHandler.COMMANDS)
 class Help(TelebotHandler):
-    """ Класс команды help - печать списка команд и их описание """
-    def __str__(self) -> str:
-        """ Описание команды """
-        return 'Показать возможности'
-
+    """ Показать возможности """
     def __call__(self, update: Update, context: CallbackContext):
-        send_msg = ['/{}: {}'.format(text_command, obj_command())
+        send_msg = ['/{}: {}'.format(text_command, obj_command.__doc__)
                     for text_command, obj_command in TelebotHandler.COMMANDS.items()
                     ]
         send_msg = '\n'.join(send_msg)
@@ -57,27 +45,77 @@ class Help(TelebotHandler):
 
 
 class BaseSearchHotel(TelebotHandler):
-    """ Базовый класс для команд поиска отелей """
-    CITY, CHECKIN, CHECKOUT, COUNT_PEOPLE, COUNT_HOTEL, COUNT_PHOTO = range(6)
-    # TODO продумать как использовать м.б. в сеттинг?
+    """ Базовый класс для команд поиска отелей. Реализация разговора с пользователем"""
+    request_data = {}
 
-    # TODO доделать и реализовать все запросы в текстовом формате
-    #  CITY, CHECKIN, CHECKOUT, COUNT_PEOPLE, COUNT_HOTEL, COUNT_PHOTO
+    # TODO продумать проверку на верно введеные данные
+    #  + реализовать календарь в check_in и check_out
+    #  + перевод в int для числа фото и отелей
+    #  + продумать как реализовать ввод взрослых и детей
 
-    @staticmethod
-    def city(update: Update, context: CallbackContext):
+    def city(self, update: Update, context: CallbackContext) -> int:
+        """ Функция для чтения ввода города пользователя """
         print('City run')
         city = update.message.text
-        print(city)
+        self.request_data.update({'query': city})
+        print(self.request_data)
+
         send_msg = 'Введите дату начала поездки'
         update.message.reply_text(send_msg)
-        return BaseSearchHotel.CHECKIN
+        return STATES_BASE['check_in']
 
-    @staticmethod
-    def check_in(update: Update, context: CallbackContext):
+    def check_in(self, update: Update, context: CallbackContext) -> int:
+        """ Функция для чтения ввода даты check in """
         print('Check in run')
         check_in = update.message.text
-        print(check_in)
+        self.request_data.update({'checkIn': check_in})
+        print(self.request_data)
+
+        send_msg = 'Введите дату завершения поездки'
+        update.message.reply_text(send_msg)
+        return STATES_BASE['check_out']
+
+    def check_out(self, update: Update, context: CallbackContext) -> int:
+        """ Функция для чтения ввода даты check in """
+        print('Check out run')
+        check_out = update.message.text
+        self.request_data.update({'checkOut': check_out})
+        print(self.request_data)
+
+        send_msg = 'Введите кол-во взрослых, проживающих в 1 номере'
+        update.message.reply_text(send_msg)
+        return STATES_BASE['count_people']
+
+    def people(self, update: Update, context: CallbackContext) -> int:
+        """ Функция для чтения ввода числа взрослых """
+        print('Count people run')
+        count_people = update.message.text
+        self.request_data.update({'adults': count_people})
+        print(self.request_data)
+
+        send_msg = 'Введите кол-во отелей'
+        update.message.reply_text(send_msg)
+        return STATES_BASE['count_hotel']
+
+    def hotel(self, update: Update, context: CallbackContext) -> int:
+        """ Функция для чтения ввода числа отелей """
+        print('Count hotel run')
+        count_hotel = update.message.text
+        self.request_data.update({'count_hotel': count_hotel})
+        print(self.request_data)
+
+        send_msg = 'Введите кол-во фото'
+        update.message.reply_text(send_msg)
+        return STATES_BASE['count_photo']
+
+    def photo(self, update: Update, context: CallbackContext) -> int:
+        """ Функция для чтения ввода числа фото """
+        print('Count photo run')
+        count_photo = update.message.text
+        self.request_data.update({'count_photo': count_photo})
+        print(self.request_data)
+        # TODO продумать разветвление на bestdeal (будет другой ретерн на цены и удаленость от центра)
+        # todo отсюда идет запрос для отелей + добавление в БД
         return ConversationHandler.END
 
     @staticmethod
@@ -86,20 +124,20 @@ class BaseSearchHotel(TelebotHandler):
 
     def __call__(self, update: Update, context: CallbackContext):
         print(self.__class__.__name__, 'run')
+        self.request_data.update({'command': self.__class__.__name__})
+
         send_msg = '{} запущен. \nВведите город, в который вы хотите поехать'.format(self.__class__.__name__)
         update.message.reply_text(send_msg)
-        return self.CITY
+        return STATES_BASE['city']
 
 
 @CollectionCommand('lowprice', TelebotHandler.COMMANDS)
 class LowPrice(BaseSearchHotel):
-    def __str__(self) -> str:
-        """ Описание команды """
-        return 'Поиск отелей по минимальной цене'
+    """ Поиск отелей по минимальной цене """
+    pass
 
 
 @CollectionCommand('highprice', TelebotHandler.COMMANDS)
 class HighPrice(BaseSearchHotel):
-    def __str__(self) -> str:
-        """ Описание команды """
-        return 'Поиск отелей по максимальной цене'
+    """ Поиск отелей по максимальной цене """
+    pass

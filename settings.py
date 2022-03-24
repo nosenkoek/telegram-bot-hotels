@@ -19,7 +19,7 @@ BASE_REQUEST_HOTELS_API = {
     'checkIn': datetime.now().strftime('%Y-%m-%d'),
     'checkOut': (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d'),
     'adults1': '1',
-    'locale': 'ru_RU',
+    'locale': 'en_US',
     'currency': 'RUB',
 }
 

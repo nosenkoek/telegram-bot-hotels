@@ -5,27 +5,36 @@ from abc import ABC, abstractmethod
 import requests
 from json import loads, dumps, dump, load, JSONDecodeError
 from typing import List, Dict, Any
+from logger.logger import LoggerMixin
 
 
-class BodyRequestHotel(ABC):
+class BodyRequestHotel(ABC, LoggerMixin):
     REQUEST = {}
 
     def request_hotel(self, **kwargs) -> requests.Response:
         self.REQUEST.update(BASE_REQUEST_HOTELS_API)
         self.REQUEST.update(**kwargs)
+        self.logger().info('request{}'.format(self.REQUEST))
         print(self.REQUEST)
         try:
             response = requests.get('https://hotels4.p.rapidapi.com/properties/list',
                                     headers=HEADERS, params=self.REQUEST)
         except requests.HTTPError as http_err:
             print('Ошибка HTTP:', http_err)
+            self.logger().exception(http_err)
             raise
         except Exception as err:
             print('Произошла ошибка:', err)
+            self.logger().exception(err)
             raise
         else:
-            print('Success')
-        return response
+            if response.status_code != 200:
+                self.logger().error('code {}'.format(response.status_code))
+                raise ValueError('Ошибка кода отклика')
+
+            print('Success Hotels', response.status_code)
+            self.logger().info('Success Hotels {}'.format(response.status_code))
+            return response
 
 
 class LowPriceRequestHotel(BodyRequestHotel):
@@ -33,14 +42,14 @@ class LowPriceRequestHotel(BodyRequestHotel):
 
 
 class HighPriceRequestHotel(BodyRequestHotel):
-    BodyRequestHotel.REQUEST.update({'sortOrder': 'PRICE_HIGHEST_FIRST'})
+    REQUEST = {'sortOrder': 'PRICE_HIGHEST_FIRST'}
 
 
 class BestDealRequestHotel(BodyRequestHotel):
-    pass
+    REQUEST = {'sortOrder': 'DISTANCE_FROM_LANDMARK'}
 
 
-class BaseRequest(ABC):
+class BaseRequest(ABC, LoggerMixin):
     @abstractmethod
     def context_request(self, *args, **kwargs):
         pass
@@ -48,15 +57,13 @@ class BaseRequest(ABC):
 
 class HotelRequest(BaseRequest):
     COMMANDS = {
-        'best_deal': BestDealRequestHotel(),
-        'low_price': LowPriceRequestHotel(),
-        'high_price': HighPriceRequestHotel(),
+        'bestdeal': BestDealRequestHotel(),
+        'lowprice': LowPriceRequestHotel(),
+        'highprice': HighPriceRequestHotel(),
     }
 
     def context_request(self, command: str, **kwargs) -> requests.Response:
         result = self.COMMANDS.get(command)
-        print(result)
-        print(result.REQUEST)
         return result.request_hotel(**kwargs)
 
 
@@ -70,43 +77,56 @@ class LocationRequest(BaseRequest):
                                     headers=HEADERS, params=self.REQUEST)
         except requests.HTTPError as http_err:
             print('Ошибка HTTP:', http_err)
+            self.logger().exception(http_err)
             raise
         except Exception as err:
             print('Произошла ошибка:', err)
+            self.logger().exception(err)
             raise
         else:
-            print('Success')
-        return response
+            if response.status_code != 200:
+                self.logger().error('code {}'.format(response.status_code))
+                raise ValueError('Ошибка кода отклика')
+
+            print('Success Location', response.status_code)
+            self.logger().info('Success Location {}'.format(response.status_code))
+            return response
 
 
 class PhotoRequest(BaseRequest):
-    @staticmethod
-    def context_request(**kwargs) -> requests.Response:
+    def context_request(self, **kwargs) -> requests.Response:
         try:
             response = requests.get('https://hotels4.p.rapidapi.com/properties/get-hotel-photos',
                                     headers=HEADERS, params=kwargs)
         except requests.HTTPError as http_err:
             print('Ошибка HTTP:', http_err)
+            self.logger().exception(http_err)
             raise
         except Exception as err:
             print('Произошла ошибка:', err)
+            self.logger().exception(err)
             raise
         else:
-            print('Success')
-        return response
+            if response.status_code != 200:
+                self.logger().error('code {}'.format(response.status_code))
+                raise ValueError('Ошибка кода отклика')
+
+            print('Success Photo', response.status_code)
+            self.logger().info('Success Photo {}'.format(response.status_code))
+            return response
 
 
-class HotelHandler():
+class HotelHandler(LoggerMixin):
     def __init__(self, request: HotelRequest):
         self._request = request
 
     def handler(self, command: str, count_hotel=COUNT_MAX_HOTEL, **kwargs) -> List[Dict[str, Any]]:
         data = self._request.context_request(command, **kwargs)
 
-        if data.status_code != 200:
-            raise ValueError('Ошибка кода отклика')
-
         data = loads(data.text)
+        with open('bestdeal.json', 'w', encoding='utf-8') as file:
+            dump(data, file, ensure_ascii=False, indent=4)
+
         hotels = []
         hotels_response = search_substruct(data, 'results')
 
@@ -131,55 +151,52 @@ class HotelHandler():
                 'distance': distance,
                 'price': search_substruct(hotel, 'exactCurrent')
             })
+
+        self.logger().info('success handle hotels')
         return hotels
 
 
-class LocationHandler():
+class LocationHandler(LoggerMixin):
     def __init__(self, request: LocationRequest):
         self._request = request
 
     def handler(self, **kwargs) -> int:
         data = self._request.context_request(**kwargs)
-
-        if data.status_code != 200:
-            raise ValueError('Ошибка кода отклика', data.status_code)
-
         data = loads(data.text)
-        print(data)
-
         suggestions = search_substruct(data, 'entities')
 
         if not isinstance(suggestions, list):
+            self.logger().error('Not entities. Wrong structure')
             raise ValueError('Ошибка в структуре ответа на запрос локации')
 
         for location in suggestions:
             if location.get('type') == 'CITY':
-                print(location.get('name'))
+                self.logger().info('success city = {}'.format(location.get('name')))
+                print('success city = {}'.format(location.get('name')))
                 return location.get('destinationId')
             else:
+                self.logger().error('Not found city')
                 raise ValueError('Город не найден')
 
 
-class PhotoHandler():
+class PhotoHandler(LoggerMixin):
     def __init__(self, request: PhotoRequest):
         self._request = request
 
     def handler(self, count_photo=COUNT_MAX_PHOTO, **kwargs) -> List[str]:
         data = self._request.context_request(**kwargs)
 
-        if data.status_code != 200:
-            raise ValueError('Ошибка кода отклика', data.status_code)
+        photo = []
 
         try:
-            data_response = loads(data.text)
+            photo_response = search_substruct(loads(data.text), 'hotelImages')
         except JSONDecodeError:
+            self.logger().warning('No photo {}'.format(kwargs))
             print('Нет фото')
             return ['нет фото']
 
-        photo = []
-        photo_response = search_substruct(loads(data.text), 'hotelImages')
-
         if not isinstance(photo_response, list):
+            self.logger().error('Not hotelImages. Wrong structure')
             raise ValueError('Ошибка в структуре ответа на запроса фото отеля')
 
         for photo_item in photo_response:
@@ -198,6 +215,8 @@ class PhotoHandler():
 
             url_photo_item = base_url.format(size=size_suffix)
             photo.append(url_photo_item)
+
+        self.logger().info('success photo')
         return photo
 
 
@@ -205,5 +224,15 @@ if __name__ == '__main__':
     loc_request = LocationRequest()
     loc_handler = LocationHandler(loc_request)
 
-    data_loc = loc_handler.handler(query='Лондон')
-    print(data_loc)
+    city_id = loc_handler.handler(query='Париж')
+    print(city_id)
+
+    hotel_request = HotelRequest()
+    hotel_handler = HotelHandler(hotel_request)
+
+    data_hotel = hotel_handler.handler(command='bestdeal', count_hotel=10, destinationId=city_id)
+
+    with open('result.txt', 'w', encoding='utf-8') as file:
+        dump(data_hotel, file, ensure_ascii=False, indent=4)
+
+

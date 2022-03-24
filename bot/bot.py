@@ -4,11 +4,15 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, CallbackContext, ConversationHandler, Filters
 from bot.decorator import CollectionCommand
 from db.db_handler import DataUsers
+from rapid.hotel_handler import RapidFacade
+from logger.logger import LoggerMixin
 
 database = DataUsers()
+hotel_handler = RapidFacade()
+RUN = 'Run'
 
 
-class TelebotHandler():
+class TelebotHandler(LoggerMixin):
     """ Базовый класс со словарем команд """
     COMMANDS = {}
 
@@ -23,6 +27,8 @@ class Welcome(TelebotHandler):
         database.create(user_id=update.message.from_user.id, user_name=update.message.from_user.first_name)
         update.message.reply_text(send_msg)
 
+        self.logger().info(RUN)
+
 
 @CollectionCommand('history', TelebotHandler.COMMANDS)
 class History(TelebotHandler):
@@ -30,6 +36,8 @@ class History(TelebotHandler):
     def __call__(self, update: Update, context: CallbackContext) -> None:
         data = database.read(update.message.from_user.id)
         update.message.reply_text(data)
+
+        self.logger().info(RUN)
 
 
 @CollectionCommand('help', TelebotHandler.COMMANDS)
@@ -41,6 +49,7 @@ class Help(TelebotHandler):
                     ]
         send_msg = '\n'.join(send_msg)
 
+        self.logger().info(RUN)
         return update.message.reply_text(send_msg)
 
 
@@ -62,6 +71,8 @@ class BaseSearchHotel(TelebotHandler):
 
         send_msg = 'Введите дату начала поездки'
         update.message.reply_text(send_msg)
+
+        self.logger().info(RUN)
         return STATES_BASE['check_in']
 
     def check_in(self, update: Update, context: CallbackContext) -> int:
@@ -73,6 +84,8 @@ class BaseSearchHotel(TelebotHandler):
 
         send_msg = 'Введите дату завершения поездки'
         update.message.reply_text(send_msg)
+
+        self.logger().info(RUN)
         return STATES_BASE['check_out']
 
     def check_out(self, update: Update, context: CallbackContext) -> int:
@@ -84,6 +97,8 @@ class BaseSearchHotel(TelebotHandler):
 
         send_msg = 'Введите кол-во взрослых, проживающих в 1 номере'
         update.message.reply_text(send_msg)
+
+        self.logger().info(RUN)
         return STATES_BASE['count_people']
 
     def people(self, update: Update, context: CallbackContext) -> int:
@@ -95,6 +110,8 @@ class BaseSearchHotel(TelebotHandler):
 
         send_msg = 'Введите кол-во отелей'
         update.message.reply_text(send_msg)
+
+        self.logger().info(RUN)
         return STATES_BASE['count_hotel']
 
     def hotel(self, update: Update, context: CallbackContext) -> int:
@@ -106,6 +123,8 @@ class BaseSearchHotel(TelebotHandler):
 
         send_msg = 'Введите кол-во фото'
         update.message.reply_text(send_msg)
+
+        self.logger().info(RUN)
         return STATES_BASE['count_photo']
 
     def photo(self, update: Update, context: CallbackContext) -> int:
@@ -116,6 +135,18 @@ class BaseSearchHotel(TelebotHandler):
         print(self.request_data)
         # TODO продумать разветвление на bestdeal (будет другой ретерн на цены и удаленость от центра)
         # todo отсюда идет запрос для отелей + добавление в БД
+
+        # data = hotel_handler.handler(
+        #     command=self.__class__.__name__.lower(),
+        #     city=self.request_data['query'],
+        #     count_hotel=self.request_data['count_hotel'],
+        #     count_photo=self.request_data['count_photo'],
+        #     adults=self.request_data['count_people'],
+        #     checkIn=self.request_data['checkIn'],
+        #     checkOut=self.request_data['checkOut']
+        # )
+
+        self.logger().info(RUN)
         return ConversationHandler.END
 
     @staticmethod
@@ -128,6 +159,8 @@ class BaseSearchHotel(TelebotHandler):
 
         send_msg = '{} запущен. \nВведите город, в который вы хотите поехать'.format(self.__class__.__name__)
         update.message.reply_text(send_msg)
+
+        self.logger().info(RUN)
         return STATES_BASE['city']
 
 
@@ -140,4 +173,10 @@ class LowPrice(BaseSearchHotel):
 @CollectionCommand('highprice', TelebotHandler.COMMANDS)
 class HighPrice(BaseSearchHotel):
     """ Поиск отелей по максимальной цене """
+    pass
+
+
+@CollectionCommand('bestdeal', TelebotHandler.COMMANDS)
+class HighPrice(BaseSearchHotel):
+    """ Поиск отелей по удаленности от центра """
     pass

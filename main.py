@@ -5,9 +5,9 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, Filters, ConversationHandler
 from bot.bot import TelebotHandler
 from db.db_handler import DatabaseFactory
+from logger.logger import LoggerMixin
 
 """ Бот: @guinea_pig_2022_bot """
-
 
 TOKEN = '5113338503:AAFtsZUu5UYQGTFl2PC6SfpoTbrsrGNa6EY'
 
@@ -19,7 +19,7 @@ class AbstractFactory(ABC):
         pass
 
 
-class TeleBot():
+class TeleBot(LoggerMixin):
     """ Класс для инициализации телеграмм команд и запуска бота"""
     def __init__(self, token: str) -> None:
         """ Создается обработчик команд"""
@@ -31,8 +31,8 @@ class TeleBot():
     def add_handlers_commands(self) -> None:
         """ Регистрация обработчиков команд бота """
         dispatcher = self.updater.dispatcher
-
         for commands, commands_cls in self.handler.COMMANDS.items():
+
             commands_obj = commands_cls()
 
             if commands in ['lowprice', 'highprice']:
@@ -54,6 +54,8 @@ class TeleBot():
                 """ Добавление обработки остальных реализованных команд """
                 dispatcher.add_handler(CommandHandler(commands, commands_cls()))
 
+            self.logger().info('{}'.format(commands))
+
     def start(self) -> None:
         """ Запуск бота """
         self.updater.start_polling()
@@ -74,3 +76,4 @@ class TeleBotFactory(AbstractFactory):
 if __name__ == '__main__':
     tele_bot = TeleBotFactory()
     tele_bot.create_telebot()
+

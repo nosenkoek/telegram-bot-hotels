@@ -9,7 +9,7 @@ logging.basicConfig(filename=path_log,
                     filemode='w',
                     encoding='utf-8',
                     level=logging.INFO,
-                    format='%(asctime)s | %(name)s | %(levelname)s | %(module)s | %(funcName)s | %(message)s',
+                    format='%(asctime)s | %(levelname)s | %(filename)s | %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S'
                     )
 
@@ -17,15 +17,28 @@ logging.basicConfig(filename=path_log,
 # file_logger = logging.FileHandler(path_log)
 
 
-# def logger(cls):
-#     @wraps(cls)
-#     def wrapper(*args, **kwargs):
-#         instance = cls(*args, **kwargs)
-#         logging.info('{}'.format(cls.__name__))
-#         return instance
-#     return wrapper
+def logger(func, name):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        logging.info('{} | {} run'.format(name, func.__qualname__))
+        try:
+            result = func(*args, **kwargs)
+        except TypeError:
+            """ для работы со staticmethod """
+            args = args[1:]
+            result = func(*args, **kwargs)
+        return result
+    return wrapper
 
-class LoggerMixin():
-    def logger(self):
-        logger = logging.getLogger(f'{self.__class__.__name__}')
-        return logger
+
+def logger_all():
+    @wraps(logger)
+    def decorate(cls):
+        for method_name in dir(cls):
+            if method_name.startswith('__') is False or method_name == '__call__':
+                current_method = getattr(cls, method_name)
+                decorate_method = logger(current_method, cls.__name__)
+                setattr(cls, method_name, decorate_method)
+        return cls
+    return decorate
+

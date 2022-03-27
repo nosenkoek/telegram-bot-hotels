@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 
 HEADERS = {
     'x-rapidapi-host': "hotels4.p.rapidapi.com",
-    'x-rapidapi-key': "8313b0a0bdmshe9cafbcdf42438bp19c8c0jsnbe34dcb1db94"
+    'x-rapidapi-key': "a9aad8794fmsh039fe95526d7dccp1b6e21jsn4ac292303c66"
 }
 
 BASE_REQUEST_LOCATION_API = {

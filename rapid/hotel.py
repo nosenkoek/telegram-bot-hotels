@@ -1,61 +1,117 @@
 from settings import BASE_REQUEST_HOTELS_API, BASE_REQUEST_LOCATION_API, HEADERS, COUNT_MAX_PHOTO, COUNT_MAX_HOTEL
-from rapid.func_search import search_substruct
 
 from abc import ABC, abstractmethod
 import requests
-from json import loads, dumps, dump, load, JSONDecodeError
-from typing import List, Dict, Any
-from logger.logger import LoggerMixin
+from re import search
+from json import loads, dump, JSONDecodeError
+from typing import List, Dict, Any, Optional, Union
+from datetime import datetime
+from logger.logger import logger_all
+import logging
 
 
-class BodyRequestHotel(ABC, LoggerMixin):
-    REQUEST = {}
-
-    def request_hotel(self, **kwargs) -> requests.Response:
-        self.REQUEST.update(BASE_REQUEST_HOTELS_API)
-        self.REQUEST.update(**kwargs)
-        self.logger().info('request{}'.format(self.REQUEST))
-        print(self.REQUEST)
+class RequestMixin():
+    """ Миксин для запросов по url и параметрам """
+    @staticmethod
+    def request_get(url: str, request: dict) -> requests.Response:
+        """
+        Метод запроса
+        :param url: url-адрес для запроса,
+        :param request: словарь параметров для запроса,
+        :return: отклик в виде объекта Response
+        """
         try:
-            response = requests.get('https://hotels4.p.rapidapi.com/properties/list',
-                                    headers=HEADERS, params=self.REQUEST)
+            response = requests.get(url=url, headers=HEADERS, params=request)
         except requests.HTTPError as http_err:
             print('Ошибка HTTP:', http_err)
-            self.logger().exception(http_err)
+            logging.exception(http_err)
             raise
         except Exception as err:
             print('Произошла ошибка:', err)
-            self.logger().exception(err)
+            logging.exception(err)
             raise
         else:
             if response.status_code != 200:
-                self.logger().error('code {}'.format(response.status_code))
-                raise ValueError('Ошибка кода отклика')
-
-            print('Success Hotels', response.status_code)
-            self.logger().info('Success Hotels {}'.format(response.status_code))
+                logging.error('code {}'.format(response.status_code))
+                raise ValueError('Ошибка кода отклика', response.status_code)
             return response
 
 
+class SearchValueMixin():
+    """ Миксин для поиска подструктуры по ключу"""
+    def _search_substruct(self, struct: Union[Dict, List], key_result: str) -> Optional[List]:
+        """ Функция для поиска подструктуры по ключу """
+        if isinstance(struct, dict):
+            if key_result in struct.keys():
+                return struct[key_result]
+
+            values = struct.values()
+        else:
+            values = struct
+
+        for sub_struct in values:
+            if isinstance(sub_struct, dict) or isinstance(sub_struct, list):
+                result = self._search_substruct(sub_struct, key_result)
+                if result:
+                    break
+        else:
+            result = None
+        return result
+
+
+class BodyRequestHotel(ABC, RequestMixin):
+    """ Базовый класс для запросов отелей (Фабричный метод) """
+    REQUEST = {}
+
+    def request_hotel(self, **kwargs) -> requests.Response:
+        """
+        Метод для запроса списка отелей.
+        :param kwargs: дополнительные настраиваемые параметры для поиска,
+        :return: response
+        """
+        self.REQUEST.update(BASE_REQUEST_HOTELS_API)
+        self.REQUEST.update(**kwargs)
+
+        logging.info('request{}'.format(self.REQUEST))
+        print(self.REQUEST)
+
+        response = self.request_get('https://hotels4.p.rapidapi.com/properties/list', self.REQUEST)
+
+        print('Success Hotels |', response.status_code)
+        logging.info('Success Hotels | {}'.format(response.status_code))
+        return response
+
+
+@logger_all()
 class LowPriceRequestHotel(BodyRequestHotel):
-    REQUEST = {'sortOrder': 'PRICE'}
+    """ Дочерний класс запроса lowprice"""
+    def __init__(self):
+        self.REQUEST = {'sortOrder': 'PRICE'}
 
 
+@logger_all()
 class HighPriceRequestHotel(BodyRequestHotel):
-    REQUEST = {'sortOrder': 'PRICE_HIGHEST_FIRST'}
+    """ Дочерний класс запроса highprice"""
+    def __init__(self):
+        self.REQUEST = {'sortOrder': 'PRICE_HIGHEST_FIRST'}
 
 
+@logger_all()
 class BestDealRequestHotel(BodyRequestHotel):
-    REQUEST = {'sortOrder': 'DISTANCE_FROM_LANDMARK'}
+    """ Дочерний класс запроса bestdeal. Сортировка по DISTANCE_FROM_LANDMARK"""
+    def __init__(self):
+        self.REQUEST = {'sortOrder': 'DISTANCE_FROM_LANDMARK'}
 
 
-class BaseRequest(ABC, LoggerMixin):
+class BaseRequest(ABC):
+    """ Абстрактный класс для запросов (DIP - принцип инверсии зависимостей) """
     @abstractmethod
     def context_request(self, *args, **kwargs):
         pass
 
 
 class HotelRequest(BaseRequest):
+    """ Фабрика запросов отелей. Изменяется сортировка."""
     COMMANDS = {
         'bestdeal': BestDealRequestHotel(),
         'lowprice': LowPriceRequestHotel(),
@@ -67,136 +123,214 @@ class HotelRequest(BaseRequest):
         return result.request_hotel(**kwargs)
 
 
-class LocationRequest(BaseRequest):
-    REQUEST = BASE_REQUEST_LOCATION_API
+@logger_all()
+class LocationRequest(BaseRequest, RequestMixin):
+    """ Класс запроса локации """
+    def __init__(self):
+        self.REQUEST = BASE_REQUEST_LOCATION_API
 
     def context_request(self, **kwargs) -> requests.Response:
+        """
+        Метод для запроса списка локаций.
+        :param kwargs: дополнительный настраиваемый параметр для поиска (query),
+        :return: response
+        """
         self.REQUEST.update(**kwargs)
-        try:
-            response = requests.get('https://hotels4.p.rapidapi.com/locations/v2/search',
-                                    headers=HEADERS, params=self.REQUEST)
-        except requests.HTTPError as http_err:
-            print('Ошибка HTTP:', http_err)
-            self.logger().exception(http_err)
-            raise
-        except Exception as err:
-            print('Произошла ошибка:', err)
-            self.logger().exception(err)
-            raise
-        else:
-            if response.status_code != 200:
-                self.logger().error('code {}'.format(response.status_code))
-                raise ValueError('Ошибка кода отклика')
 
-            print('Success Location', response.status_code)
-            self.logger().info('Success Location {}'.format(response.status_code))
-            return response
+        response = self.request_get('https://hotels4.p.rapidapi.com/locations/v2/search', self.REQUEST)
+
+        print('Success Location', response.status_code)
+        logging.info('Success Location {}'.format(response.status_code))
+        return response
 
 
-class PhotoRequest(BaseRequest):
+@logger_all()
+class PhotoRequest(BaseRequest, RequestMixin):
+    """ Класс запроса фото """
     def context_request(self, **kwargs) -> requests.Response:
-        try:
-            response = requests.get('https://hotels4.p.rapidapi.com/properties/get-hotel-photos',
-                                    headers=HEADERS, params=kwargs)
-        except requests.HTTPError as http_err:
-            print('Ошибка HTTP:', http_err)
-            self.logger().exception(http_err)
-            raise
-        except Exception as err:
-            print('Произошла ошибка:', err)
-            self.logger().exception(err)
-            raise
-        else:
-            if response.status_code != 200:
-                self.logger().error('code {}'.format(response.status_code))
-                raise ValueError('Ошибка кода отклика')
+        """
+        Метод для запроса фото.
+        :param kwargs: параметр для поиска фото (id отеля),
+        :return: response
+        """
+        response = self.request_get('https://hotels4.p.rapidapi.com/properties/get-hotel-photos', kwargs)
 
-            print('Success Photo', response.status_code)
-            self.logger().info('Success Photo {}'.format(response.status_code))
-            return response
+        print('Success Photo', response.status_code)
+        logging.info('Success Photo {}'.format(response.status_code))
+        return response
 
 
-class HotelHandler(LoggerMixin):
+@logger_all()
+class HotelHandler(SearchValueMixin):
+    """
+    Класс обработчик отелей
+    Args:
+        request(HotelRequest): экземпляр класса HotelRequest для запроса отелей
+    """
     def __init__(self, request: HotelRequest):
         self._request = request
 
+    @staticmethod
+    def _count_nights(kwargs) -> int:
+        """
+        Расчет количества ночей
+        :param kwargs: параметры запроса
+        :return: количество ночей
+        """
+        check_in, check_out = kwargs.get('checkIn'), kwargs.get('checkOut')
+        check_in, check_out = datetime.strptime(check_in, '%Y-%m-%d'), datetime.strptime(check_out, '%Y-%m-%d')
+
+        count_night = check_out - check_in
+        count_night = count_night.days
+        return count_night
+
+    def _price(self, hotel: dict, count_night: int) -> (float, float):
+        """
+        Расчет цены для отелей.
+        :param hotel: словарь с параметрами отеля,
+        :param count_night: количество ночей,
+        :return: цена за 1 ночь и общая цена
+        """
+        price_one_night = self._search_substruct(hotel, 'exactCurrent')
+        total_price = price_one_night * count_night
+        return price_one_night, total_price
+
+    def _distance(self, hotel: dict) -> Optional[str]:
+        """
+        Поиск удаленности от центра.
+        :param hotel: словарь с параметрами отеля,
+        :return: удаленность от центра или None при отсутствии этого параметра
+        """
+        landmarks = self._search_substruct(hotel, 'landmarks')
+        landmarks_filter = list(filter(lambda item: item.get('label') in ['Центр города', 'City center'], landmarks))
+
+        if len(landmarks_filter):
+            distance = landmarks_filter[0].get('distance')
+        else:
+            distance = None
+
+        return distance
+
+    @staticmethod
+    def _valid_distance(distance: Optional[str], kwargs) -> bool:
+        """
+        Проверка отеля по удаленности от центра при команде bestdeal
+        :param distance: определенная дистанция
+        :param kwargs: параметры для поиска отелей
+        :return: True или False подходит/ не подходит
+        """
+        distance_user = kwargs.get('distance')
+        distance_hotel = search(r'(\d+,|.\d+)', distance).group(0)
+        distance_float = float(distance_hotel.replace(',', '.'))
+
+        if distance_user < distance_float:
+            return False
+        return True
+
     def handler(self, command: str, count_hotel=COUNT_MAX_HOTEL, **kwargs) -> List[Dict[str, Any]]:
+        """
+        Обработчик отклика с сайта отелей. Внешний интерфейс.
+        :param command: команда по сортировке отеля (bestdeal, highprice, lowprice),
+        :param count_hotel: количество отелей введенное пользователем,
+        :param kwargs: дополнительные параметры для поиска отеля. обязательно destinationId
+        :return hotels: подготовленный список отелей для отправки
+
+        """
         data = self._request.context_request(command, **kwargs)
 
         data = loads(data.text)
-        with open('bestdeal.json', 'w', encoding='utf-8') as file:
-            dump(data, file, ensure_ascii=False, indent=4)
+        with open('hotels.json', 'w', encoding='utf-8') as file_hotel:
+            dump(data, file_hotel, ensure_ascii=False, indent=4)
 
         hotels = []
-        hotels_response = search_substruct(data, 'results')
+        hotels_response = self._search_substruct(data, 'results')
+        hotels_filter = filter(lambda item: self._search_substruct(item, 'exactCurrent'), hotels_response)
 
-        for hotel in hotels_response:
+        for hotel in hotels_filter:
             if len(hotels) >= count_hotel:
                 break
 
-            landmarks = search_substruct(hotel, 'landmarks')
-            for landmark in landmarks:
-                if landmark.get('label') in ['Центр города', 'City center']:
-                    distance = landmark.get('distance')
-                    break
+            id_hotel = self._search_substruct(hotel, 'id')
+            count_night = self._count_nights(kwargs)
+            price, total_price = self._price(hotel, count_night)
+            distance = self._distance(hotel)
+
+            if command == 'bestdeal':
+                hotel_is_valid = self._valid_distance(distance, kwargs)
             else:
-                distance = None
+                hotel_is_valid = True
 
-            hotels.append({
-                'id': search_substruct(hotel, 'id'),
-                'name': search_substruct(hotel, 'name'),
-                'address': search_substruct(hotel, 'streetAddress'),
-                'star': search_substruct(hotel, 'starRating'),
-                'rating': search_substruct(hotel, 'unformattedRating'),
-                'distance': distance,
-                'price': search_substruct(hotel, 'exactCurrent')
-            })
+            if hotel_is_valid:
+                hotels.append({
+                    'id': id_hotel,
+                    'name': self._search_substruct(hotel, 'name'),
+                    'address': self._search_substruct(hotel, 'streetAddress'),
+                    'star': self._search_substruct(hotel, 'starRating'),
+                    'rating': self._search_substruct(hotel, 'unformattedRating'),
+                    'distance': distance,
+                    'price': price,
+                    'total_price': total_price,
+                    'url': 'https://uk.hotels.com/ho{}'.format(id_hotel)
+                })
 
-        self.logger().info('success handle hotels')
+        logging.info('success handle hotels')
         return hotels
 
 
-class LocationHandler(LoggerMixin):
+@logger_all()
+class LocationHandler(SearchValueMixin):
     def __init__(self, request: LocationRequest):
         self._request = request
 
     def handler(self, **kwargs) -> int:
+        """
+        Обработчик отклика с сайта отелей. Поиск города. Внешний интерфейс.
+        :param kwargs: параметр необходимый для поиска города (query),
+        :return: id города
+        """
         data = self._request.context_request(**kwargs)
         data = loads(data.text)
-        suggestions = search_substruct(data, 'entities')
+        suggestions = self._search_substruct(data, 'entities')
 
         if not isinstance(suggestions, list):
-            self.logger().error('Not entities. Wrong structure')
+            logging.error('Not entities. Wrong structure')
             raise ValueError('Ошибка в структуре ответа на запрос локации')
 
         for location in suggestions:
             if location.get('type') == 'CITY':
-                self.logger().info('success city = {}'.format(location.get('name')))
+                logging.info('success city = {}'.format(location.get('name')))
                 print('success city = {}'.format(location.get('name')))
                 return location.get('destinationId')
             else:
-                self.logger().error('Not found city')
+                logging.error('Not found city')
                 raise ValueError('Город не найден')
 
 
-class PhotoHandler(LoggerMixin):
+@logger_all()
+class PhotoHandler(SearchValueMixin):
     def __init__(self, request: PhotoRequest):
         self._request = request
 
     def handler(self, count_photo=COUNT_MAX_PHOTO, **kwargs) -> List[str]:
-        data = self._request.context_request(**kwargs)
+        """
+        Обработчик отклика с сайта отелей. Поиск фото отеля. Внешний интерфейс.
+        :param count_photo: число фото, вводимое пользователем,
+        :param kwargs: дополнительный параметр для поиска фото (id)
+        :return: список с url-адресами фото отеля
+        """
 
+        data = self._request.context_request(**kwargs)
         photo = []
 
         try:
-            photo_response = search_substruct(loads(data.text), 'hotelImages')
+            photo_response = self._search_substruct(loads(data.text), 'hotelImages')
         except JSONDecodeError:
-            self.logger().warning('No photo {}'.format(kwargs))
+            logging.warning('No photo | {}'.format(kwargs))
             print('Нет фото')
             return ['нет фото']
 
         if not isinstance(photo_response, list):
-            self.logger().error('Not hotelImages. Wrong structure')
+            logging.error('Not hotelImages. Wrong structure')
             raise ValueError('Ошибка в структуре ответа на запроса фото отеля')
 
         for photo_item in photo_response:
@@ -216,7 +350,7 @@ class PhotoHandler(LoggerMixin):
             url_photo_item = base_url.format(size=size_suffix)
             photo.append(url_photo_item)
 
-        self.logger().info('success photo')
+        logging.info('success photo')
         return photo
 
 
@@ -234,5 +368,3 @@ if __name__ == '__main__':
 
     with open('result.txt', 'w', encoding='utf-8') as file:
         dump(data_hotel, file, ensure_ascii=False, indent=4)
-
-

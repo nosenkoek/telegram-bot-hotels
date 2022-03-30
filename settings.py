@@ -1,5 +1,8 @@
 from datetime import datetime, timedelta
+from bot.buttons import ButtonOneLine, ButtonTwoLines
 
+TODAY_DATE = datetime.date(datetime.now())
+FORMAT_DATE = '%Y-%m-%d'
 
 HEADERS = {
     'x-rapidapi-host': "hotels4.p.rapidapi.com",
@@ -16,8 +19,8 @@ BASE_REQUEST_HOTELS_API = {
     'destinationId': None,
     'pageNumber': '1',
     'pageSize': '10',
-    'checkIn': datetime.now().strftime('%Y-%m-%d'),
-    'checkOut': (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d'),
+    'checkIn': datetime.now().strftime(FORMAT_DATE),
+    'checkOut': (datetime.now() + timedelta(days=1)).strftime(FORMAT_DATE),
     'adults1': '1',
     'locale': 'en_US',
     'currency': 'RUB',
@@ -27,12 +30,7 @@ COUNT_MAX_HOTEL = 10
 
 COUNT_MAX_PHOTO = 5
 
-STATES_BASE = {
-    'city': 0,
-    'check_in': 1,
-    'check_out': 2,
-    'count_people': 3,
-    'count_hotel': 4,
-    'count_photo': 5
-}
+BUTTON_PEOPLE = ButtonOneLine(1, 2, 3, 4)
+BUTTON_HOTEL = ButtonOneLine(3, 5, 7)
+BUTTON_PHOTO = ButtonTwoLines(1, 2, 3, 4, 5, no_photo=0)
 

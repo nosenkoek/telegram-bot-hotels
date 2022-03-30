@@ -1,11 +1,10 @@
-from settings import STATES_BASE
-
 from abc import ABC, abstractmethod
-from telegram import Update
-from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, Filters, ConversationHandler
+
+from telegram.ext import Updater, CommandHandler
 from bot.bot import TelebotHandler
+from bot.conversation_handlers import SortPriceConversationHandler, BestdealConversationHandler
 from db.db_handler import DatabaseFactory
-from logger.logger import LoggerMixin
+from logger.logger import logger_all
 
 """ Бот: @guinea_pig_2022_bot """
 
@@ -19,7 +18,8 @@ class AbstractFactory(ABC):
         pass
 
 
-class TeleBot(LoggerMixin):
+@logger_all()
+class TeleBot():
     """ Класс для инициализации телеграмм команд и запуска бота"""
     def __init__(self, token: str) -> None:
         """ Создается обработчик команд"""
@@ -32,29 +32,16 @@ class TeleBot(LoggerMixin):
         """ Регистрация обработчиков команд бота """
         dispatcher = self.updater.dispatcher
         for commands, commands_cls in self.handler.COMMANDS.items():
-
-            commands_obj = commands_cls()
-
             if commands in ['lowprice', 'highprice']:
                 """ Добавление функции разговора при запросах 'lowprice', 'highprice' """
-                dispatcher.add_handler(ConversationHandler(
-                    entry_points=[CommandHandler(commands, commands_cls())],
-                    states={
-                        STATES_BASE['city']: [MessageHandler(Filters.text, commands_obj.city)],
-                        STATES_BASE['check_in']: [MessageHandler(Filters.text, commands_obj.check_in)],
-                        STATES_BASE['check_out']: [MessageHandler(Filters.text, commands_obj.check_out)],
-                        STATES_BASE['count_people']: [MessageHandler(Filters.text, commands_obj.people)],
-                        STATES_BASE['count_hotel']: [MessageHandler(Filters.text, commands_obj.hotel)],
-                        STATES_BASE['count_photo']: [MessageHandler(Filters.text, commands_obj.photo)]
-                    },
-                    # todo подумать как можно использовать
-                    fallbacks=[CommandHandler('cancel', commands_obj.cancel)]
-                ))
+                handler_price = SortPriceConversationHandler(commands, commands_cls)
+                dispatcher.add_handler(handler_price())
+            elif commands == 'bestdeal':
+                handler_price = BestdealConversationHandler(commands, commands_cls)
+                dispatcher.add_handler(handler_price())
             else:
                 """ Добавление обработки остальных реализованных команд """
                 dispatcher.add_handler(CommandHandler(commands, commands_cls()))
-
-            self.logger().info('{}'.format(commands))
 
     def start(self) -> None:
         """ Запуск бота """

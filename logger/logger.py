@@ -2,6 +2,7 @@ import logging
 from functools import wraps
 from os import path
 
+# TODO настроить логгер, ошибки должны быть в том числе в терминале
 my_path = path.dirname(path.abspath(__file__))
 path_log = path.join(my_path, '../logger/logging.log')
 
@@ -9,24 +10,34 @@ logging.basicConfig(filename=path_log,
                     filemode='w',
                     encoding='utf-8',
                     level=logging.INFO,
-                    format='%(asctime)s | %(levelname)s | %(filename)s | %(message)s',
+                    format='%(asctime)s | %(levelname)s | %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S'
                     )
 
-# terminal_logger = logging.StreamHandler()
-# file_logger = logging.FileHandler(path_log)
+my_logger = logging.getLogger('logger')
 
+
+terminal_logger = logging.StreamHandler()
+terminal_logger.setLevel(logging.WARNING)
+
+
+file_logger = logging.FileHandler(path_log)
+
+my_logger.addHandler(terminal_logger)
+my_logger.addHandler(file_logger)
 
 def logger(func, name):
     @wraps(func)
     def wrapper(*args, **kwargs):
-        logging.info('{} | {} run'.format(name, func.__qualname__))
+        my_logger.info('{} | {} run'.format(name, func.__qualname__))
         try:
             result = func(*args, **kwargs)
         except TypeError:
             """ для работы со staticmethod """
             args = args[1:]
             result = func(*args, **kwargs)
+        except Exception as err:
+            my_logger.exception('{} | {} ERROR {}'.format(name, func.__qualname__, err))
         return result
     return wrapper
 

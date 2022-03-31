@@ -1,8 +1,10 @@
 from settings import TODAY_DATE, FORMAT_DATE, BUTTON_HOTEL, BUTTON_PHOTO, BUTTON_PEOPLE
 
 from bot.decorator import CollectionCommand
+from bot.registry_request import Registry
 from db.db_handler import DataUsers
 from logger.logger import logger_all
+
 
 from abc import ABC, abstractmethod
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
@@ -58,7 +60,7 @@ class Handler(ABC):
      Args:
          _successor: номер текущего обработчика
      """
-    request_data = {}
+    registry = Registry()
 
     def __init__(self, successor: int):
         self._successor = successor
@@ -75,9 +77,12 @@ class Handler(ABC):
 class BaseSearchHandler(Handler):
     """ Базовый класс для старта команд lowprice, highprice, bestdeal"""
     def __call__(self, update: Update, context: CallbackContext) -> int:
-        super().request_data.clear()
         print(self.__class__.__name__, 'run')
-        super().request_data.update({'command': self.__class__.__name__.lower()})
+        user_id = update.message.from_user.id
+
+        super().registry.add_new_id(user_id)
+        super().registry.update_data(user_id, {'command': self.__class__.__name__.lower()})
+        print(super().registry._datas, super().registry.get_data(user_id))
 
         send_msg = '{} запущен. \nВведите город, в который вы хотите поехать'.format(self.__class__.__name__)
         update.message.reply_text(send_msg)
@@ -112,8 +117,10 @@ class CityHandle(Handler):
         """ Функция для чтения ввода города пользователя """
         print('City run')
         city = update.message.text
-        super().request_data.update({'query': city})
-        print(super().request_data)
+        user_id = update.message.from_user.id
+
+        super().registry.update_data(user_id, {'query': city})
+        print(super().registry._datas, super().registry.get_data(user_id))
 
         calendar, step = DetailedTelegramCalendar(min_date=TODAY_DATE).build()
         send_msg = 'Введите дату начала поездки {}'.format(LSTEP[step])
@@ -124,10 +131,10 @@ class CityHandle(Handler):
 @logger_all()
 class DateHandler(Handler):
     """ Обработчик даты заезда"""
-    def min_date(self) -> (datetime, str):
-        if 'checkIn' in super().request_data.keys():
+    def min_date(self, user_id) -> (datetime, str):
+        if 'checkIn' in super().registry.get_data(user_id).keys():
             send_msg = 'Введите дату завершения поездки'
-            check_in = super().request_data['checkIn']
+            check_in = super().registry.get_data(user_id).get('checkIn')
             check_in = datetime.strptime(check_in, FORMAT_DATE)
             min_date = check_in.date() + timedelta(days=1)
         else:
@@ -141,8 +148,9 @@ class DateHandler(Handler):
         print('Check in run')
 
         query = update.callback_query
+        user_id = query.from_user.id
 
-        min_date, send_msg = self.min_date()
+        min_date, send_msg = self.min_date(user_id)
 
         result, key, step = DetailedTelegramCalendar(min_date=min_date).process(query.data)
 
@@ -151,19 +159,20 @@ class DateHandler(Handler):
         elif result:
             result_str = result.strftime(FORMAT_DATE)
 
-            if 'checkIn' not in super().request_data.keys():
-                super().request_data.update({'checkIn': result_str})
+            if 'checkIn' not in super().registry.get_data(user_id).keys():
+                super().registry.update_data(user_id, {'checkIn': result_str})
 
                 calendar, step = DetailedTelegramCalendar(min_date=min_date).build()
                 query.edit_message_text(f'Введите дату завершения поездки {LSTEP[step]}', reply_markup=calendar)
             else:
-                super().request_data.update({'checkOut': result_str})
+                super().registry.update_data(user_id, {'checkOut': result_str})
+
                 markup = BUTTON_PEOPLE.keyboard()
 
                 query.delete_message()
                 query.message.reply_text('Введите количество проживающих в 1 номере (не больше 4)', reply_markup=markup)
 
-            print(super().request_data)
+            print(super().registry._datas, super().registry.get_data(user_id))
             return self.successor
         else:
             raise ValueError
@@ -181,7 +190,8 @@ class PeopleHandler(Handler):
     def __call__(self, update: Update, context: CallbackContext) -> int:
         print('Count people run')
         query = update.callback_query
-        super().request_data.update({'adults1': query.data})
+        user_id = query.from_user.id
+        super().registry.update_data(user_id, {'adults1': query.data})
 
         send_msg, markup = self._answer()
         query.message.edit_text(send_msg, reply_markup=markup)
@@ -191,6 +201,7 @@ class PeopleHandler(Handler):
         print('Count people message run')
         update.message.bot.delete_message(chat_id=update.message.chat_id, message_id=(update.message.message_id - 1))
         count_people = update.message.text
+        user_id = update.message.from_user.id
         send_msg, markup = self._answer()
         try:
             count_people = int(count_people)
@@ -204,8 +215,8 @@ class PeopleHandler(Handler):
                 reply_markup=markup
             )
         else:
-            super().request_data.update({'adults1': count_people})
-            print(super().request_data)
+            super().registry.update_data(user_id, {'adults1': count_people})
+            print(super().registry._datas, super().registry.get_data(user_id))
             update.message.reply_text(send_msg, reply_markup=markup)
             return self.successor
 
@@ -223,8 +234,10 @@ class HotelCountHandler(Handler):
         print('Count hotel run')
         query = update.callback_query
         count_hotel = int(query.data)
-        super().request_data.update({'count_hotel': count_hotel})
-        print(super().request_data)
+        user_id = query.from_user.id
+        super().registry.update_data(user_id, {'count_hotel': count_hotel})
+
+        print(super().registry._datas, super().registry.get_data(user_id))
 
         send_msg, markup = self._answer()
         query.message.edit_text(send_msg, reply_markup=markup)
@@ -234,6 +247,7 @@ class HotelCountHandler(Handler):
         print('Count hotel message run')
         update.message.bot.delete_message(chat_id=update.message.chat_id, message_id=(update.message.message_id - 1))
         count_hotel = update.message.text
+        user_id = update.message.from_user.id
         try:
             count_hotel = int(count_hotel)
             if count_hotel > 10:
@@ -246,8 +260,8 @@ class HotelCountHandler(Handler):
                 reply_markup=markup
             )
         else:
-            super().request_data.update({'count_hotel': count_hotel})
-            print(super().request_data)
+            super().registry.update_data(user_id, {'count_hotel': count_hotel})
+            print(super().registry._datas, super().registry.get_data(user_id))
 
             send_msg, markup = self._answer()
             update.message.reply_text(send_msg, reply_markup=markup)
@@ -257,14 +271,15 @@ class HotelCountHandler(Handler):
 @logger_all()
 class PhotoCountHandler(Handler):
     """ Обработчик количества фото отелей"""
-    def _answer(self):
+    def _answer(self, user_id):
         try:
             data = [
-                'Город: {}'.format(super().request_data['query']),
-                'Даты: {} - {}'.format(super().request_data['checkIn'], super().request_data['checkOut']),
-                'Количество проживающих: {}'.format(super().request_data['adults1']),
-                'Количество отелей: {}'.format(super().request_data['count_hotel']),
-                'Количество фото: {}'.format(super().request_data['count_photo']),
+                'Город: {}'.format(super().registry.get_data(user_id).get('query')),
+                'Даты: {} - {}'.format(super().registry.get_data(user_id).get('checkIn'),
+                                       super().registry.get_data(user_id).get('checkOut')),
+                'Количество проживающих: {}'.format(super().registry.get_data(user_id).get('adults1')),
+                'Количество отелей: {}'.format(super().registry.get_data(user_id).get('count_hotel')),
+                'Количество фото: {}'.format(super().registry.get_data(user_id).get('count_photo')),
             ]
         except ValueError:
             raise ValueError
@@ -279,14 +294,14 @@ class PhotoCountHandler(Handler):
     def __call__(self, update: Update, context: CallbackContext) -> int:
         print('Count photo run')
         query = update.callback_query
-
         count_photo = int(query.data)
+        user_id = query.from_user.id
 
-        super().request_data.update({'count_photo': count_photo})
-        print(super().request_data)
+        super().registry.update_data(user_id, {'count_photo': count_photo})
+        print(super().registry._datas, super().registry.get_data(user_id))
 
-        if super().request_data['command'] in ['lowprice', 'highprice']:
-            send_msg, markup = self._answer()
+        if super().registry.get_data(user_id).get('command') in ['lowprice', 'highprice']:
+            send_msg, markup = self._answer(user_id)
 
             query.delete_message()
             query.message.reply_text(send_msg)
@@ -298,6 +313,7 @@ class PhotoCountHandler(Handler):
         print('Count message photo run')
         update.message.bot.delete_message(chat_id=update.message.chat_id, message_id=(update.message.message_id - 1))
         count_photo = update.message.text
+        user_id = update.message.from_user.id
         try:
             count_photo = int(count_photo)
             if count_photo > 5:
@@ -310,11 +326,11 @@ class PhotoCountHandler(Handler):
                 reply_markup=markup
             )
         else:
-            super().request_data.update({'count_photo': count_photo})
-            print(super().request_data)
+            super().registry.update_data(user_id, {'count_photo': count_photo})
+            print(super().registry._datas, super().registry.get_data(user_id))
 
-            if super().request_data['command'] in ['lowprice', 'highprice']:
-                send_msg, markup = self._answer()
+            if super().registry.get_data(user_id).get('command') in ['lowprice', 'highprice']:
+                send_msg, markup = self._answer(user_id)
                 update.message.reply_text(send_msg)
                 update.message.reply_text('Начать поиск?', reply_markup=markup)
 

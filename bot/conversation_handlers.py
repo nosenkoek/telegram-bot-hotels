@@ -8,6 +8,7 @@ from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandle
 
 class SortPriceConversationHandler():
     def __init__(self, command, commands_cls):
+
         self._command = command
         self._commands_cls = commands_cls(0)
         self._city = CityHandle(1)
@@ -19,6 +20,7 @@ class SortPriceConversationHandler():
         self._search = SearchHandler(7)
         self._cancel = Cancel(7)
 
+    # TODO сделать возможность отмены выполнения команды - это под вопросом
     def __call__(self):
         states = {
                         self._commands_cls.successor: [MessageHandler(Filters.text, self._city)],
@@ -33,7 +35,6 @@ class SortPriceConversationHandler():
                         self._photo.successor: [CallbackQueryHandler(self._search)],
                         self._search.successor: [CommandHandler(self._command, self._commands_cls)],
                     }
-        print(states)
         handler = ConversationHandler(
                     entry_points=[CommandHandler(self._command, self._commands_cls)],
                     states=states,

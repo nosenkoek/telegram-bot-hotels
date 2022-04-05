@@ -12,7 +12,7 @@ class SingletonMeta(type):
 class Data():
     """ Класс для сбора и хранения данных о запросах пользователя"""
     def __init__(self):
-        self._request_data = {}    # todo errors: False/True
+        self._request_data = {}
 
     def update_data(self, info: dict):
         self._request_data.update(info)

@@ -2,9 +2,9 @@ import logging
 from functools import wraps
 from os import path
 
-# TODO настроить логгер, ошибки должны быть в том числе в терминале
 my_path = path.dirname(path.abspath(__file__))
 path_log = path.join(my_path, '../logger/logging.log')
+path_err = path.join(my_path, '../logger/errors.log')
 
 logging.basicConfig(filename=path_log,
                     filemode='w',
@@ -16,15 +16,14 @@ logging.basicConfig(filename=path_log,
 
 my_logger = logging.getLogger('logger')
 
-
-terminal_logger = logging.StreamHandler()
-terminal_logger.setLevel(logging.WARNING)
-
-
 file_logger = logging.FileHandler(path_log)
 
-my_logger.addHandler(terminal_logger)
+error_logger = logging.FileHandler(path_err, mode='w', encoding='utf-8')
+error_logger.setLevel(logging.WARNING)
+
+my_logger.addHandler(error_logger)
 my_logger.addHandler(file_logger)
+
 
 def logger(func, name):
     @wraps(func)
@@ -36,9 +35,9 @@ def logger(func, name):
             """ для работы со staticmethod """
             args = args[1:]
             result = func(*args, **kwargs)
-        except Exception as err:
-            my_logger.exception('{} | {} ERROR {}'.format(name, func.__qualname__, err))
-        return result
+            return result
+        else:
+            return result
     return wrapper
 
 
@@ -52,4 +51,3 @@ def logger_all():
                 setattr(cls, method_name, decorate_method)
         return cls
     return decorate
-

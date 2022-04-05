@@ -3,7 +3,7 @@ from settings import TODAY_DATE, FORMAT_DATE, BUTTON_HOTEL, BUTTON_PHOTO, BUTTON
 from bot.decorator import CollectionCommand
 from bot.registry_request import Registry
 from bot.command_handler import TelebotHandler
-from logger.logger import logger_all
+from logger.logger import logger_all, my_logger
 from rapid.hotel_handler import RapidFacade
 
 from abc import ABC, abstractmethod
@@ -104,7 +104,7 @@ class CheckInHandler(Handler):
             query.edit_message_text(f'Введите дату окончания поездки {LSTEP[step]}', reply_markup=calendar)
             return self.successor
         else:
-            raise ValueError
+            print('Нажата пустая кнопка')
 
 
 @logger_all()
@@ -133,7 +133,7 @@ class CheckOutHandler(Handler):
 
             return self.successor
         else:
-            raise ValueError
+            print('Нажата пустая кнопка')
 
 
 @logger_all()
@@ -424,21 +424,18 @@ class SearchHotelHandler(Handler):
                                                    checkIn=check_in, checkOut=check_out, adults1=people,
                                                    priceMin=price_min, priceMax=price_max, distance=distance)
                 else:
+
                     hotels = hotel_handler.handler(command, city, count_hotels, count_photo,
                                                    checkIn=check_in, checkOut=check_out, adults1=people)
 
-                # todo разобраться с исключениями
-                #  1 - если не найдено отелей по этому диапазону
-
-                if hotels is None:
-                    raise ValueError('Ошибка запроса')
-
-                if not hotels:
-                    query.delete_message()
-                    query.message.reply_text('По вашему запросу не найдено отелей')
-            except ValueError:
+            except NameError as err:
+                my_logger.exception('Ошибка в запросе {}'.format(err))
                 query.delete_message()
                 query.message.reply_text('Ошибка запроса. Попробуйте позднее.')
+            except ValueError as err:
+                my_logger.exception('Ошибка - отели не найдены {}'.format(err))
+                query.delete_message()
+                query.message.reply_text('По вашему запросу не найдено отелей')
             else:
                 query.delete_message()
 
@@ -464,8 +461,8 @@ class HandlerFactory():
         'photo': PhotoCountHandler,
         'prices': PricesHandler,
         'distance': DistanceHandler,
-        'search': SearchHandler,   # - без прямого запроса на рапид, заглушка для телеграмма
-        # 'search': SearchHotelHandler,
+        # 'search': SearchHandler,   # - без прямого запроса на рапид, заглушка для телеграмма
+        'search': SearchHotelHandler,
     }
 
     def create_handler(self, name_handler: str, number: int):

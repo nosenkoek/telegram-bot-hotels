@@ -2,775 +2,501 @@
     "result": "OK",
     "data": {
         "body": {
-            "header": "Paris, France",
+            "header": "Ilıca Belediyesi, Kahramanmaras, Kahramanmaraş Province, Turkey",
             "query": {
                 "destination": {
-                    "id": "504261",
-                    "value": "Paris, France",
-                    "resolvedLocation": "CITY:504261:UNKNOWN:UNKNOWN"
+                    "id": "11114064",
+                    "value": "Ilıca Belediyesi, Kahramanmaras, Kahramanmaraş Province, Turkey",
+                    "resolvedLocation": "CITY:11114064:UNKNOWN:UNKNOWN"
                 }
             },
             "searchResults": {
-                "totalCount": 7308,
+                "totalCount": 23,
                 "results": [
                     {
-                        "id": 368483,
-                        "name": "Boutique Hôtel Konfidentiel",
-                        "starRating": 4.0,
+                        "id": 942145568,
+                        "name": "Tekirhan Otel & Lokanta",
+                        "starRating": 0.0,
                         "urls": {},
                         "address": {
-                            "streetAddress": "64 Rue de L'Arbre Sec",
-                            "extendedAddress": "",
-                            "locality": "Paris",
-                            "postalCode": "75001",
-                            "region": "Paris",
-                            "countryName": "France",
-                            "countryCode": "fr",
+                            "streetAddress": "Kayseri Yolu 55.km Tekir Mahallesi",
+                            "extendedAddress": "Cumhuriyet Caddesi No 36   Kahramanmaras",
+                            "locality": "Kahramanmaras",
+                            "postalCode": "46170",
+                            "region": "Kahramanmaras",
+                            "countryName": "Turkey",
+                            "countryCode": "tr",
                             "obfuscate": false
                         },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
                         "guestReviews": {
-                            "unformattedRating": 9.0,
-                            "rating": "9.0",
-                            "total": 55,
+                            "unformattedRating": 8.6,
+                            "rating": "8.6",
+                            "total": 4,
                             "scale": 10,
-                            "badge": "superb",
-                            "badgeText": "Superb"
+                            "badge": "fabulous",
+                            "badgeText": "Fabulous"
                         },
                         "landmarks": [
                             {
-                                "label": "City center",
-                                "distance": "0.1 miles"
+                                "label": "Ilıca Belediyesi",
+                                "distance": "14 miles"
                             },
                             {
-                                "label": "Eiffel Tower",
+                                "label": "Kahramanmaras (KCM)",
+                                "distance": "30 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "1,504 RUB",
+                                "exactCurrent": 1504.31
+                            },
+                            "features": {
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            }
+                        },
+                        "neighbourhood": "Kahramanmaras",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "D13|TESCO",
+                        "coordinate": {
+                            "lat": 37.88311,
+                            "lon": 36.62454
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 29410799,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/30000000/29420000/29410800/29410799/91753492_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 675856544,
+                        "name": "Sular Hotel",
+                        "starRating": 4.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Kurtulus Mahallesi",
+                            "extendedAddress": "Seyh Adil Cd. No 4",
+                            "locality": "Kahramanmaras",
+                            "postalCode": "46100",
+                            "region": "",
+                            "countryName": "Turkey",
+                            "countryCode": "tr",
+                            "obfuscate": false
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.0,
+                            "rating": "8.0",
+                            "total": 1,
+                            "scale": 10,
+                            "badge": "very-good",
+                            "badgeText": "Very Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "Ilıca Belediyesi",
+                                "distance": "18 miles"
+                            },
+                            {
+                                "label": "Kahramanmaras (KCM)",
+                                "distance": "3.6 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "2,699 RUB",
+                                "exactCurrent": 2698.95
+                            },
+                            "features": {
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            }
+                        },
+                        "neighbourhood": "Kahramanmaras",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "TESCO",
+                        "coordinate": {
+                            "lat": 37.58186,
+                            "lon": 36.92901
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 21089267,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/22000000/21090000/21089300/21089267/7df5789f_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 550479200,
+                        "name": "Hampton by Hilton Kahramanmaras",
+                        "starRating": 0.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Trabzon Cad No 2",
+                            "extendedAddress": "",
+                            "locality": "Kahramanmaras",
+                            "postalCode": "46100",
+                            "region": "Kahramanmaras",
+                            "countryName": "Turkey",
+                            "countryCode": "tr",
+                            "obfuscate": false
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.6,
+                            "rating": "8.6",
+                            "total": 144,
+                            "scale": 10,
+                            "badge": "fabulous",
+                            "badgeText": "Fabulous"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "Ilıca Belediyesi",
+                                "distance": "18 miles"
+                            },
+                            {
+                                "label": "Kahramanmaras (KCM)",
+                                "distance": "3.5 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "2,707 RUB",
+                                "exactCurrent": 2707.25
+                            },
+                            "features": {
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            }
+                        },
+                        "neighbourhood": "Kahramanmaras",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|TESCO",
+                        "coordinate": {
+                            "lat": 37.5808,
+                            "lon": 36.9279
+                        },
+                        "providerType": "MULTISOURCE",
+                        "supplierHotelId": 17171225,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/18000000/17180000/17171300/17171225/1a267f76_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 798426464,
+                        "name": "Hotel BLC",
+                        "starRating": 3.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Isa Divanli Mah Seyh Adil Cad No 33",
+                            "extendedAddress": "",
+                            "locality": "Kahramanmaras",
+                            "postalCode": "46100",
+                            "region": "",
+                            "countryName": "Turkey",
+                            "countryCode": "tr",
+                            "obfuscate": false
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.6,
+                            "rating": "8.6",
+                            "total": 3,
+                            "scale": 10,
+                            "badge": "fabulous",
+                            "badgeText": "Fabulous"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "Ilıca Belediyesi",
+                                "distance": "18 miles"
+                            },
+                            {
+                                "label": "Kahramanmaras (KCM)",
+                                "distance": "3.5 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "1,518 RUB",
+                                "exactCurrent": 1517.59
+                            },
+                            "features": {
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            }
+                        },
+                        "neighbourhood": "Kahramanmaras",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "coordinate": {
+                            "lat": 37.58076,
+                            "lon": 36.93053
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 24919577,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/25000000/24920000/24919600/24919577/128dcb13_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 1245995232,
+                        "name": "Deluxe Life Residence",
+                        "starRating": 0.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Yeni Sehir Mah. 74020. Sokak No 15/1",
+                            "extendedAddress": "Deluxe Life Rezidans Dulkadiroglu",
+                            "locality": "Kahramanmaras",
+                            "postalCode": "46100",
+                            "region": "",
+                            "countryName": "Turkey",
+                            "countryCode": "tr",
+                            "obfuscate": false
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 2.0,
+                            "rating": "2.0",
+                            "total": 1,
+                            "scale": 10
+                        },
+                        "landmarks": [
+                            {
+                                "label": "Ilıca Belediyesi",
+                                "distance": "19 miles"
+                            },
+                            {
+                                "label": "Kahramanmaras (KCM)",
+                                "distance": "3.0 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "1,014 RUB",
+                                "exactCurrent": 1014.49
+                            },
+                            "features": {
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            }
+                        },
+                        "neighbourhood": "Kahramanmaras",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13",
+                        "coordinate": {
+                            "lat": 37.57318,
+                            "lon": 36.93153
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 38906101,
+                        "vrBadge": "Condo Hotel",
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/39000000/38910000/38906200/38906101/b6929584_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 702314,
+                        "name": "Kentpark Exclusive Hotel",
+                        "starRating": 0.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Egemenlik Mahallesi, No 21/, 21007.",
+                            "extendedAddress": "",
+                            "locality": "Kahramanmaras",
+                            "postalCode": "46100",
+                            "region": "Merkez",
+                            "countryName": "Turkey",
+                            "countryCode": "tr",
+                            "obfuscate": false
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 7.4,
+                            "rating": "7.4",
+                            "total": 16,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "Ilıca Belediyesi",
+                                "distance": "19 miles"
+                            },
+                            {
+                                "label": "Kahramanmaras (KCM)",
+                                "distance": "3.0 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "1,973 RUB",
+                                "exactCurrent": 1973.36
+                            },
+                            "features": {
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            }
+                        },
+                        "neighbourhood": "Kahramanmaras",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "coordinate": {
+                            "lat": 37.57036,
+                            "lon": 36.92673
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 18686904,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/19000000/18690000/18687000/18686904/7ddbb6bd_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 692943,
+                        "name": "Kentpark Premium Business Hotel",
+                        "starRating": 0.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Egemenlik Mah. 21007 Sok No 21",
+                            "extendedAddress": "Dulkadiroglu",
+                            "locality": "Kahramanmaras",
+                            "postalCode": "46100",
+                            "region": "",
+                            "countryName": "Turkey",
+                            "countryCode": "tr",
+                            "obfuscate": false
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 7.8,
+                            "rating": "7.8",
+                            "total": 16,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "Ilıca Belediyesi",
+                                "distance": "19 miles"
+                            },
+                            {
+                                "label": "Kahramanmaras (KCM)",
+                                "distance": "3.0 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "1,561 RUB",
+                                "exactCurrent": 1560.76
+                            },
+                            "features": {
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            }
+                        },
+                        "neighbourhood": "Kahramanmaras",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "coordinate": {
+                            "lat": 37.57036,
+                            "lon": 36.92674
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 18356764,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/19000000/18360000/18356800/18356764/7e3ee040_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 619625216,
+                        "name": "Arsan Otel",
+                        "starRating": 4.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Sumer Mahallesi Guney Cevreyolu Uzeri",
+                            "extendedAddress": "Arsan Center",
+                            "locality": "Kahramanmaras",
+                            "postalCode": "46080",
+                            "region": "",
+                            "countryName": "Turkey",
+                            "countryCode": "tr",
+                            "obfuscate": false
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 9.6,
+                            "rating": "9.6",
+                            "total": 8,
+                            "scale": 10,
+                            "badge": "exceptional",
+                            "badgeText": "Exceptional"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "Ilıca Belediyesi",
+                                "distance": "20 miles"
+                            },
+                            {
+                                "label": "Kahramanmaras (KCM)",
                                 "distance": "2.2 miles"
                             }
                         ],
                         "geoBullets": [],
                         "ratePlan": {
                             "price": {
-                                "current": "27,217 RUB",
-                                "exactCurrent": 27216.58,
-                                "old": "30,241 RUB",
-                                "info": "nightly price per room",
-                                "additionalInfo": "This is the average nightly price for your dates.",
-                                "fullyBundledPricePerStay": "total 90,785 RUB for 3&nbsp;nights"
+                                "current": "2,973 RUB",
+                                "exactCurrent": 2972.91
                             },
                             "features": {
-                                "freeCancellation": false,
                                 "paymentPreference": false,
                                 "noCCRequired": false
-                            },
-                            "type": "EC"
-                        },
-                        "neighbourhood": "Les Halles",
-                        "deals": {
-                            "secretPrice": {
-                                "dealText": "Save more with Secret Prices"
-                            },
-                            "priceReasoning": "DRR-443"
-                        },
-                        "messaging": {
-                            "scarcity": "1 left on our app"
-                        },
-                        "badging": {},
-                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
-                        "coordinate": {
-                            "lat": 48.861247,
-                            "lon": 2.342508
-                        },
-                        "roomsLeft": 1,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 4130483,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/5000000/4140000/4130500/4130483/2296cba4_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 644787,
-                        "name": "Maison Albar Hotels Le Pont Neuf",
-                        "starRating": 5.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "23/25 RUE DU PONT NEUF",
-                            "extendedAddress": "",
-                            "locality": "Paris",
-                            "postalCode": "75001",
-                            "region": "",
-                            "countryName": "France",
-                            "countryCode": "fr",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 9.2,
-                            "rating": "9.2",
-                            "total": 214,
-                            "scale": 10,
-                            "badge": "superb",
-                            "badgeText": "Superb"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "0.2 miles"
-                            },
-                            {
-                                "label": "Eiffel Tower",
-                                "distance": "2.3 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "42,388 RUB",
-                                "exactCurrent": 42388.12,
-                                "info": "nightly price per room",
-                                "additionalInfo": "This is the average nightly price for your dates.",
-                                "fullyBundledPricePerStay": "total 141,145 RUB for 3&nbsp;nights"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": true,
-                                "noCCRequired": false
-                            },
-                            "type": "Dual"
-                        },
-                        "neighbourhood": "Les Halles",
-                        "deals": {},
-                        "messaging": {},
-                        "badging": {
-                            "hotelBadge": {
-                                "type": "vipBasic",
-                                "label": "VIP"
                             }
                         },
-                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
-                        "coordinate": {
-                            "lat": 48.860555,
-                            "lon": 2.34442
-                        },
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 16599855,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/17000000/16600000/16599900/16599855/ea4deb56_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 176705,
-                        "name": "Novotel Paris Les Halles",
-                        "starRating": 4.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "8 Place Marguerite De Navarre",
-                            "extendedAddress": "",
-                            "locality": "Paris",
-                            "postalCode": "75001",
-                            "region": "Paris",
-                            "countryName": "France",
-                            "countryCode": "fr",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 9.0,
-                            "rating": "9.0",
-                            "total": 1066,
-                            "scale": 10,
-                            "badge": "superb",
-                            "badgeText": "Superb"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "0.2 miles"
-                            },
-                            {
-                                "label": "Eiffel Tower",
-                                "distance": "2.4 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "34,895 RUB",
-                                "exactCurrent": 34894.59,
-                                "info": "nightly price per room",
-                                "additionalInfo": "This is the average nightly price for your dates."
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": true,
-                                "noCCRequired": false
-                            },
-                            "type": "Dual"
-                        },
-                        "neighbourhood": "Les Halles",
+                        "neighbourhood": "Kahramanmaras",
                         "deals": {},
                         "messaging": {},
                         "badging": {},
-                        "pimmsAttributes": "DoubleStamps|XMPV2|TESCO",
-                        "coordinate": {
-                            "lat": 48.860611,
-                            "lon": 2.346624
-                        },
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 24795,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/30000/24800/24795/b6cbd3a5_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 2244127936,
-                        "name": "Hôtel Dandy",
-                        "starRating": 0.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "88 Rue Saint-Denis",
-                            "extendedAddress": "",
-                            "locality": "Paris",
-                            "postalCode": "75001",
-                            "region": "",
-                            "countryName": "France",
-                            "countryCode": "fr",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "0.3 miles"
-                            },
-                            {
-                                "label": "Eiffel Tower",
-                                "distance": "2.5 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "27,774 RUB",
-                                "exactCurrent": 27774.39,
-                                "info": "nightly price per room",
-                                "additionalInfo": "This is the average nightly price for your dates.",
-                                "fullyBundledPricePerStay": "total 91,993 RUB for 3&nbsp;nights"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": true,
-                                "noCCRequired": false
-                            },
-                            "type": "Dual"
-                        },
-                        "neighbourhood": "Les Halles",
-                        "deals": {},
-                        "messaging": {
-                            "scarcity": "1 left on our app"
-                        },
-                        "badging": {},
-                        "pimmsAttributes": "D13|HRW",
-                        "coordinate": {
-                            "lat": 48.862364,
-                            "lon": 2.349577
-                        },
-                        "roomsLeft": 1,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 70097748,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/71000000/70100000/70097800/70097748/a378c99e_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 179438624,
-                        "name": "Grand Hotel du Palais Royal",
-                        "starRating": 5.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "4 rue de Valois",
-                            "extendedAddress": "",
-                            "locality": "Paris",
-                            "postalCode": "75001",
-                            "region": "",
-                            "countryName": "France",
-                            "countryCode": "fr",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 9.6,
-                            "rating": "9.6",
-                            "total": 169,
-                            "scale": 10,
-                            "badge": "exceptional",
-                            "badgeText": "Exceptional"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "0.3 miles"
-                            },
-                            {
-                                "label": "Eiffel Tower",
-                                "distance": "2.0 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "38,330 RUB",
-                                "exactCurrent": 38329.57,
-                                "old": "42,588 RUB",
-                                "info": "nightly price per room",
-                                "additionalInfo": "This is the average nightly price for your dates.",
-                                "fullyBundledPricePerStay": "total 127,751 RUB for 3&nbsp;nights"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": true,
-                                "noCCRequired": false
-                            },
-                            "type": "Dual"
-                        },
-                        "neighbourhood": "Palais-Royal",
-                        "deals": {
-                            "specialDeal": {
-                                "dealText": "Mobile exclusive: save 10%"
-                            },
-                            "priceReasoning": "DRR-444"
-                        },
-                        "messaging": {
-                            "scarcity": "1 left on our app"
-                        },
-                        "badging": {},
                         "pimmsAttributes": "DoubleStamps|D13|TESCO",
                         "coordinate": {
-                            "lat": 48.86332,
-                            "lon": 2.33786
-                        },
-                        "roomsLeft": 1,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 5576207,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/6000000/5580000/5576300/5576207/d0bcdca6_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 206320,
-                        "name": "La Clef Louvre Paris by The Crest Collection",
-                        "starRating": 5.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "8 Rue De Richelieu",
-                            "extendedAddress": "",
-                            "locality": "Paris",
-                            "postalCode": "75001",
-                            "region": "Paris",
-                            "countryName": "France",
-                            "countryCode": "fr",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 9.0,
-                            "rating": "9.0",
-                            "total": 181,
-                            "scale": 10,
-                            "badge": "superb",
-                            "badgeText": "Superb"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "0.4 miles"
-                            },
-                            {
-                                "label": "Eiffel Tower",
-                                "distance": "1.9 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "42,135 RUB",
-                                "exactCurrent": 42134.96,
-                                "old": "46,817 RUB",
-                                "info": "nightly price per unit",
-                                "additionalInfo": "This is the average nightly price for your dates.",
-                                "fullyBundledPricePerStay": "total 140,309 RUB for 3&nbsp;nights"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            },
-                            "type": "EC"
-                        },
-                        "neighbourhood": "Palais-Royal",
-                        "deals": {
-                            "specialDeal": {
-                                "dealText": "Mobile exclusive: save 10%"
-                            },
-                            "priceReasoning": "DRR-444"
-                        },
-                        "messaging": {},
-                        "badging": {},
-                        "pimmsAttributes": "DoubleStamps|D13|HRW|TESCO",
-                        "coordinate": {
-                            "lat": 48.86387,
-                            "lon": 2.33587
+                            "lat": 37.563146,
+                            "lon": 36.940651
                         },
                         "providerType": "LOCAL",
-                        "supplierHotelId": 526631,
-                        "vrBadge": "Residences",
+                        "supplierHotelId": 19332038,
                         "isAlternative": false,
                         "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/530000/526700/526631/127461c0_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 528856,
-                        "name": "Les Bains Paris",
-                        "starRating": 5.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "7 Rue du Bourg l'Abbe",
-                            "extendedAddress": "",
-                            "locality": "Paris",
-                            "postalCode": "75003",
-                            "region": "",
-                            "countryName": "France",
-                            "countryCode": "fr",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 9.4,
-                            "rating": "9.4",
-                            "total": 126,
-                            "scale": 10,
-                            "badge": "exceptional",
-                            "badgeText": "Exceptional"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "0.4 miles"
-                            },
-                            {
-                                "label": "Eiffel Tower",
-                                "distance": "2.6 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "39,133 RUB",
-                                "exactCurrent": 39133.0,
-                                "info": "nightly price per room",
-                                "additionalInfo": "This is the average nightly price for your dates.",
-                                "fullyBundledPricePerStay": "total 130,403 RUB for 3&nbsp;nights"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": true,
-                                "noCCRequired": false
-                            },
-                            "type": "Dual"
-                        },
-                        "neighbourhood": "Quartier Sainte-Avoye",
-                        "deals": {},
-                        "messaging": {},
-                        "badging": {
-                            "hotelBadge": {
-                                "type": "vipBasic",
-                                "label": "VIP"
-                            }
-                        },
-                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
-                        "coordinate": {
-                            "lat": 48.86394,
-                            "lon": 2.35217
-                        },
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 11299839,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/12000000/11300000/11299900/11299839/1ac285e0_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 1158529728,
-                        "name": "Hotel Le Presbytère",
-                        "starRating": 3.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "78 Rue de la Verrerie",
-                            "extendedAddress": "",
-                            "locality": "Paris",
-                            "postalCode": "75004",
-                            "region": "",
-                            "countryName": "France",
-                            "countryCode": "fr",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 9.4,
-                            "rating": "9.4",
-                            "total": 64,
-                            "scale": 10,
-                            "badge": "exceptional",
-                            "badgeText": "Exceptional"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "0.4 miles"
-                            },
-                            {
-                                "label": "Eiffel Tower",
-                                "distance": "2.5 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "48,072 RUB",
-                                "exactCurrent": 48072.37,
-                                "old": "53,414 RUB",
-                                "info": "nightly price per room",
-                                "additionalInfo": "This is the average nightly price for your dates.",
-                                "fullyBundledPricePerStay": "total 159,272 RUB for 3&nbsp;nights"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            },
-                            "type": "EC"
-                        },
-                        "neighbourhood": "Saint-Merri",
-                        "deals": {
-                            "secretPrice": {
-                                "dealText": "Save more with Secret Prices"
-                            },
-                            "priceReasoning": "DRR-443"
-                        },
-                        "messaging": {
-                            "scarcity": "1 left on our app"
-                        },
-                        "badging": {},
-                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
-                        "coordinate": {
-                            "lat": 48.85901,
-                            "lon": 2.35035
-                        },
-                        "roomsLeft": 1,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 36172804,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/37000000/36180000/36172900/36172804/0a2260b4_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 282287,
-                        "name": "Hotel Therese",
-                        "starRating": 4.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "5/7 rue Thérèse",
-                            "extendedAddress": "",
-                            "locality": "Paris",
-                            "postalCode": "75001",
-                            "region": "Paris",
-                            "countryName": "France",
-                            "countryCode": "fr",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 9.2,
-                            "rating": "9.2",
-                            "total": 186,
-                            "scale": 10,
-                            "badge": "superb",
-                            "badgeText": "Superb"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "0.4 miles"
-                            },
-                            {
-                                "label": "Eiffel Tower",
-                                "distance": "2.0 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "35,756 RUB",
-                                "exactCurrent": 35755.88,
-                                "old": "39,729 RUB",
-                                "info": "nightly price per room",
-                                "additionalInfo": "This is the average nightly price for your dates.",
-                                "fullyBundledPricePerStay": "total 135,277 RUB for 3&nbsp;nights"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            },
-                            "type": "EC"
-                        },
-                        "neighbourhood": "Palais-Royal",
-                        "deals": {
-                            "specialDeal": {
-                                "dealText": "Mobile exclusive: save 9%"
-                            },
-                            "priceReasoning": "DRR-444"
-                        },
-                        "messaging": {
-                            "scarcity": "1 left on our app"
-                        },
-                        "badging": {
-                            "hotelBadge": {
-                                "type": "vipBasic",
-                                "label": "VIP"
-                            }
-                        },
-                        "pimmsAttributes": "DoubleStamps|D13|HRW|TESCO",
-                        "coordinate": {
-                            "lat": 48.865925,
-                            "lon": 2.336082
-                        },
-                        "roomsLeft": 1,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 53566,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/60000/53600/53566/21f2c6f6_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 1921205600,
-                        "name": "Hotel du Sentier",
-                        "starRating": 4.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "2 Place du Caire",
-                            "extendedAddress": "",
-                            "locality": "Paris",
-                            "postalCode": "75002",
-                            "region": "",
-                            "countryName": "France",
-                            "countryCode": "fr",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 9.8,
-                            "rating": "9.8",
-                            "total": 9,
-                            "scale": 10,
-                            "badge": "exceptional",
-                            "badgeText": "Exceptional"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "0.4 miles"
-                            },
-                            {
-                                "label": "Eiffel Tower",
-                                "distance": "2.5 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "39,797 RUB",
-                                "exactCurrent": 39796.85,
-                                "info": "nightly price per room",
-                                "additionalInfo": "This is the average nightly price for your dates.",
-                                "fullyBundledPricePerStay": "total 132,300 RUB for 3&nbsp;nights"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            },
-                            "type": "EC"
-                        },
-                        "neighbourhood": "Bonne-Nouvelle",
-                        "deals": {},
-                        "messaging": {
-                            "scarcity": "1 left on our app"
-                        },
-                        "badging": {},
-                        "pimmsAttributes": "D13",
-                        "coordinate": {
-                            "lat": 48.868117,
-                            "lon": 2.348789
-                        },
-                        "roomsLeft": 1,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 60006425,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/61000000/60010000/60006500/60006425/050d8477_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/20000000/19340000/19332100/19332038/ece289ed_y.jpg?impolicy=fcrop&w=250&h=140&q=high"
                         }
                     }
                 ],
                 "pagination": {
                     "currentPage": 1,
-                    "pageGroup": "EXPEDIA_IN_POLYGON",
-                    "nextPageStartIndex": 10,
-                    "nextPageNumber": 2,
-                    "nextPageGroup": "EXPEDIA_IN_POLYGON"
+                    "pageGroup": "EXPEDIA_IN_POLYGON"
                 }
             },
             "sortResults": {
                 "options": [
-                    {
-                        "label": "Featured",
-                        "itemMeta": "popular",
-                        "choices": [
-                            {
-                                "label": "Featured",
-                                "value": "BEST_SELLER",
-                                "selected": false
-                            }
-                        ],
-                        "enhancedChoices": []
-                    },
                     {
                         "label": "Star rating",
                         "itemMeta": "star",
@@ -806,169 +532,7 @@
                                 "choices": [
                                     {
                                         "label": "City center",
-                                        "id": 504261.0
-                                    },
-                                    {
-                                        "label": "AccorHotels Arena",
-                                        "id": 1696523.0
-                                    },
-                                    {
-                                        "label": "Arc de Triomphe",
-                                        "id": 1431.0
-                                    },
-                                    {
-                                        "label": "Boulevard Haussmann",
-                                        "id": 1736637.0
-                                    },
-                                    {
-                                        "label": "Champs-Elysees",
-                                        "id": 1701809.0
-                                    },
-                                    {
-                                        "label": "Eiffel Tower",
-                                        "id": 520053.0
-                                    },
-                                    {
-                                        "label": "Galeries Lafayette",
-                                        "id": 1696522.0
-                                    },
-                                    {
-                                        "label": "Louvre Museum",
-                                        "id": 520052.0
-                                    },
-                                    {
-                                        "label": "Notre-Dame",
-                                        "id": 528023.0
-                                    },
-                                    {
-                                        "label": "Palais des Congres de Paris",
-                                        "id": 1635495.0
-                                    },
-                                    {
-                                        "label": "Palais Garnier",
-                                        "id": 1632921.0
-                                    },
-                                    {
-                                        "label": "Parc des Princes",
-                                        "id": 1652423.0
-                                    },
-                                    {
-                                        "label": "Paris Expo Porte de Versailles",
-                                        "id": 1636081.0
-                                    },
-                                    {
-                                        "label": "Paris Nord Villepinte Exhibition Centre",
-                                        "id": 1714405.0
-                                    },
-                                    {
-                                        "label": "Paris Olympia",
-                                        "id": 1652497.0
-                                    },
-                                    {
-                                        "label": "Place de la Bastille",
-                                        "id": 1652476.0
-                                    },
-                                    {
-                                        "label": "Place de la Republique",
-                                        "id": 1724058.0
-                                    },
-                                    {
-                                        "label": "Rue Cler",
-                                        "id": 1752172.0
-                                    },
-                                    {
-                                        "label": "Stade de France",
-                                        "id": 1652457.0
-                                    },
-                                    {
-                                        "label": "Stade Roland Garros",
-                                        "id": 10891120.0
-                                    }
-                                ]
-                            },
-                            {
-                                "label": "Train stations",
-                                "itemMeta": "stations",
-                                "choices": [
-                                    {
-                                        "label": "Aéroport Charles de Gaulle 2 TGV Station",
-                                        "id": 1752148.0
-                                    },
-                                    {
-                                        "label": "Bercy Station",
-                                        "id": 1704128.0
-                                    },
-                                    {
-                                        "label": "CDG Airport Terminal 1 Station",
-                                        "id": 11131015.0
-                                    },
-                                    {
-                                        "label": "Charles de Gaulle - Etoile Station",
-                                        "id": 1700933.0
-                                    },
-                                    {
-                                        "label": "Charles de Gaulle Airport 2 Station",
-                                        "id": 1714783.0
-                                    },
-                                    {
-                                        "label": "Chatelet Station",
-                                        "id": 1700958.0
-                                    },
-                                    {
-                                        "label": "Châtelet-Les Halles Station",
-                                        "id": 1701477.0
-                                    },
-                                    {
-                                        "label": "Gare de l'Est",
-                                        "id": 1701542.0
-                                    },
-                                    {
-                                        "label": "Gare de Lyon",
-                                        "id": 1714821.0
-                                    },
-                                    {
-                                        "label": "Gare du Nord",
-                                        "id": 1704087.0
-                                    },
-                                    {
-                                        "label": "Montparnasse Station",
-                                        "id": 1636723.0
-                                    },
-                                    {
-                                        "label": "Opera Station",
-                                        "id": 1704055.0
-                                    },
-                                    {
-                                        "label": "Orly Sud Airport Station",
-                                        "id": 11130996.0
-                                    },
-                                    {
-                                        "label": "Parc-des-Expositions Station",
-                                        "id": 1716065.0
-                                    },
-                                    {
-                                        "label": "Paris-St-Lazare Station",
-                                        "id": 1701454.0
-                                    },
-                                    {
-                                        "label": "Porte d'Orleans Station",
-                                        "id": 1704121.0
-                                    },
-                                    {
-                                        "label": "Porte Maillot Station",
-                                        "id": 1721178.0
-                                    },
-                                    {
-                                        "label": "Roissy Charles-de-Gaulle Airport Station",
-                                        "id": 1714546.0
-                                    },
-                                    {
-                                        "label": "Saint-Germain-des-Pres Station",
-                                        "id": 1704101.0
-                                    },
-                                    {
-                                        "label": "Saint-Michel - Notre-Dame Station",
-                                        "id": 1733515.0
+                                        "id": 11114064.0
                                     }
                                 ]
                             },
@@ -977,12 +541,8 @@
                                 "itemMeta": "airports",
                                 "choices": [
                                     {
-                                        "label": "Orly Airport (ORY)",
-                                        "id": 485292.0
-                                    },
-                                    {
-                                        "label": "Roissy - Charles de Gaulle Airport (CDG)",
-                                        "id": 485293.0
+                                        "label": "Kahramanmaras (KCM)",
+                                        "id": 1661098.0
                                     }
                                 ]
                             }
@@ -1018,7 +578,7 @@
                         "enhancedChoices": []
                     }
                 ],
-                "distanceOptionLandmarkId": 504261.0
+                "distanceOptionLandmarkId": 11114064.0
             },
             "filters": {
                 "applied": true,
@@ -1028,9 +588,9 @@
                     },
                     "autosuggest": {
                         "additionalUrlParams": {
-                            "resolved-location": "CITY:504261:UNKNOWN:UNKNOWN",
-                            "q-destination": "Paris, France",
-                            "destination-id": "504261"
+                            "resolved-location": "CITY:11114064:UNKNOWN:UNKNOWN",
+                            "q-destination": "Ilıca Belediyesi, Kahramanmaras, Kahramanmaraş Province, Turkey",
+                            "destination-id": "11114064"
                         }
                     }
                 },
@@ -1038,7 +598,8 @@
                     "applied": false,
                     "items": [
                         {
-                            "value": 5
+                            "value": 5,
+                            "disabled": true
                         },
                         {
                             "value": 4
@@ -1047,10 +608,12 @@
                             "value": 3
                         },
                         {
-                            "value": 2
+                            "value": 2,
+                            "disabled": true
                         },
                         {
-                            "value": 1
+                            "value": 1,
+                            "disabled": true
                         }
                     ]
                 },
@@ -1069,986 +632,30 @@
                     "items": [
                         {
                             "label": "City center",
-                            "value": "504261"
+                            "value": "11114064"
                         },
                         {
-                            "label": "Eiffel Tower",
-                            "value": "520053"
-                        },
-                        {
-                            "label": "Roissy - Charles de Gaulle Airport (CDG)",
-                            "value": "485293"
-                        },
-                        {
-                            "label": "Louvre Museum",
-                            "value": "520052"
-                        },
-                        {
-                            "label": "Palais Garnier",
-                            "value": "1632921"
-                        },
-                        {
-                            "label": "Champs-Elysees",
-                            "value": "1701809"
-                        },
-                        {
-                            "label": "Arc de Triomphe",
-                            "value": "1431"
-                        },
-                        {
-                            "label": "Orly Airport (ORY)",
-                            "value": "485292"
-                        },
-                        {
-                            "label": "Montparnasse Station",
-                            "value": "1636723"
-                        },
-                        {
-                            "label": "Paris Expo Porte de Versailles",
-                            "value": "1636081"
-                        },
-                        {
-                            "label": "Galeries Lafayette",
-                            "value": "1696522"
-                        },
-                        {
-                            "label": "Paris Nord Villepinte Exhibition Centre",
-                            "value": "1714405"
-                        },
-                        {
-                            "label": "Notre-Dame",
-                            "value": "528023"
-                        },
-                        {
-                            "label": "Gare de l'Est",
-                            "value": "1701542"
-                        },
-                        {
-                            "label": "AccorHotels Arena",
-                            "value": "1696523"
-                        },
-                        {
-                            "label": "Palais des Congres de Paris",
-                            "value": "1635495"
-                        },
-                        {
-                            "label": "CDG Airport Terminal 1 Station",
-                            "value": "11131015"
-                        },
-                        {
-                            "label": "Paris-St-Lazare Station",
-                            "value": "1701454"
-                        },
-                        {
-                            "label": "Stade de France",
-                            "value": "1652457"
-                        },
-                        {
-                            "label": "Charles de Gaulle Airport 2 Station",
-                            "value": "1714783"
+                            "label": "Kahramanmaras (KCM)",
+                            "value": "1661098"
                         }
                     ],
                     "distance": []
                 },
-                "neighbourhood": {
-                    "applied": false,
-                    "items": [
-                        {
-                            "label": "15th Arrondissement",
-                            "value": "1731383"
-                        },
-                        {
-                            "label": "8th Arrondissement",
-                            "value": "1731373"
-                        },
-                        {
-                            "label": "6th Arrondissement",
-                            "value": "1731372"
-                        },
-                        {
-                            "label": "7th Arrondissement",
-                            "value": "1731391"
-                        },
-                        {
-                            "label": "9th Arrondissement",
-                            "value": "1731375"
-                        },
-                        {
-                            "label": "Champs-Élysées",
-                            "value": "11117463"
-                        },
-                        {
-                            "label": "1st Arrondissement",
-                            "value": "1731364"
-                        },
-                        {
-                            "label": "5th Arrondissement",
-                            "value": "1731370"
-                        },
-                        {
-                            "label": "14th Arrondissement",
-                            "value": "1731382"
-                        },
-                        {
-                            "label": "Bercy",
-                            "value": "1691967"
-                        },
-                        {
-                            "label": "17th Arrondissement",
-                            "value": "1731385"
-                        },
-                        {
-                            "label": "13th Arrondissement",
-                            "value": "1731380"
-                        },
-                        {
-                            "label": "Saint-Germain-des-Pres",
-                            "value": "1691784"
-                        },
-                        {
-                            "label": "10th Arrondissement",
-                            "value": "1731376"
-                        },
-                        {
-                            "label": "11th Arrondissement",
-                            "value": "1731377"
-                        },
-                        {
-                            "label": "16th Arrondissement",
-                            "value": "1731384"
-                        },
-                        {
-                            "label": "12th Arrondissement",
-                            "value": "1731379"
-                        },
-                        {
-                            "label": "Latin Quarter",
-                            "value": "1639764"
-                        },
-                        {
-                            "label": "18th Arrondissement",
-                            "value": "1731387"
-                        },
-                        {
-                            "label": "2nd Arrondissement",
-                            "value": "1731365"
-                        },
-                        {
-                            "label": "4th Arrondissement",
-                            "value": "1731369"
-                        },
-                        {
-                            "label": "19th Arrondissement",
-                            "value": "1731389"
-                        },
-                        {
-                            "label": "3rd Arrondissement",
-                            "value": "1731367"
-                        },
-                        {
-                            "label": "Quartier du Faubourg-Montmartre",
-                            "value": "11117504"
-                        },
-                        {
-                            "label": "20th Arrondissement",
-                            "value": "1731390"
-                        },
-                        {
-                            "label": "Pigalle",
-                            "value": "1722994"
-                        },
-                        {
-                            "label": "La Villette",
-                            "value": "1691964"
-                        },
-                        {
-                            "label": "Les Halles",
-                            "value": "11117465"
-                        },
-                        {
-                            "label": "Madeleine",
-                            "value": "10990271"
-                        },
-                        {
-                            "label": "Porte de Clichy",
-                            "value": "10990272"
-                        },
-                        {
-                            "label": "La Plaine-Saint-Denis",
-                            "value": "11071260"
-                        },
-                        {
-                            "label": "Quartier de la Place-Vendôme",
-                            "value": "11117493"
-                        },
-                        {
-                            "label": "Meudon-la-Forêt",
-                            "value": "10990967"
-                        },
-                        {
-                            "label": "Notre-Dame-des-Champs",
-                            "value": "11117415"
-                        },
-                        {
-                            "label": "Belleville",
-                            "value": "10798929"
-                        },
-                        {
-                            "label": "Grenelle",
-                            "value": "11037980"
-                        },
-                        {
-                            "label": "Odéon",
-                            "value": "11117401"
-                        },
-                        {
-                            "label": "Ternes",
-                            "value": "10990286"
-                        },
-                        {
-                            "label": "Sorbonne",
-                            "value": "11117478"
-                        },
-                        {
-                            "label": "Batignolles",
-                            "value": "10565089"
-                        },
-                        {
-                            "label": "Quartier des Invalides",
-                            "value": "11117476"
-                        },
-                        {
-                            "label": "Passy",
-                            "value": "10990951"
-                        },
-                        {
-                            "label": "Porte de la Chapelle",
-                            "value": "10990283"
-                        },
-                        {
-                            "label": "Paris City Center",
-                            "value": "1730997"
-                        },
-                        {
-                            "label": "Marais",
-                            "value": "1707199"
-                        },
-                        {
-                            "label": "Montmartre",
-                            "value": "1707200"
-                        },
-                        {
-                            "label": "Montparnasse",
-                            "value": "1707272"
-                        },
-                        {
-                            "label": "Jardin des plantes",
-                            "value": "11117398"
-                        },
-                        {
-                            "label": "Palais-Royal",
-                            "value": "11117898"
-                        },
-                        {
-                            "label": "Hôtel de Ville",
-                            "value": "11117460"
-                        },
-                        {
-                            "label": "Pere Lachaise",
-                            "value": "1691973"
-                        },
-                        {
-                            "label": "Vivienne",
-                            "value": "11117670"
-                        },
-                        {
-                            "label": "Auteuil",
-                            "value": "11117731"
-                        },
-                        {
-                            "label": "Les Îles",
-                            "value": "11117903"
-                        },
-                        {
-                            "label": "Gare",
-                            "value": "11023508"
-                        },
-                        {
-                            "label": "Chaillot",
-                            "value": "11117484"
-                        },
-                        {
-                            "label": "Clignancourt",
-                            "value": "10990917"
-                        },
-                        {
-                            "label": "Arts-et-Métiers",
-                            "value": "11117727"
-                        },
-                        {
-                            "label": "L'Europe",
-                            "value": "10990273"
-                        },
-                        {
-                            "label": "Parc-de-Montsouris",
-                            "value": "11117422"
-                        },
-                        {
-                            "label": "Porte-Dauphine",
-                            "value": "11117728"
-                        },
-                        {
-                            "label": "Quartier du Petit-Montrouge",
-                            "value": "11117456"
-                        },
-                        {
-                            "label": "Quartier de l'École-Militaire",
-                            "value": "11117442"
-                        },
-                        {
-                            "label": "Chaussée-d'Antin",
-                            "value": "11117383"
-                        },
-                        {
-                            "label": "Saint-Maur Créteil",
-                            "value": "11117869"
-                        },
-                        {
-                            "label": "Butte-aux-Cailles",
-                            "value": "10990262"
-                        },
-                        {
-                            "label": "La Varenne Saint-Hilaire",
-                            "value": "1712788"
-                        },
-                        {
-                            "label": "Necker",
-                            "value": "11117444"
-                        },
-                        {
-                            "label": "Porte-Saint-Martin",
-                            "value": "11117389"
-                        },
-                        {
-                            "label": "Université",
-                            "value": "11117433"
-                        },
-                        {
-                            "label": "Quinze-Vingts",
-                            "value": "11117492"
-                        },
-                        {
-                            "label": "Hôpital Saint-Louis",
-                            "value": "11117449"
-                        },
-                        {
-                            "label": "Quartier de la Porte-Saint-Denis",
-                            "value": "11117488"
-                        },
-                        {
-                            "label": "Ivry-port",
-                            "value": "11117454"
-                        },
-                        {
-                            "label": "Picpus",
-                            "value": "11117736"
-                        },
-                        {
-                            "label": "Quartier de Rochechouart",
-                            "value": "11117718"
-                        },
-                        {
-                            "label": "Quartier de Javel",
-                            "value": "11117503"
-                        },
-                        {
-                            "label": "Faubourg de l'Arche",
-                            "value": "11117423"
-                        },
-                        {
-                            "label": "Bonne-Nouvelle",
-                            "value": "11117912"
-                        },
-                        {
-                            "label": "Quartier de la Salpêtrière",
-                            "value": "11117416"
-                        },
-                        {
-                            "label": "Quartier de la Folie-Méricourt",
-                            "value": "11117400"
-                        },
-                        {
-                            "label": "Charonne",
-                            "value": "11117475"
-                        },
-                        {
-                            "label": "Nanterre Centre",
-                            "value": "11117901"
-                        },
-                        {
-                            "label": "Quartier Saint-Georges",
-                            "value": "11117669"
-                        },
-                        {
-                            "label": "Quartier Saint-Ambroise",
-                            "value": "11117477"
-                        },
-                        {
-                            "label": "Quartier de la Monnaie",
-                            "value": "11117441"
-                        },
-                        {
-                            "label": "Quartier de la Maison-Blanche",
-                            "value": "11117450"
-                        },
-                        {
-                            "label": "Quartier du Gros-Caillou",
-                            "value": "11117419"
-                        },
-                        {
-                            "label": "Saint-Lambert",
-                            "value": "11117899"
-                        },
-                        {
-                            "label": "Quartier de la Muette",
-                            "value": "11117740"
-                        },
-                        {
-                            "label": "Val-de-Grâce",
-                            "value": "11117916"
-                        },
-                        {
-                            "label": "Petit Nanterre",
-                            "value": "11117659"
-                        },
-                        {
-                            "label": "Domaine du Bois",
-                            "value": "11117733"
-                        },
-                        {
-                            "label": "Quartier de la Roquette",
-                            "value": "11117425"
-                        },
-                        {
-                            "label": "Arsenal",
-                            "value": "11117434"
-                        },
-                        {
-                            "label": "Gaillon",
-                            "value": "11117902"
-                        },
-                        {
-                            "label": "Plaisance",
-                            "value": "11117913"
-                        },
-                        {
-                            "label": "Saint-Gervais",
-                            "value": "11117430"
-                        },
-                        {
-                            "label": "Bel-Air",
-                            "value": "10996974"
-                        },
-                        {
-                            "label": "Quartier des Grandes-Carrières",
-                            "value": "11117439"
-                        },
-                        {
-                            "label": "Quartier de la Chapelle",
-                            "value": "11117406"
-                        },
-                        {
-                            "label": "Saint-Thomas-d'Aquin",
-                            "value": "11117453"
-                        },
-                        {
-                            "label": "Asiatique",
-                            "value": "10565702"
-                        },
-                        {
-                            "label": "Quartier du Mail",
-                            "value": "11117482"
-                        },
-                        {
-                            "label": "Faubourg-du-Roule",
-                            "value": "11117734"
-                        },
-                        {
-                            "label": "Quartier de la Goutte-d'Or",
-                            "value": "11117914"
-                        },
-                        {
-                            "label": "Saint-Vincent-de-Paul",
-                            "value": "11117428"
-                        },
-                        {
-                            "label": "Saint-Germain-l'Auxerrois",
-                            "value": "11117717"
-                        },
-                        {
-                            "label": "Saint-Louis",
-                            "value": "11117882"
-                        },
-                        {
-                            "label": "Saint-Victor",
-                            "value": "11117518"
-                        },
-                        {
-                            "label": "Épinettes",
-                            "value": "11117412"
-                        },
-                        {
-                            "label": "Notre-Dame",
-                            "value": "11117864"
-                        },
-                        {
-                            "label": "Porchefontaine",
-                            "value": "11117459"
-                        },
-                        {
-                            "label": "Gambetta",
-                            "value": "11117667"
-                        },
-                        {
-                            "label": "Quartier de Bécon",
-                            "value": "11117749"
-                        },
-                        {
-                            "label": "Quartier de la Boule - Champs-Pierreux",
-                            "value": "11117485"
-                        },
-                        {
-                            "label": "Bois - Clos d'Orléans",
-                            "value": "11117435"
-                        },
-                        {
-                            "label": "Saint-Louis",
-                            "value": "11118052"
-                        },
-                        {
-                            "label": "Le Parc Saint-Maur",
-                            "value": "11117431"
-                        },
-                        {
-                            "label": "Triangle de Choisy",
-                            "value": "11117468"
-                        },
-                        {
-                            "label": "Quartier de la Plaine-de-Monceaux",
-                            "value": "11117617"
-                        },
-                        {
-                            "label": "Plateau - Mont-Valérien",
-                            "value": "11117409"
-                        },
-                        {
-                            "label": "Quartier Sainte-Marguerite",
-                            "value": "11117397"
-                        },
-                        {
-                            "label": "Quartier Sainte-Avoye",
-                            "value": "11117867"
-                        },
-                        {
-                            "label": "Jussieu",
-                            "value": "11117438"
-                        },
-                        {
-                            "label": "Front de Lac",
-                            "value": "11117656"
-                        },
-                        {
-                            "label": "Croulebarbe",
-                            "value": "11118087"
-                        },
-                        {
-                            "label": "Les Mûriers",
-                            "value": "11117871"
-                        },
-                        {
-                            "label": "Saint-Merri",
-                            "value": "11117517"
-                        },
-                        {
-                            "label": "La Source",
-                            "value": "11117385"
-                        },
-                        {
-                            "label": "Archives",
-                            "value": "11117487"
-                        },
-                        {
-                            "label": "Chantiers",
-                            "value": "11117917"
-                        },
-                        {
-                            "label": "Louis Bertrand-Mirabeau-Sémard",
-                            "value": "11117418"
-                        },
-                        {
-                            "label": "Cœur de Ville",
-                            "value": "11117735"
-                        },
-                        {
-                            "label": "Pasteur-Rousseau",
-                            "value": "11118103"
-                        },
-                        {
-                            "label": "Amérique",
-                            "value": "11117384"
-                        },
-                        {
-                            "label": "Parc-Nord",
-                            "value": "11117655"
-                        },
-                        {
-                            "label": "Quartier du Pont-de-Flandre",
-                            "value": "11117483"
-                        },
-                        {
-                            "label": "Combat",
-                            "value": "11117405"
-                        },
-                        {
-                            "label": "Diderot",
-                            "value": "11117897"
-                        },
-                        {
-                            "label": "Enfants-Rouges",
-                            "value": "11117420"
-                        },
-                        {
-                            "label": "Saint-Fargeau",
-                            "value": "11117466"
-                        },
-                        {
-                            "label": "Le Tremblay",
-                            "value": "11117726"
-                        },
-                        {
-                            "label": "Monmousseau-Vérollot",
-                            "value": "11117452"
-                        },
-                        {
-                            "label": "Champeval",
-                            "value": "11118046"
-                        },
-                        {
-                            "label": "Clagny Glatigny",
-                            "value": "11117426"
-                        },
-                        {
-                            "label": "Quartier du Vieux-Pont - Sainte-Geneviève",
-                            "value": "11117730"
-                        },
-                        {
-                            "label": "Les Hautes Noues",
-                            "value": "11117448"
-                        },
-                        {
-                            "label": "Les Stades",
-                            "value": "11117911"
-                        },
-                        {
-                            "label": "Montaigut",
-                            "value": "11117921"
-                        },
-                        {
-                            "label": "Petit-Colombes",
-                            "value": "12527148"
-                        },
-                        {
-                            "label": "Notre Dame",
-                            "value": "12518520"
-                        },
-                        {
-                            "label": "Cité des Périchaux",
-                            "value": "12522346"
-                        },
-                        {
-                            "label": "Côte d'Or-Les Sarrazins",
-                            "value": "11117471"
-                        },
-                        {
-                            "label": "Flandres",
-                            "value": "12518599"
-                        },
-                        {
-                            "label": "Bel-Air Nord",
-                            "value": "12508362"
-                        },
-                        {
-                            "label": "Alouettes",
-                            "value": "11117619"
-                        },
-                        {
-                            "label": "Curial Cambrai",
-                            "value": "12530437"
-                        },
-                        {
-                            "label": "Bleuets - Bordières - Pinsons",
-                            "value": "11117474"
-                        },
-                        {
-                            "label": "République–Point-du-Jour",
-                            "value": "12512928"
-                        },
-                        {
-                            "label": "Les Puces de Saint-Ouen",
-                            "value": "12501858"
-                        },
-                        {
-                            "label": "Jean Zay",
-                            "value": "11118075"
-                        },
-                        {
-                            "label": "Villa Montmorency",
-                            "value": "12537070"
-                        },
-                        {
-                            "label": "Vignerons",
-                            "value": "11118058"
-                        },
-                        {
-                            "label": "Village",
-                            "value": "11117467"
-                        },
-                        {
-                            "label": "Mont-Mesly",
-                            "value": "12502723"
-                        },
-                        {
-                            "label": "Faubourg Saint-Germain",
-                            "value": "12525050"
-                        },
-                        {
-                            "label": "Chenevier-Déménitroux",
-                            "value": "11117410"
-                        },
-                        {
-                            "label": "Silly-Gallieni",
-                            "value": "12503777"
-                        },
-                        {
-                            "label": "Plateau — Pyramide",
-                            "value": "12536871"
-                        },
-                        {
-                            "label": "Parchamp–Albert Kahn",
-                            "value": "12508449"
-                        },
-                        {
-                            "label": "Les Mousseaux",
-                            "value": "12530595"
-                        },
-                        {
-                            "label": "Le Vieux Saint-Maur",
-                            "value": "11117469"
-                        },
-                        {
-                            "label": "Haut du Mont-Mesly",
-                            "value": "11117411"
-                        },
-                        {
-                            "label": "La Mare",
-                            "value": "12537054"
-                        },
-                        {
-                            "label": "Prince–Marmottan",
-                            "value": "12513040"
-                        },
-                        {
-                            "label": "Chemin de l'Île",
-                            "value": "11117424"
-                        },
-                        {
-                            "label": "Quartier Centre Ville",
-                            "value": "12523569"
-                        },
-                        {
-                            "label": "Quartier Victor Hugo",
-                            "value": "11117388"
-                        },
-                        {
-                            "label": "Centre Ville",
-                            "value": "12527506"
-                        },
-                        {
-                            "label": "Zone d'aménagement concerté des Docks",
-                            "value": "12518452"
-                        },
-                        {
-                            "label": "Python Duvernois",
-                            "value": "12518621"
-                        },
-                        {
-                            "label": "Saint Blaise",
-                            "value": "12523597"
-                        },
-                        {
-                            "label": "Les Viselets",
-                            "value": "11117403"
-                        },
-                        {
-                            "label": "Petit-Ivry",
-                            "value": "11117436"
-                        },
-                        {
-                            "label": "Quartier des peupliers",
-                            "value": "12527407"
-                        },
-                        {
-                            "label": "Plaisance",
-                            "value": "11117443"
-                        },
-                        {
-                            "label": "Falguière",
-                            "value": "12537096"
-                        },
-                        {
-                            "label": "Adamville",
-                            "value": "11117748"
-                        },
-                        {
-                            "label": "Noyer Renard",
-                            "value": "12530182"
-                        },
-                        {
-                            "label": "Billancourt–Rives de Seine",
-                            "value": "12522253"
-                        },
-                        {
-                            "label": "Croix des Mèches",
-                            "value": "11118018"
-                        },
-                        {
-                            "label": "Sorano",
-                            "value": "11117464"
-                        },
-                        {
-                            "label": "Les Amandiers",
-                            "value": "12518802"
-                        },
-                        {
-                            "label": "Le Plateau",
-                            "value": "11117479"
-                        },
-                        {
-                            "label": "Grange aux Belles",
-                            "value": "12518404"
-                        },
-                        {
-                            "label": "Ormetteau-Port",
-                            "value": "11117750"
-                        },
-                        {
-                            "label": "Le Port sous la Lune",
-                            "value": "11117505"
-                        },
-                        {
-                            "label": "La Pie",
-                            "value": "11117451"
-                        },
-                        {
-                            "label": "Riquet Stalingrad",
-                            "value": "12513170"
-                        },
-                        {
-                            "label": "Quartier Massy-Opéra I",
-                            "value": "12536873"
-                        },
-                        {
-                            "label": "Quartier de l'Horloge",
-                            "value": "12527363"
-                        },
-                        {
-                            "label": "Strasbourg -Saint-Denis",
-                            "value": "12516649"
-                        },
-                        {
-                            "label": "Porte d'Asnières",
-                            "value": "12530434"
-                        }
-                    ]
-                },
                 "accommodationType": {
                     "applied": false,
                     "items": [
-                        {
-                            "label": "Agritourism",
-                            "value": "40"
-                        },
                         {
                             "label": "Apart-hotels",
                             "value": "20"
                         },
                         {
                             "label": "Apartments",
-                            "value": "15"
-                        },
-                        {
-                            "label": "B&Bs",
-                            "value": "5"
-                        },
-                        {
-                            "label": "Cabins and lodges",
-                            "value": "9"
-                        },
-                        {
-                            "label": "Caravan parks",
-                            "value": "21"
-                        },
-                        {
-                            "label": "Castles",
-                            "value": "27"
-                        },
-                        {
-                            "label": "Chalets",
-                            "value": "10"
-                        },
-                        {
-                            "label": "Cottages",
-                            "value": "11"
-                        },
-                        {
-                            "label": "Country houses",
-                            "value": "24"
-                        },
-                        {
-                            "label": "Guest houses",
-                            "value": "30"
-                        },
-                        {
-                            "label": "Hostels",
-                            "value": "12"
+                            "value": "15",
+                            "disabled": true
                         },
                         {
                             "label": "Hotels",
                             "value": "1"
-                        },
-                        {
-                            "label": "Houseboats",
-                            "value": "16"
-                        },
-                        {
-                            "label": "Inns",
-                            "value": "8"
-                        },
-                        {
-                            "label": "Palaces",
-                            "value": "29"
-                        },
-                        {
-                            "label": "Resorts",
-                            "value": "3"
-                        },
-                        {
-                            "label": "Vacation homes",
-                            "value": "4"
-                        },
-                        {
-                            "label": "Villas",
-                            "value": "14"
                         }
                     ]
                 },
@@ -2080,24 +687,18 @@
                             "value": "519"
                         },
                         {
-                            "label": "Casino",
-                            "value": "2112"
-                        },
-                        {
                             "label": "Childcare",
-                            "value": "521"
+                            "value": "521",
+                            "disabled": true
                         },
                         {
                             "label": "Connecting rooms available",
-                            "value": "523"
+                            "value": "523",
+                            "disabled": true
                         },
                         {
                             "label": "Cribs available",
                             "value": "525"
-                        },
-                        {
-                            "label": "Electric vehicle charging point",
-                            "value": "1073743315"
                         },
                         {
                             "label": "Gym",
@@ -2106,10 +707,6 @@
                         {
                             "label": "Internet Access",
                             "value": "8"
-                        },
-                        {
-                            "label": "Kitchen",
-                            "value": "32"
                         },
                         {
                             "label": "Meeting Facilities",
@@ -2129,19 +726,12 @@
                         },
                         {
                             "label": "Pool",
-                            "value": "128"
+                            "value": "128",
+                            "disabled": true
                         },
                         {
                             "label": "Restaurant",
                             "value": "256"
-                        },
-                        {
-                            "label": "Ski-in/ski-out",
-                            "value": "535"
-                        },
-                        {
-                            "label": "Ski storage",
-                            "value": "533"
                         },
                         {
                             "label": "Smoking areas",
@@ -2149,7 +739,8 @@
                         },
                         {
                             "label": "Spa",
-                            "value": "539"
+                            "value": "539",
+                            "disabled": true
                         },
                         {
                             "label": "WiFi included",
@@ -2161,24 +752,17 @@
                     "applied": false,
                     "items": [
                         {
-                            "label": "Accessibility equipment for the deaf",
-                            "value": "2097152"
-                        },
-                        {
                             "label": "Accessible bathroom",
                             "value": "131072"
                         },
                         {
                             "label": "Accessible parking",
-                            "value": "524288"
+                            "value": "524288",
+                            "disabled": true
                         },
                         {
                             "label": "Accessible path of travel",
                             "value": "65536"
-                        },
-                        {
-                            "label": "Braille or raised signage",
-                            "value": "4194304"
                         },
                         {
                             "label": "In-room accessibility",
@@ -2198,60 +782,27 @@
                     "applied": false,
                     "items": [
                         {
-                            "label": "Adventure",
-                            "value": "18"
-                        },
-                        {
-                            "label": "Boutique",
-                            "value": "4"
-                        },
-                        {
                             "label": "Business",
                             "value": "14"
-                        },
-                        {
-                            "label": "Casino",
-                            "value": "8"
                         },
                         {
                             "label": "Family-friendly",
                             "value": "25"
                         },
                         {
-                            "label": "Golf",
-                            "value": "26"
-                        },
-                        {
-                            "label": "Historic",
-                            "value": "2"
-                        },
-                        {
                             "label": "Hot Springs",
-                            "value": "22"
-                        },
-                        {
-                            "label": "LGBTQ Welcoming",
-                            "value": "21"
+                            "value": "22",
+                            "disabled": true
                         },
                         {
                             "label": "Luxury",
-                            "value": "15"
-                        },
-                        {
-                            "label": "Romantic",
-                            "value": "1"
-                        },
-                        {
-                            "label": "Shopping",
-                            "value": "17"
-                        },
-                        {
-                            "label": "Ski",
-                            "value": "28"
+                            "value": "15",
+                            "disabled": true
                         },
                         {
                             "label": "Spa Hotel",
-                            "value": "27"
+                            "value": "27",
+                            "disabled": true
                         }
                     ]
                 },
@@ -2260,11 +811,11 @@
                     "range": {
                         "min": {
                             "defaultValue": 0,
-                            "value": 25000
+                            "value": 1000
                         },
                         "max": {
                             "defaultValue": 25000,
-                            "value": 50000
+                            "value": 3000
                         },
                         "increments": 250
                     },
@@ -2273,14 +824,6 @@
                 },
                 "paymentPreference": {
                     "items": [
-                        {
-                            "label": "Free cancellation",
-                            "value": "fc"
-                        },
-                        {
-                            "label": "Book without card details",
-                            "value": "ncc"
-                        },
                         {
                             "label": "Pay with Hotels.com gift card",
                             "value": "gc"
@@ -2310,12 +853,12 @@
                 }
             },
             "miscellaneous": {
-                "pageViewBeaconUrl": "/taps/v1/PageView?deviceType=App-Phone&sort-order=DISTANCE_FROM_LANDMARK&rooms=1&destRegionID=504261&hotelIds=368483,644787,176705,2244127936,179438624,206320,528856,1158529728,282287,1921205600&adults=1&userAgent=Hotels.com/Android%2080.0.1.9.release-80_0%20(80000660)&userGuid=47e0ecf3-cf3a-4ba6-9c19-76af2bf1250a&pageName=Hotel-Search&slots=HSR_A,HSR_B,HSR_C,HSR_D,HSR_E,HSR_F,HSR_G,HSR_H,HSR_I,HSR_J&checkIn=2022-03-27&children=0&culture=en_US&testVersionOverride=4961.0,904.0,7561.0,7215.0,8218.0,8711.0,8928.1,9008.0,8347.2,9004.0,8952.0,7992.2,8915.0,9729.0,9864.0,10155.0,10185.0,10473.0,10320.0,10361.0&domain=www.hotels.com&userIP=127.0.0.1&action=pageview&publisher=expedia&checkOut=2022-03-30&programId=1",
+                "pageViewBeaconUrl": "/taps/v1/PageView?deviceType=App-Phone&sort-order=DISTANCE_FROM_LANDMARK&rooms=1&destRegionID=11114064&hotelIds=942145568,675856544,550479200,798426464,1245995232,702314,692943,619625216&adults=1&userAgent=Hotels.com/Android%2080.0.1.9.release-80_0%20(80000660)&userGuid=94904a02-b44c-4679-889d-f6fe2cf1e44d&pageName=Hotel-Search&slots=HSR_A,HSR_B,HSR_C,HSR_D,HSR_E,HSR_F,HSR_G,HSR_H,HSR_I,HSR_J&children=0&culture=en_US&testVersionOverride=4961.0,904.0,7561.0,7215.0,8218.0,8711.0,8928.1,9008.0,8347.2,9004.0,8952.0,7992.2,8915.0,9729.0,9864.0,10155.0,10185.0,10473.0,10320.0,10361.0&domain=www.hotels.com&userIP=127.0.0.1&action=pageview&publisher=expedia&programId=1",
                 "showLegalInfoForStrikethroughPrices": true,
                 "legalInfoForStrikethroughPrices": "The struck-out price is based on the property’s standard rate on our app, as determined and supplied by the property."
             },
             "pageInfo": {
-                "pageType": "dateful"
+                "pageType": "dateless"
             }
         },
         "common": {
@@ -2325,55 +868,48 @@
             },
             "tracking": {
                 "omniture": {
-                    "s.products": "MULTISOURCE;4130483,LOCAL;16599855,LOCAL;24795",
-                    "s.eVar40": "D=v0",
-                    "s.eVar41": "RUB",
-                    "s.eVar42": "0|3|20220327|20220330",
-                    "s.eVar4": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
-                    "s.eVar43": "en_US|HCOM_US|www.hotels.com",
-                    "s.eVar3": "1|0",
-                    "s.eVar2": "Paris, France",
-                    "s.eVar7": "0",
-                    "s.server": "www.hotels.com",
-                    "s.eVar6": "504261",
-                    "s.eVar5": "1",
-                    "s.eVar9": "Distance to other landmark near to far",
-                    "s.prop22": "Price - RUB25000-50000",
-                    "s.prop21": "0",
-                    "s.prop20": "1",
-                    "s.currencyCode": "RUB",
-                    "s.prop9": "7308",
-                    "s.eVar95": "Unknown",
-                    "s.prop7": "2954",
-                    "s.eVar10": "Price - RUB25000-50000",
-                    "s.eVar13": "389367",
-                    "s.prop19": "1",
-                    "s.prop18": "D=v6",
-                    "s.prop5": "389367",
-                    "s.prop15": "3",
-                    "s.prop3": "Paris, France",
-                    "s.prop14": "D=v7",
-                    "s.eVar93": "aws.us-west-2.unknown",
-                    "s.prop2": "Distance to other landmark near to far",
                     "s.prop33": "D=v33",
                     "s.prop32": "D=v43",
-                    "s.prop74": "search result with dates | ms shown | N",
+                    "s.prop74": "search result without dates | ms shown | N",
+                    "s.products": "LOCAL;29410799,LOCAL;21089267,MULTISOURCE;17171225",
                     "s.eVar16": "Mob :: aApp",
-                    "s.eVar63": "ecb40e49-a128-48ec-b2ac-74bb02fdbe0f",
-                    "s.eVar22": "1|RUB|24:368483:30240.6400:27216.5767:0|24:644787:42388.1200:42388.1200:0|24:176705:34894.5900:34894.5900:0|24:2244127936:27774.3900:27774.3900:0|24:179438624:42588.4133:38329.5700:1",
-                    "s.eVar23": "1|RUB|24:206320:46816.6200:42134.9600:1|24:528856:39133.0033:39133.0033:0|24:1158529728:53413.7400:48072.3700:0|24:282287:39728.7600:35755.8800:1|24:1921205600:39796.8533:39796.8533:0",
+                    "s.eVar40": "D=v0",
+                    "s.eVar41": "RUB",
+                    "s.eVar63": "a8adecc1-5297-4afa-b540-89ca02cddd68",
+                    "s.eVar42": "dateless",
+                    "s.eVar4": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
+                    "s.eVar43": "en_US|HCOM_US|www.hotels.com",
+                    "s.eVar2": "Ilıca Belediyesi, Kahramanmaras, Kahramanmaraş Province, Turkey",
                     "s.eVar24": "MCTC=20;TU=NA;PDID=NULL;MVT=",
+                    "s.eVar7": "",
+                    "s.server": "www.hotels.com",
+                    "s.eVar6": "11114064",
                     "s.prop29": "D=v42",
-                    "s.prop27": "47e0ecf3-cf3a-4ba6-9c19-76af2bf1250a",
+                    "s.prop27": "94904a02-b44c-4679-889d-f6fe2cf1e44d",
+                    "s.eVar9": "Distance to other landmark near to far",
+                    "s.prop22": "Price - RUB1000-3000",
                     "s.eVar69": "Mob :: aApp",
-                    "s.eVar26": "US:TX:EDINBURG:636",
+                    "s.currencyCode": "RUB",
+                    "s.eVar26": "US:OK:BROKENARROW:671",
                     "s.eVar29": "Mob :: aApp",
+                    "s.prop9": "8",
+                    "s.eVar95": "Unknown",
+                    "s.prop7": "8",
                     "s.eVar31": "D=v0",
+                    "s.eVar10": "Price - RUB1000-3000",
                     "s.eVar32": "D=v0",
-                    "s.eVar33": "search result with dates",
-                    "s.eVar34": "H1871:007.002,M376:000.000,M904:000.000,M3736:000.000,M4200:000.000,M4440.2,M4869:001.000,M4952:050.000,M4961:001.000,M5184:001.000,M5342:000.000,M5663:000.000,M6388:000.000,M6775:000.000,M6779:000.000,M7015.1,M7192:000.000,M7215:000.000,M7296:000.000,M7305:000.000,M7353:000.000,M7362.1,M7552:023.001,M7763:000.000,M7765.2,M7870:000.000,M7895:000.000,M8130:000.001,M8336:000.000,M8347:019.002,M8483:000.000,M8692:000.000,M8693:000.000,M8698:000.000,M8708:000.000,M8718:000.000,M8915:000.000,M8928:019.001,M8952:000.000,M8954:000.000,M8976:000.000,M8992:000.000,M9035:000.000,M9220:000.000,M9281:000.000,M9282:000.000,M9297:000.000,M9301:000.000,M9351:000.000,M9420:000.000,M9431:000.000,M9434:000.000,M9469:000.000,M9549:000.000,M9567.1,M9691:000.000,M9693:000.000,M9699:004.001,M9729:000.000,M9752:000.000,M9771.0,M9864:000.000,M9924:000.000,M9961:000.000,M9971:000.000,M10001:000.000,M10007:000.000,M10013:002.001,M10086:000.000,M10121:000.000,M10137:000.000,M10155:000.000,M10185:000.000,M10248:000.000,M10259:000.000,M10282:000.000,M10300:000.000,M10320:000.000,M10361:000.000,M10473:000.000,M10482:000.000,M9215:001.000",
+                    "s.eVar33": "search result without dates",
+                    "s.eVar34": "H1871:007.002,M904:000.000,M3736:000.000,M4440.2,M4869:001.000,M4952:050.000,M4961:001.000,M5342:000.000,M5663:000.000,M6388:000.000,M6775:000.000,M6779:000.000,M7015.1,M7192:000.000,M7215:000.000,M7296:000.000,M7305:000.000,M7353:000.000,M7362.1,M7552:023.001,M7870:000.000,M8130:000.001,M8336:000.000,M8347:019.002,M8692:000.000,M8698:000.000,M8718:000.000,M8915:000.000,M8928:019.001,M8952:000.000,M8976:000.000,M8992:000.000,M9035:000.000,M9220:000.000,M9297:000.000,M9351:000.000,M9431:000.000,M9434:000.000,M9469:000.000,M9549:000.000,M9729:000.000,M9752:000.000,M9864:000.000,M9924:000.000,M9961:000.000,M9971:000.000,M10001:000.000,M10007:000.000,M10013:002.001,M10121:000.000,M10137:000.000,M10155:000.000,M10185:000.000,M10248:000.000,M10259:000.000,M10268:000.000,M10282:000.000,M10300:000.000,M10320:000.000,M10361:000.000,M10473:000.000,M9215:001.000",
+                    "s.eVar13": "389367",
                     "s.events": "event324,event320,event319",
-                    "s.prop36": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|"
+                    "s.prop18": "D=v6",
+                    "s.prop5": "389367",
+                    "s.prop15": "",
+                    "s.prop3": "Ilıca Belediyesi, Kahramanmaras, Kahramanmaraş Province, Turkey",
+                    "s.prop14": "D=v7",
+                    "s.prop36": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
+                    "s.eVar93": "aws.us-west-2.unknown",
+                    "s.prop2": "Distance to other landmark near to far"
                 }
             }
         }

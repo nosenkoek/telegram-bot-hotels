@@ -6,7 +6,7 @@ from re import search
 from json import loads, dump, JSONDecodeError
 from typing import List, Dict, Any, Optional, Union
 from datetime import datetime
-from logger.logger import logger_all
+from logger.logger import logger_all, my_logger
 import logging
 
 
@@ -23,17 +23,12 @@ class RequestMixin():
         try:
             response = requests.get(url=url, headers=HEADERS, params=request)
         except requests.HTTPError as http_err:
+            my_logger.exception('Ошибка HTTP: {}'.format(http_err))
             print('Ошибка HTTP:', http_err)
-            logging.exception(http_err)
-            raise
-        except Exception as err:
-            print('Произошла ошибка:', err)
-            logging.exception(err)
-            raise
+            raise http_err
         else:
             if response.status_code != 200:
-                logging.error('code {}'.format(response.status_code))
-                raise ValueError('Ошибка кода отклика', response.status_code)
+                raise NameError('Ошибка кода отклика', response.status_code)
             return response
 
 
@@ -72,13 +67,9 @@ class BodyRequestHotel(ABC, RequestMixin):
         self.REQUEST.update(BASE_REQUEST_HOTELS_API)
         self.REQUEST.update(**kwargs)
 
-        logging.info('request{}'.format(self.REQUEST))
         print(self.REQUEST)
-
         response = self.request_get('https://hotels4.p.rapidapi.com/properties/list', self.REQUEST)
-
         print('Success Hotels |', response.status_code)
-        logging.info('Success Hotels | {}'.format(response.status_code))
         return response
 
 
@@ -136,11 +127,7 @@ class LocationRequest(BaseRequest, RequestMixin):
         :return: response
         """
         self.REQUEST.update(**kwargs)
-
         response = self.request_get('https://hotels4.p.rapidapi.com/locations/v2/search', self.REQUEST)
-
-        print('Success Location', response.status_code)
-        logging.info('Success Location {}'.format(response.status_code))
         return response
 
 
@@ -154,9 +141,7 @@ class PhotoRequest(BaseRequest, RequestMixin):
         :return: response
         """
         response = self.request_get('https://hotels4.p.rapidapi.com/properties/get-hotel-photos', kwargs)
-
         print('Success Photo', response.status_code)
-        logging.info('Success Photo {}'.format(response.status_code))
         return response
 
 
@@ -195,14 +180,15 @@ class HotelHandler(SearchValueMixin):
         total_price = price_one_night * count_night
         return price_one_night, total_price
 
-    def _distance(self, hotel: dict) -> Optional[str]:
+    def _distance(self, hotel: dict, city: str) -> Optional[str]:
         """
         Поиск удаленности от центра.
         :param hotel: словарь с параметрами отеля,
         :return: удаленность от центра или None при отсутствии этого параметра
         """
         landmarks = self._search_substruct(hotel, 'landmarks')
-        landmarks_filter = list(filter(lambda item: item.get('label') in ['Центр города', 'City center'], landmarks))
+        landmarks_filter = list(filter(lambda item: item.get('label') in
+                                                    ['Центр города', 'City center', city], landmarks))
 
         if len(landmarks_filter):
             distance = landmarks_filter[0].get('distance')
@@ -220,7 +206,8 @@ class HotelHandler(SearchValueMixin):
         :return: True или False подходит/ не подходит
         """
         distance_user = kwargs.get('distance')
-        distance_hotel = search(r'(\d+,|.\d+)', distance).group(0)
+        print(distance)
+        distance_hotel = search(r'(\d+[., ]\d*)', distance).group(0)
         distance_float = float(distance_hotel.replace(',', '.'))
 
         if distance_user < distance_float:
@@ -238,12 +225,21 @@ class HotelHandler(SearchValueMixin):
         """
         data = self._request.context_request(command, **kwargs)
 
+        if data is None:
+            raise TypeError('Ошибка запроса отелей')
+
         data = loads(data.text)
+
         with open('hotels.json', 'w', encoding='utf-8') as file_hotel:
             dump(data, file_hotel, ensure_ascii=False, indent=4)
 
         hotels = []
+
         hotels_response = self._search_substruct(data, 'results')
+
+        if hotels_response is None:
+            return hotels
+
         hotels_filter = filter(lambda item: self._search_substruct(item, 'exactCurrent'), hotels_response)
 
         for hotel in hotels_filter:
@@ -253,7 +249,9 @@ class HotelHandler(SearchValueMixin):
             id_hotel = self._search_substruct(hotel, 'id')
             count_night = self._count_nights(kwargs)
             price, total_price = self._price(hotel, count_night)
-            distance = self._distance(hotel)
+            name_city = self._search_substruct(data, 'header')
+            name_city = search(r'[^,]+', name_city).group(0)
+            distance = self._distance(hotel, name_city)
 
             if command == 'bestdeal':
                 hotel_is_valid = self._valid_distance(distance, kwargs)
@@ -288,7 +286,12 @@ class LocationHandler(SearchValueMixin):
         :param kwargs: параметр необходимый для поиска города (query),
         :return: id города
         """
+
         data = self._request.context_request(**kwargs)
+
+        if data is None:
+            raise ValueError('Ошибка в запросе')
+
         data = loads(data.text)
         suggestions = self._search_substruct(data, 'entities')
 
@@ -324,13 +327,11 @@ class PhotoHandler(SearchValueMixin):
 
         try:
             photo_response = self._search_substruct(loads(data.text), 'hotelImages')
-        except JSONDecodeError:
-            logging.warning('No photo | {}'.format(kwargs))
-            print('Нет фото')
+        except JSONDecodeError as err:
+            my_logger.exception('Ошибка - фото не найдено {}'.format(err))
             return ['нет фото']
 
         if not isinstance(photo_response, list):
-            logging.error('Not hotelImages. Wrong structure')
             raise ValueError('Ошибка в структуре ответа на запроса фото отеля')
 
         for photo_item in photo_response:

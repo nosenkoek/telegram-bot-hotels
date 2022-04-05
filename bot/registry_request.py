@@ -1,6 +1,6 @@
 class SingletonMeta(type):
+    """ Паттерн Одиночка. Создание мета класса"""
     _instances = {}
-    # todo узнать почему call, а не new
 
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:
@@ -10,8 +10,9 @@ class SingletonMeta(type):
 
 
 class Data():
+    """ Класс для сбора и хранения данных о запросах пользователя"""
     def __init__(self):
-        self._request_data = {}
+        self._request_data = {}    # todo errors: False/True
 
     def update_data(self, info: dict):
         self._request_data.update(info)
@@ -22,6 +23,10 @@ class Data():
 
 
 class Registry(metaclass=SingletonMeta):
+    """
+    Создание Реестра запросов пользователей. Паттерн Registry.
+    _datas: dict, словарь id - Data() Каждому id свой экземпляр.
+    """
     _datas = {}
 
     def add_new_id(self, user_id):

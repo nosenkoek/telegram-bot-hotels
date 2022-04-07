@@ -1,17 +1,21 @@
 from settings import BASE_REQUEST_HOTELS_API, BASE_REQUEST_LOCATION_API, HEADERS, COUNT_MAX_PHOTO, COUNT_MAX_HOTEL
 
+from logger.logger import logger_all, my_logger
+
 from abc import ABC, abstractmethod
 import requests
 from re import search
 from json import loads, dump, JSONDecodeError
 from typing import List, Dict, Any, Optional, Union
 from datetime import datetime
-from logger.logger import logger_all, my_logger
+from os import path
+
 import logging
 
 
 class RequestMixin():
     """ Миксин для запросов по url и параметрам """
+
     @staticmethod
     def request_get(url: str, request: dict) -> requests.Response:
         """
@@ -34,7 +38,8 @@ class RequestMixin():
 
 class SearchValueMixin():
     """ Миксин для поиска подструктуры по ключу"""
-    def _search_substruct(self, struct: Union[Dict, List], key_result: str) -> Optional[List]:
+
+    def _search_substruct(self, struct: Union[Dict, List], key_result: str) -> Optional[List, str]:
         """ Функция для поиска подструктуры по ключу """
         if isinstance(struct, dict):
             if key_result in struct.keys():
@@ -76,6 +81,7 @@ class BodyRequestHotel(ABC, RequestMixin):
 @logger_all()
 class LowPriceRequestHotel(BodyRequestHotel):
     """ Дочерний класс запроса lowprice"""
+
     def __init__(self):
         self.REQUEST = {'sortOrder': 'PRICE'}
 
@@ -83,6 +89,7 @@ class LowPriceRequestHotel(BodyRequestHotel):
 @logger_all()
 class HighPriceRequestHotel(BodyRequestHotel):
     """ Дочерний класс запроса highprice"""
+
     def __init__(self):
         self.REQUEST = {'sortOrder': 'PRICE_HIGHEST_FIRST'}
 
@@ -90,12 +97,14 @@ class HighPriceRequestHotel(BodyRequestHotel):
 @logger_all()
 class BestDealRequestHotel(BodyRequestHotel):
     """ Дочерний класс запроса bestdeal. Сортировка по DISTANCE_FROM_LANDMARK"""
+
     def __init__(self):
         self.REQUEST = {'sortOrder': 'DISTANCE_FROM_LANDMARK'}
 
 
 class BaseRequest(ABC):
     """ Абстрактный класс для запросов (DIP - принцип инверсии зависимостей) """
+
     @abstractmethod
     def context_request(self, *args, **kwargs):
         pass
@@ -117,6 +126,7 @@ class HotelRequest(BaseRequest):
 @logger_all()
 class LocationRequest(BaseRequest, RequestMixin):
     """ Класс запроса локации """
+
     def __init__(self):
         self.REQUEST = BASE_REQUEST_LOCATION_API
 
@@ -134,6 +144,7 @@ class LocationRequest(BaseRequest, RequestMixin):
 @logger_all()
 class PhotoRequest(BaseRequest, RequestMixin):
     """ Класс запроса фото """
+
     def context_request(self, **kwargs) -> requests.Response:
         """
         Метод для запроса фото.
@@ -152,6 +163,7 @@ class HotelHandler(SearchValueMixin):
     Args:
         request(HotelRequest): экземпляр класса HotelRequest для запроса отелей
     """
+
     def __init__(self, request: HotelRequest):
         self._request = request
 
@@ -187,14 +199,14 @@ class HotelHandler(SearchValueMixin):
         :return: удаленность от центра или None при отсутствии этого параметра
         """
         landmarks = self._search_substruct(hotel, 'landmarks')
-        landmarks_filter = list(filter(lambda item: item.get('label') in
-                                                    ['Центр города', 'City center', city], landmarks))
+        landmarks_filter = list(filter(
+            lambda item: item.get('label') in ['Центр города', 'City center', city], landmarks)
+        )
 
         if len(landmarks_filter):
             distance = landmarks_filter[0].get('distance')
         else:
             distance = None
-
         return distance
 
     @staticmethod
@@ -205,8 +217,9 @@ class HotelHandler(SearchValueMixin):
         :param kwargs: параметры для поиска отелей
         :return: True или False подходит/ не подходит
         """
+        # todo подумать что делать с милями
+
         distance_user = kwargs.get('distance')
-        print(distance)
         distance_hotel = search(r'(\d+[., ]\d*)', distance).group(0)
         distance_float = float(distance_hotel.replace(',', '.'))
 
@@ -230,7 +243,10 @@ class HotelHandler(SearchValueMixin):
 
         data = loads(data.text)
 
-        with open('hotels.json', 'w', encoding='utf-8') as file_hotel:
+        abs_path = path.dirname(path.abspath(__file__))
+        path_result = path.join(abs_path, '../rapid/hotels.json')
+
+        with open(path_result, 'w', encoding='utf-8') as file_hotel:
             dump(data, file_hotel, ensure_ascii=False, indent=4)
 
         hotels = []
@@ -270,8 +286,6 @@ class HotelHandler(SearchValueMixin):
                     'total_price': total_price,
                     'url': 'https://uk.hotels.com/ho{}'.format(id_hotel)
                 })
-
-        logging.info('success handle hotels')
         return hotels
 
 
@@ -324,6 +338,13 @@ class PhotoHandler(SearchValueMixin):
 
         data = self._request.context_request(**kwargs)
         photo = []
+
+        # todo не забыть удалить
+        # abs_path = path.dirname(path.abspath(__file__))
+        # path_result = path.join(abs_path, '../rapid/photo.json')
+        #
+        # with open(path_result, 'a', encoding='utf-8') as file_hotel:
+        #     dump(loads(data.text), file_hotel, ensure_ascii=False, indent=4)
 
         try:
             photo_response = self._search_substruct(loads(data.text), 'hotelImages')

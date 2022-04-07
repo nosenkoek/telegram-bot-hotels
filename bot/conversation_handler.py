@@ -21,8 +21,9 @@ class CommandConversationHandler(ABC):
         self._command = command
         self._commands_cls = commands_cls(0)
         self._cancel = Cancel()
-
         self._states = {}
+
+        """ Динамическое создание словаря обработчиков для Conversation Handler"""
         for idx, name_handler in enumerate(self.keys, 1):
             self.__setattr__(f'_{name_handler}', handler.create_handler(name_handler, idx))
 
@@ -50,7 +51,7 @@ class CommandConversationHandler(ABC):
                 })
 
         self._states.update({
-            self.__getattribute__('_search').successor: [CommandHandler(self._command, self._commands_cls)]
+            getattr(self, '_search').successor: [CommandHandler(self._command, self._commands_cls)]
         })
 
     @abstractmethod
@@ -60,7 +61,6 @@ class CommandConversationHandler(ABC):
 
 class SortPriceConversationHandler(CommandConversationHandler):
     """ Базовый класс для создания обработчика диалога с пользователем по командам lowprice, highprice"""
-
     def __init__(self, command, commands_cls):
         self.keys.append('search')
         super().__init__(command, commands_cls)
@@ -76,8 +76,7 @@ class SortPriceConversationHandler(CommandConversationHandler):
 
 
 class BestdealConversationHandler(CommandConversationHandler):
-    """ Базовый класс для создания обработчика диалога с пользователем по командам bestdeal"""
-
+    """ Класс для создания обработчика диалога с пользователем по командам bestdeal"""
     def __init__(self, command, commands_cls):
         self.keys.extend(['prices', 'distance', 'search'])
         super().__init__(command, commands_cls)

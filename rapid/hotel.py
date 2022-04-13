@@ -1,4 +1,5 @@
-from settings import BASE_REQUEST_HOTELS_API, BASE_REQUEST_LOCATION_API, HEADERS, COUNT_MAX_PHOTO, COUNT_MAX_HOTEL
+from settings import BASE_REQUEST_HOTELS_API, BASE_REQUEST_LOCATION_API, HEADERS, \
+    KOEFF_MILES_KM, COUNT_MAX_PHOTO, COUNT_MAX_HOTEL
 
 from logger.logger import logger_all, my_logger
 
@@ -39,7 +40,7 @@ class RequestMixin():
 class SearchValueMixin():
     """ Миксин для поиска подструктуры по ключу"""
 
-    def _search_substruct(self, struct: Union[Dict, List], key_result: str) -> Optional[List, str]:
+    def _search_substruct(self, struct: Union[Dict, List], key_result: str) -> Union[None, List, str]:
         """ Функция для поиска подструктуры по ключу """
         if isinstance(struct, dict):
             if key_result in struct.keys():
@@ -192,7 +193,7 @@ class HotelHandler(SearchValueMixin):
         total_price = price_one_night * count_night
         return price_one_night, total_price
 
-    def _distance(self, hotel: dict, city: str) -> Optional[str]:
+    def _distance(self, hotel: dict, city: str) -> Optional[float]:
         """
         Поиск удаленности от центра.
         :param hotel: словарь с параметрами отеля,
@@ -205,25 +206,28 @@ class HotelHandler(SearchValueMixin):
 
         if len(landmarks_filter):
             distance = landmarks_filter[0].get('distance')
+            dimension = search(r'[a-z]+', distance).group(0)
+
+            distance_hotel = search(r'(\d+[., ]\d*)', distance).group(0)
+            distance_float = float(distance_hotel.replace(',', '.'))
+
+            if dimension == 'miles':
+                distance_float *= KOEFF_MILES_KM
         else:
-            distance = None
-        return distance
+            distance_float = None
+        return distance_float
 
     @staticmethod
-    def _valid_distance(distance: Optional[str], kwargs) -> bool:
+    def _valid_distance(distance: Optional[float], kwargs) -> bool:
         """
         Проверка отеля по удаленности от центра при команде bestdeal
         :param distance: определенная дистанция
         :param kwargs: параметры для поиска отелей
         :return: True или False подходит/ не подходит
         """
-        # todo подумать что делать с милями
-
         distance_user = kwargs.get('distance')
-        distance_hotel = search(r'(\d+[., ]\d*)', distance).group(0)
-        distance_float = float(distance_hotel.replace(',', '.'))
 
-        if distance_user < distance_float:
+        if distance_user < distance:
             return False
         return True
 
@@ -267,6 +271,7 @@ class HotelHandler(SearchValueMixin):
             price, total_price = self._price(hotel, count_night)
             name_city = self._search_substruct(data, 'header')
             name_city = search(r'[^,]+', name_city).group(0)
+
             distance = self._distance(hotel, name_city)
 
             if command == 'bestdeal':
@@ -281,7 +286,7 @@ class HotelHandler(SearchValueMixin):
                     'address': self._search_substruct(hotel, 'streetAddress'),
                     'star': self._search_substruct(hotel, 'starRating'),
                     'rating': self._search_substruct(hotel, 'unformattedRating'),
-                    'distance': distance,
+                    'distance': f'{distance:.1f} км',
                     'price': price,
                     'total_price': total_price,
                     'url': 'https://uk.hotels.com/ho{}'.format(id_hotel)
@@ -338,13 +343,6 @@ class PhotoHandler(SearchValueMixin):
 
         data = self._request.context_request(**kwargs)
         photo = []
-
-        # todo не забыть удалить
-        # abs_path = path.dirname(path.abspath(__file__))
-        # path_result = path.join(abs_path, '../rapid/photo.json')
-        #
-        # with open(path_result, 'a', encoding='utf-8') as file_hotel:
-        #     dump(loads(data.text), file_hotel, ensure_ascii=False, indent=4)
 
         try:
             photo_response = self._search_substruct(loads(data.text), 'hotelImages')

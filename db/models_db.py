@@ -27,7 +27,7 @@ class Users(BaseModel):
     """
     user_id = CharField(unique=True)
     user_name = CharField(max_length=50)
-    date_registration = DateTimeField(null=False, default=datetime.now())
+    date_request = DateTimeField(null=False, default=datetime.now())
 
     class Meta:
         table_name = 'users'
@@ -39,15 +39,16 @@ class UserRequests(BaseModel):
     Args:
         user_id - id пользователя в телеграмме (внешний ключ к табл. users)
         date_request - дата запроса
-        city_request - выбранный город      \
-        check_in - дата начала поездки       - возможно объединение
-        check_out - дата окончания поездки  /
+        command_request - команда запроса
+        city_request - выбранный город
+        hotels - список, полученных отелей (словарь name: url)
+
     """
     user_id = CharField()
-    date_request = DateTimeField(null=False)
+    date_request = DateTimeField(null=False, default=datetime.now())
+    command_request = CharField(max_length=20)
     city_request = CharField(max_length=50)
-    check_in = DateTimeField(null=False)
-    check_out = DateTimeField(null=False)
+    hotels = CharField(max_length=255)
 
     class Meta:
         table_name = 'user_requests'

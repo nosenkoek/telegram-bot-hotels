@@ -1,12 +1,10 @@
 from bot.decorator import CollectionCommand
-from db.db_handler import DataUsers
 from logger.logger import logger_all
+from settings import DATABASE
 
 from telegram import Update
 from telegram.ext import CallbackContext
-
-
-database = DataUsers()
+from json import loads
 
 
 class TelebotHandler():
@@ -22,7 +20,11 @@ class Welcome(TelebotHandler):
         send_msg = 'Привет {}! Здесь ты найдешь лучшие предложения по поиску отелей ' \
                    'Для начала посмотри, что я умею /help'.format(update.message.from_user.first_name)
 
-        database.create(user_id=update.message.from_user.id, user_name=update.message.from_user.first_name)
+        DATABASE.create(
+            user_id=update.message.from_user.id,
+            key_table='users',
+            user_name=update.message.from_user.first_name
+        )
         update.message.reply_text(send_msg)
 
 
@@ -31,8 +33,14 @@ class Welcome(TelebotHandler):
 class History(TelebotHandler):
     """ Показать историю (последние 5 действия) """
     def __call__(self, update: Update, context: CallbackContext) -> None:
-        data = database.read(update.message.from_user.id)
-        update.message.reply_text(data)
+        data_requests = DATABASE.read_requests(user_id=update.message.from_user.id)
+
+        if len(data_requests) < 5:
+            data_start = DATABASE.read_user(user_id=update.message.from_user.id)
+            update.message.reply_text('Начало: {}'.format(data_start.date_request.strftime('%d.%m.%Y %H:%M')))
+
+        for request in data_requests:
+            update.message.reply_text(request, disable_web_page_preview=True, parse_mode='HTML')
 
 
 @logger_all()

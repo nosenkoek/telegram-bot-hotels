@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 from bot.buttons import ButtonOneLine, ButtonTwoLines
+from db.db_handler import DatabaseHandler
 
 TODAY_DATE = datetime.date(datetime.now())
 FORMAT_DATE = '%Y-%m-%d'
@@ -30,7 +31,10 @@ COUNT_MAX_HOTEL = 10
 
 COUNT_MAX_PHOTO = 5
 
+KOEFF_MILES_KM = 1.60934
+
 BUTTON_PEOPLE = ButtonOneLine(1, 2, 3, 4)
 BUTTON_HOTEL = ButtonOneLine(3, 5, 7)
 BUTTON_PHOTO = ButtonTwoLines(1, 2, 3, 4, 5, no_photo=0)
 
+DATABASE = DatabaseHandler()

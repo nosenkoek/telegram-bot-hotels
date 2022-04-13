@@ -1,10 +1,11 @@
-from abc import ABC, abstractmethod
-
-from telegram.ext import Updater, CommandHandler
-from bot.bot import TelebotHandler
-from bot.conversation_handlers import SortPriceConversationHandler, BestdealConversationHandler
-from db.db_handler import DatabaseFactory
+from bot.command_handler import TelebotHandler
+from bot.conversation_handler import SortPriceConversationHandler, BestdealConversationHandler
 from logger.logger import logger_all
+
+from abc import ABC, abstractmethod
+from telegram.ext import Updater, CommandHandler, Defaults
+from warnings import filterwarnings
+
 
 """ Бот: @guinea_pig_2022_bot """
 
@@ -23,7 +24,7 @@ class TeleBot():
     """ Класс для инициализации телеграмм команд и запуска бота"""
     def __init__(self, token: str) -> None:
         """ Создается обработчик команд"""
-        self.updater = Updater(token)
+        self.updater = Updater(token, defaults=Defaults(run_async=True))
         self.handler = TelebotHandler()
 
         print(self.handler.COMMANDS)
@@ -31,6 +32,9 @@ class TeleBot():
     def add_handlers_commands(self) -> None:
         """ Регистрация обработчиков команд бота """
         dispatcher = self.updater.dispatcher
+        # todo для отключения предупреждения о per_message=False в ConversationHandler
+        # filterwarnings(action="ignore", message=r".*CallbackQueryHandler")
+
         for commands, commands_cls in self.handler.COMMANDS.items():
             if commands in ['lowprice', 'highprice']:
                 """ Добавление функции разговора при запросах 'lowprice', 'highprice' """
@@ -55,7 +59,6 @@ class TeleBotFactory(AbstractFactory):
         """ Создание и запуск Телеграмм-бота"""
         bot = TeleBot(TOKEN)
         bot.add_handlers_commands()
-        # bot.add_handlers_message()
         bot.start()
         return bot
 

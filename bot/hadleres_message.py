@@ -1,4 +1,4 @@
-from settings import TODAY_DATE, FORMAT_DATE, BUTTON_HOTEL, BUTTON_PHOTO, BUTTON_PEOPLE
+from settings import TODAY_DATE, FORMAT_DATE, BUTTON_HOTEL, BUTTON_PHOTO, BUTTON_PEOPLE, DATABASE
 
 from bot.decorator import CollectionCommand
 from bot.registry_request import Registry
@@ -14,7 +14,10 @@ from time import sleep
 from telegram_bot_calendar import DetailedTelegramCalendar, LSTEP
 from datetime import datetime, timedelta
 from re import findall
+from json import dumps
 from typing import List
+
+# todo посмотреть создание модулей
 
 
 class Handler(ABC):
@@ -257,7 +260,7 @@ class CheckDataMixin():
 
         if request_data.get('command') == 'bestdeal':
             data.append('Диапазон цен: {} - {}'.format(request_data.get('priceMin'), request_data.get('priceMax')))
-            data.append('Удаленность от центра: {}'.format(request_data.get('distance')))
+            data.append('Удаленность от центра: {} км'.format(request_data.get('distance')))
 
         data_msg = '\n'.join(data)
         send_msg = 'Проверьте данные:\n{}'.format(data_msg)
@@ -345,14 +348,13 @@ class PricesHandler(Handler):
             super().registry.update_data(user_id, {'priceMin': min(prices)})
             super().registry.update_data(user_id, {'priceMax': max(prices)})
 
-            # todo добавить размерность
-            update.message.reply_text('Введите максимальную удаленность от центра')
+            update.message.reply_text('Введите максимальную удаленность от центра, км')
             return self.successor
 
 
 @logger_all()
 class DistanceHandler(Handler, CheckDataMixin):
-    """ Обработчик удаленность от центра"""
+    """ Обработчик удаленности от центра"""
 
     def __call__(self, update: Update, context: CallbackContext) -> int:
         """ Хэндлер для обработки текста """
@@ -366,8 +368,7 @@ class DistanceHandler(Handler, CheckDataMixin):
             update.message.bot.delete_message(chat_id=update.message.chat_id,
                                               message_id=(update.message.message_id - 1))
             update.message.delete()
-            # todo добавить размерность
-            update.message.reply_text('Введено неверное значение. Введите максимальную удаленность от центра')
+            update.message.reply_text('Введено неверное значение. Введите максимальную удаленность от центра, км')
         else:
             super().registry.update_data(user_id, {'distance': distance})
             send_msg, markup, msg_start = self._answer(super().registry.get_data(user_id))
@@ -529,28 +530,13 @@ class SearchHotelHandler(Handler):
         :param hotel_handler: модуль для запроса отелей.
         :return: список найденных отелей с данными
         """
-        command = request_data.get('command')
-        city = request_data.get('query')
-        count_hotels = request_data.get('count_hotel')
-        count_photo = request_data.get('count_photo')
-        # todo как "скормить" словарь вместо kwargs
-        check_in = request_data.get('checkIn')
-        check_out = request_data.get('checkOut')
-        people = request_data.get('adults1')
+        param_request = request_data.copy()
+        command = param_request.pop('command')
+        city = param_request.pop('query')
+        count_hotels = param_request.pop('count_hotel')
+        count_photo = param_request.pop('count_photo')
 
-        if command == 'bestdeal':
-            price_min = request_data.get('priceMin')
-            price_max = request_data.get('priceMax')
-            distance = request_data.get('distance')
-
-            hotels = hotel_handler.handler(command, city, count_hotels, count_photo,
-                                           checkIn=check_in, checkOut=check_out, adults1=people,
-                                           priceMin=price_min, priceMax=price_max, distance=distance)
-        else:
-
-            hotels = hotel_handler.handler(command, city, count_hotels, count_photo,
-                                           checkIn=check_in, checkOut=check_out, adults1=people)
-
+        hotels = hotel_handler.handler(command, city, count_hotels, count_photo, **param_request)
         return hotels
 
     @staticmethod
@@ -563,7 +549,7 @@ class SearchHotelHandler(Handler):
         stars = '\u2b50\ufe0f' * int(hotel.get("star"))
         msg = [
             f'<b>{hotel.get("name")}</b>\t\t\t {stars}',
-            hotel.get('address'),
+            str(hotel.get('address')),
             f'Рейтинг: {hotel.get("rating")}',
             f'Удаленность от центра: {hotel.get("distance")}',
             f'Цена за ночь: {int(hotel.get("price"))} руб. \t\t\t '
@@ -605,6 +591,59 @@ class SearchHotelHandler(Handler):
         else:
             query.message.reply_media_group(media=photo_group)
 
+    @staticmethod
+    def _add_request_db(user_id, request_data, hotels):
+        """
+        Добавление строки в БД.
+        :param user_id: уникальный id пользователя,
+        :param request_data: запрос пользователя
+        :param hotels: список отелей.
+        """
+        hotels_dict = {}
+
+        for hotel in hotels:
+            hotels_dict.update({hotel.get('name'): hotel.get('url')})
+
+        hotel_json = dumps(hotels_dict)
+
+        DATABASE.create(
+            user_id=user_id,
+            key_table='user_requests',
+            command_request=request_data.get('command'),
+            city_request=request_data.get('query'),
+            hotels=hotel_json
+        )
+
+    def _valid_hotels(self, query, user_id, request_data):
+        """
+        Запрос отелей и отправка сообщений пользователю в случае ошибки, в случае успеха - запись в БД.
+        :param query: callback_query,
+        :param user_id: уникальный id пользователя,
+        :param request_data: словарь с данными запроса пользователя,
+        :return: обработанный список отелей от rapid
+        """
+        hotel_handler = RapidFacade()
+        hotels = []
+
+        try:
+            hotels = self._request_hotel(request_data, hotel_handler)
+        except NameError as err:
+            my_logger.exception('Ошибка в запросе {}'.format(err))
+            query.message.reply_text('Ошибка запроса. Попробуйте позднее.')
+        except ValueError as err:
+            print('Ошибка - отели не найдены {}'.format(err))
+            my_logger.exception('Ошибка - отели не найдены {}'.format(err))
+            if 'Город не найден' in err.args:
+                query.message.reply_text(str(err))
+            else:
+                query.message.reply_text('По вашему запросу не найдено отелей')
+        else:
+            self._add_request_db(user_id, request_data, hotels)
+        finally:
+            query.bot.delete_message(chat_id=query.message.chat_id, message_id=(query.message.message_id + 1))
+
+        return hotels
+
     def __call__(self, update: Update, context: CallbackContext) -> int:
         """ Обрабатывает ответ на вопрос о поиске ответа и отправляет список отелей """
         query = update.callback_query
@@ -618,25 +657,8 @@ class SearchHotelHandler(Handler):
         query.delete_message()
 
         if answer == '1':
-            hotel_handler = RapidFacade()
-            hotels = []
-
             self._send_msg_waiting(query)
-
-            try:
-                hotels = self._request_hotel(request_data, hotel_handler)
-            except NameError as err:
-                my_logger.exception('Ошибка в запросе {}'.format(err))
-                query.message.reply_text('Ошибка запроса. Попробуйте позднее.')
-            except ValueError as err:
-                print('Ошибка - отели не найдены {}'.format(err))
-                my_logger.exception('Ошибка - отели не найдены {}'.format(err))
-                if 'Город не найден' in err.args:
-                    query.message.reply_text(str(err))
-                else:
-                    query.message.reply_text('По вашему запросу не найдено отелей')
-
-            query.bot.delete_message(chat_id=query.message.chat_id, message_id=(query.message.message_id + 1))
+            hotels = self._valid_hotels(query, user_id, request_data)
 
             for hotel in hotels:
                 send_msg = self._data_hotel_for_msg(hotel)
@@ -644,7 +666,6 @@ class SearchHotelHandler(Handler):
 
                 if count_photo:
                     self._send_photo(query, hotel)
-
         else:
             query.message.reply_text('До связи!')
         return self.successor

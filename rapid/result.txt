@@ -1,0 +1,35 @@
+[
+    {
+        "id": 249676,
+        "name": "The Grand at Trafalgar Square",
+        "address": "8 Northumberland Avenue",
+        "star": 4.0,
+        "rating": 8.6,
+        "distance": "0.2 км",
+        "price": 22338.53,
+        "total_price": 379755.01,
+        "url": "https://uk.hotels.com/ho249676"
+    },
+    {
+        "id": 180395,
+        "name": "Club Quarters Hotel, Trafalgar Square",
+        "address": "8 Northumberland Ave",
+        "star": 4.0,
+        "rating": 8.6,
+        "distance": "0.2 км",
+        "price": 21368.03,
+        "total_price": 363256.51,
+        "url": "https://uk.hotels.com/ho180395"
+    },
+    {
+        "id": 1224364128,
+        "name": "Page8, Page Hotels",
+        "address": "8 St. Martins Place",
+        "star": 4.5,
+        "rating": 9.4,
+        "distance": "0.2 км",
+        "price": 20437.5,
+        "total_price": 347437.5,
+        "url": "https://uk.hotels.com/ho1224364128"
+    }
+]

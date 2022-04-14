@@ -19,6 +19,8 @@ my_logger = logging.getLogger('logger')
 file_logger = logging.FileHandler(path_log)
 
 error_logger = logging.FileHandler(path_err, mode='w', encoding='utf-8')
+error_format = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
+error_logger.setFormatter(error_format)
 error_logger.setLevel(logging.WARNING)
 
 my_logger.addHandler(error_logger)

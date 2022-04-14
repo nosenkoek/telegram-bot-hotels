@@ -152,4 +152,3 @@ class DatabaseHandler():
         """
         result = self._STRATEGY[2].__call__(user_id=user_id, table=self._TABLE.get('user_requests'))
         return result
-

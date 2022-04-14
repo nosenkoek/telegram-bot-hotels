@@ -3,7 +3,8 @@ from bot.hadleres_message import HandlerFactory, Cancel
 from telegram.ext import CommandHandler, MessageHandler, Filters, ConversationHandler, CallbackQueryHandler
 from abc import ABC, abstractmethod
 
-filter_text = (Filters.text & ~Filters.regex('cancel'))
+pattern_regex = r'[cC]ancel'
+filter_text = (Filters.text & ~Filters.regex(pattern_regex))
 handler = HandlerFactory()
 
 
@@ -40,8 +41,10 @@ class CommandConversationHandler(ABC):
                 })
             elif name_handler in ['check_in', 'check_out', 'search']:
                 self._states.update({
-                    getattr(self, f'_{self.keys[idx - 2]}').successor:
-                        [CallbackQueryHandler(getattr(self, f'_{name_handler}'))]
+                    getattr(self, f'_{self.keys[idx - 2]}').successor: [
+                        CallbackQueryHandler(getattr(self, f'_{name_handler}')),
+                        MessageHandler(Filters.regex(pattern_regex), self._cancel)
+                    ]
                 })
             else:
                 self._states.update({
@@ -71,7 +74,7 @@ class SortPriceConversationHandler(CommandConversationHandler):
         conversation_handler = ConversationHandler(
             entry_points=[CommandHandler(self._command, self._commands_cls)],
             states=self._states,
-            fallbacks=[MessageHandler(Filters.regex('cancel'), self._cancel)]
+            fallbacks=[MessageHandler(Filters.regex(pattern_regex), self._cancel)]
         )
         return conversation_handler
 
@@ -87,6 +90,6 @@ class BestdealConversationHandler(CommandConversationHandler):
         conversation_handler = ConversationHandler(
             entry_points=[CommandHandler(self._command, self._commands_cls)],
             states=self._states,
-            fallbacks=[MessageHandler(Filters.regex('cancel'), self._cancel)]
+            fallbacks=[MessageHandler(Filters.regex(pattern_regex), self._cancel)]
         )
         return conversation_handler

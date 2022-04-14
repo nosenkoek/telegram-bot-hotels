@@ -4,7 +4,6 @@ from settings import DATABASE
 
 from telegram import Update
 from telegram.ext import CallbackContext
-from json import loads
 
 
 class TelebotHandler():

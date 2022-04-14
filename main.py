@@ -66,4 +66,3 @@ class TeleBotFactory(AbstractFactory):
 if __name__ == '__main__':
     tele_bot = TeleBotFactory()
     tele_bot.create_telebot()
-

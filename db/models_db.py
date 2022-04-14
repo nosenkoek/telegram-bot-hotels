@@ -1,4 +1,4 @@
-from peewee import SqliteDatabase, Model, PrimaryKeyField, UUIDField, CharField, DateTimeField, SQL
+from peewee import SqliteDatabase, Model, PrimaryKeyField, CharField, DateTimeField, SQL
 from datetime import datetime
 from os import path
 
@@ -53,6 +53,3 @@ class UserRequests(BaseModel):
     class Meta:
         table_name = 'user_requests'
         constraints = [SQL('FOREIGN KEY(user_id) REFERENCES users (user_id)')]
-
-
-

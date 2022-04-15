@@ -1,3 +1,6 @@
+from logger.logger import my_logger
+
+
 class SingletonMeta(type):
     """ Паттерн Одиночка. Создание мета класса"""
     _instances = {}
@@ -35,18 +38,16 @@ class Registry(metaclass=SingletonMeta):
     def get_data(self, user_id) -> dict:
         try:
             request_data = self._datas[user_id].request_data
-        except KeyError:
-            print('неверный user_id')
-            raise
+        except KeyError as err:
+            my_logger.warning(f'Registry, неверный user_id {err}')
         else:
             return request_data
 
     def delete_data(self, user_id):
         try:
             self._datas.pop(user_id)
-        except KeyError:
-            print('неверный user_id')
-            raise
+        except KeyError as err:
+            my_logger.warning(f'Registry, неверный user_id {err}')
 
     def update_data(self, user_id, info: dict):
         self._datas[user_id].update_data(info)

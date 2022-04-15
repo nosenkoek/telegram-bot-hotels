@@ -1,35 +1,35 @@
 [
     {
-        "id": 249676,
-        "name": "The Grand at Trafalgar Square",
-        "address": "8 Northumberland Avenue",
-        "star": 4.0,
-        "rating": 8.6,
-        "distance": "0.2 км",
-        "price": 22338.53,
-        "total_price": 379755.01,
-        "url": "https://uk.hotels.com/ho249676"
+        "id": 406543,
+        "name": "Hotel Saint Pierre",
+        "address": "4 Rue De L'Ecole De Medecine",
+        "star": 2.0,
+        "rating": 7.6,
+        "distance": "1.3 км",
+        "price": 13164.26,
+        "total_price": 26328.52,
+        "url": "https://uk.hotels.com/ho406543"
     },
     {
-        "id": 180395,
-        "name": "Club Quarters Hotel, Trafalgar Square",
-        "address": "8 Northumberland Ave",
+        "id": 194608,
+        "name": "Hotel Aulivia Opera",
+        "address": "RUE DES PETITES ECURIES,4",
         "star": 4.0,
-        "rating": 8.6,
-        "distance": "0.2 км",
-        "price": 21368.03,
-        "total_price": 363256.51,
-        "url": "https://uk.hotels.com/ho180395"
+        "rating": 7.8,
+        "distance": "1.3 км",
+        "price": 28764.93,
+        "total_price": 57529.86,
+        "url": "https://uk.hotels.com/ho194608"
     },
     {
-        "id": 1224364128,
-        "name": "Page8, Page Hotels",
-        "address": "8 St. Martins Place",
-        "star": 4.5,
-        "rating": 9.4,
-        "distance": "0.2 км",
-        "price": 20437.5,
-        "total_price": 347437.5,
-        "url": "https://uk.hotels.com/ho1224364128"
+        "id": 250993,
+        "name": "Hotel Alane",
+        "address": "72 Boulevard De Magenta",
+        "star": 3.0,
+        "rating": 8.2,
+        "distance": "1.8 км",
+        "price": 19489.24,
+        "total_price": 38978.48,
+        "url": "https://uk.hotels.com/ho250993"
     }
 ]

@@ -1,3 +1,5 @@
+import requests
+
 from settings import TODAY_DATE, FORMAT_DATE, BUTTON_HOTEL, BUTTON_PHOTO, BUTTON_PEOPLE, DATABASE
 
 from bot.decorator import CollectionCommand
@@ -524,9 +526,6 @@ class SearchHotelHandler(Handler):
 
         try:
             hotels = self._request_hotel(request_data, hotel_handler)
-        except NameError as err:
-            my_logger.warning('Ошибка в запросе {}'.format(err))
-            query.message.reply_text('Ошибка запроса. Попробуйте позднее.')
         except ValueError as err:
             print('Ошибка - отели не найдены {}'.format(err))
             my_logger.warning('Ошибка - отели не найдены {}'.format(err))
@@ -555,14 +554,27 @@ class SearchHotelHandler(Handler):
 
         if answer == '1':
             id_msg_send = self._send_msg_waiting(query)
-            hotels = self._valid_hotels(query, user_id, request_data, id_msg_send)
 
-            for hotel in hotels:
-                send_msg = self._data_hotel_for_msg(hotel)
-                query.message.reply_text(send_msg, disable_web_page_preview=True, parse_mode='HTML')
+            try:
+                hotels = self._valid_hotels(query, user_id, request_data, id_msg_send)
 
-                if count_photo:
-                    self._send_photo(query, hotel)
+                for hotel in hotels:
+                    send_msg = self._data_hotel_for_msg(hotel)
+                    query.message.reply_text(send_msg, disable_web_page_preview=True, parse_mode='HTML')
+
+                    if count_photo:
+                        self._send_photo(query, hotel)
+            except requests.ReadTimeout as timeout_err:
+                my_logger.exception('Ошибка ReadTimeout: {}'.format(timeout_err))
+                print('Ошибка ReadTimeout:', timeout_err)
+                query.message.reply_text('Долгое ожидание ответа с сервера. Попробуйте позднее')
+            except requests.HTTPError as http_err:
+                my_logger.exception('Ошибка HTTP: {}'.format(http_err))
+                print('Ошибка HTTP:', http_err)
+                query.message.reply_text('Ошибка запроса. Попробуйте позднее')
+            except NameError as err:
+                my_logger.warning('Ошибка в запросе {}'.format(err))
+                query.message.reply_text('Ошибка запроса. Попробуйте позднее.')
         else:
             query.message.reply_text('До связи!')
         return self.successor
@@ -593,12 +605,14 @@ class Cancel():
     """ Класс для отмены выполнения команды """
     def __call__(self, update: Update, context: CallbackContext):
         print('Cancel run')
+        user_id = update.message.from_user.id
         try:
-            id_msg_send = Handler.registry.get_data(user_id=update.message.from_user.id).pop('id_message_send')
+            id_msg_send = Handler.registry.get_data(user_id).pop('id_message_send')
         except KeyError as err:
             print('Cancel. Нет сообщения для удаления', err)
             my_logger.warning(f'Cancel. Нет сообщения для удаления. {err}')
         else:
             update.message.bot.delete_message(chat_id=update.message.chat_id, message_id=id_msg_send)
         update.message.reply_text('Отмена')
+        Handler.registry.delete_data(user_id)
         return ConversationHandler.END

@@ -25,16 +25,12 @@ class RequestMixin():
         :param request: словарь параметров для запроса,
         :return: отклик в виде объекта Response
         """
-        try:
-            response = requests.get(url=url, headers=HEADERS, params=request)
-        except requests.HTTPError as http_err:
-            my_logger.exception('Ошибка HTTP: {}'.format(http_err))
-            print('Ошибка HTTP:', http_err)
-            raise http_err
-        else:
-            if response.status_code != 200:
-                raise NameError('Ошибка кода отклика', response.status_code)
-            return response
+
+        response = requests.get(url=url, headers=HEADERS, params=request, timeout=15)
+
+        if response.status_code != 200:
+            raise NameError('Ошибка кода отклика', response.status_code)
+        return response
 
 
 class SearchValueMixin():

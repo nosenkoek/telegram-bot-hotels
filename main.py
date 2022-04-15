@@ -32,8 +32,8 @@ class TeleBot():
     def add_handlers_commands(self) -> None:
         """ Регистрация обработчиков команд бота """
         dispatcher = self.updater.dispatcher
-        # todo для отключения предупреждения о per_message=False в ConversationHandler
-        # filterwarnings(action="ignore", message=r".*CallbackQueryHandler")
+        # для отключения предупреждения о per_message=False в ConversationHandler
+        filterwarnings(action="ignore", message=r".*CallbackQueryHandler")
 
         for commands, commands_cls in self.handler.COMMANDS.items():
             if commands in ['lowprice', 'highprice']:

@@ -47,7 +47,7 @@ class ReadRequests(Strategy):
                      .order_by(table.id.desc())
                      .limit(5))
 
-        for request in query.order_by(table.id):
+        for request in query:
             data = [
                 '{} - {}'.format(request.date_request.strftime('%d.%m.%Y %H:%M'), request.command_request),
                 '<b>{}</b>'.format(request.city_request)
@@ -57,7 +57,7 @@ class ReadRequests(Strategy):
                 data.append('{}\n{}'.format(name, url))
 
             data = '\n'.join(data)
-            result.append(data)
+            result.insert(0, data)
         return result
 
 

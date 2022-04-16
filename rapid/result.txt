@@ -1,35 +1,35 @@
 [
     {
-        "id": 406543,
-        "name": "Hotel Saint Pierre",
-        "address": "4 Rue De L'Ecole De Medecine",
+        "id": 402789,
+        "name": "Book a Bed Hostels",
+        "address": "86 Tanner's Hill",
         "star": 2.0,
-        "rating": 7.6,
-        "distance": "1.3 км",
-        "price": 13164.26,
-        "total_price": 26328.52,
-        "url": "https://uk.hotels.com/ho406543"
+        "rating": 6.8,
+        "distance": "7.9 км",
+        "price": 1898.23,
+        "total_price": 1898.23,
+        "url": "https://uk.hotels.com/ho402789"
     },
     {
-        "id": 194608,
-        "name": "Hotel Aulivia Opera",
-        "address": "RUE DES PETITES ECURIES,4",
-        "star": 4.0,
-        "rating": 7.8,
-        "distance": "1.3 км",
-        "price": 28764.93,
-        "total_price": 57529.86,
-        "url": "https://uk.hotels.com/ho194608"
-    },
-    {
-        "id": 250993,
-        "name": "Hotel Alane",
-        "address": "72 Boulevard De Magenta",
-        "star": 3.0,
+        "id": 514982784,
+        "name": "Astor Hyde Park Hostel - Adults Only",
+        "address": "191 Queensgate",
+        "star": 2.0,
         "rating": 8.2,
-        "distance": "1.8 км",
-        "price": 19489.24,
-        "total_price": 38978.48,
-        "url": "https://uk.hotels.com/ho250993"
+        "distance": "3.7 км",
+        "price": 2705.18,
+        "total_price": 2705.18,
+        "url": "https://uk.hotels.com/ho514982784"
+    },
+    {
+        "id": 259199,
+        "name": "Generator London",
+        "address": "37 Tavistock Place, Russel Square",
+        "star": 2.0,
+        "rating": 7.2,
+        "distance": "2.1 км",
+        "price": 3787.25,
+        "total_price": 3787.25,
+        "url": "https://uk.hotels.com/ho259199"
     }
 ]

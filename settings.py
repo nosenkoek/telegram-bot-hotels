@@ -2,6 +2,8 @@ from datetime import datetime, timedelta
 from bot.buttons import ButtonOneLine, ButtonTwoLines
 from db.db_handler import DatabaseHandler
 
+TOKEN = '5113338503:AAFtsZUu5UYQGTFl2PC6SfpoTbrsrGNa6EY'
+
 TODAY_DATE = datetime.date(datetime.now())
 FORMAT_DATE = '%Y-%m-%d'
 

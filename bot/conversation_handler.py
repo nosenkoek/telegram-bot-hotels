@@ -10,6 +10,7 @@ handler = HandlerFactory()
 
 class CommandConversationHandler(ABC):
     """ Базовый класс для создания обработчика диалога с пользователем """
+    # TODO объединить в один словарь
     keys = [
         'city',
         'check_in',

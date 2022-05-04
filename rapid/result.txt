@@ -1,35 +1,30 @@
 [
     {
-        "id": 402789,
-        "name": "Book a Bed Hostels",
-        "address": "86 Tanner's Hill",
-        "star": 2.0,
-        "rating": 6.8,
-        "distance": "7.9 км",
-        "price": 1898.23,
-        "total_price": 1898.23,
-        "url": "https://uk.hotels.com/ho402789"
+        "id": 480122,
+        "name": "Safestay Pisa",
+        "address": "Via Filippo Corridoni 29",
+        "star": 0.0,
+        "rating": 8.6,
+        "distance": "1.9 км",
+        "price": 1274.16,
+        "total_price": 1274.16,
+        "url": "https://uk.hotels.com/ho480122",
+        "photo": [
+            "https://exp.cdn-hotels.com/hotels/10000000/9410000/9403000/9402958/9d74ad24_b.jpg"
+        ]
     },
     {
-        "id": 514982784,
-        "name": "Astor Hyde Park Hostel - Adults Only",
-        "address": "191 Queensgate",
-        "star": 2.0,
-        "rating": 8.2,
-        "distance": "3.7 км",
-        "price": 2705.18,
-        "total_price": 2705.18,
-        "url": "https://uk.hotels.com/ho514982784"
-    },
-    {
-        "id": 259199,
-        "name": "Generator London",
-        "address": "37 Tavistock Place, Russel Square",
-        "star": 2.0,
-        "rating": 7.2,
-        "distance": "2.1 км",
-        "price": 3787.25,
-        "total_price": 3787.25,
-        "url": "https://uk.hotels.com/ho259199"
+        "id": 388997,
+        "name": "Hostel Pisa Tower",
+        "address": "Via Piave 4",
+        "star": 0.0,
+        "rating": 9.2,
+        "distance": "0.3 км",
+        "price": 1337.44,
+        "total_price": 1337.44,
+        "url": "https://uk.hotels.com/ho388997",
+        "photo": [
+            "https://exp.cdn-hotels.com/hotels/5000000/4570000/4569800/4569749/b995c878_b.jpg"
+        ]
     }
 ]

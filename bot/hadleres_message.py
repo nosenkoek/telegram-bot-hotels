@@ -438,6 +438,57 @@ class SearchHotelHandler(Handler):
         return hotels
 
     @staticmethod
+    def _add_request_db(user_id: int, request_data: dict, hotels: list):
+        """
+        Добавление строки в БД.
+        :param user_id: уникальный id пользователя,
+        :param request_data: запрос пользователя
+        :param hotels: список отелей.
+        """
+        hotels_dict = {}
+
+        for hotel in hotels:
+            hotels_dict.update({hotel.get('name'): hotel.get('url')})
+
+        hotel_json = dumps(hotels_dict)
+
+        DATABASE.create(
+            user_id=user_id,
+            key_table='user_requests',
+            command_request=request_data.get('command'),
+            city_request=request_data.get('query'),
+            hotels=hotel_json
+        )
+
+    def _valid_hotels(self, query: CallbackQuery, user_id: int, request_data: dict, id_msg_send: int):
+        """
+        Запрос отелей и отправка сообщений пользователю в случае ошибки, в случае успеха - запись в БД.
+        :param query: callback_query,
+        :param user_id: уникальный id пользователя,
+        :param request_data: словарь с данными запроса пользователя,
+        :param id_msg_send: id сообщения для удаления,
+        :return: обработанный список отелей от rapid
+        """
+        hotel_handler = RapidFacade()
+        hotels = []
+
+        try:
+            hotels = self._request_hotel(request_data, hotel_handler)
+        except ValueError as err:
+            print('Ошибка - отели не найдены {}'.format(err))
+            my_logger.warning('Ошибка - отели не найдены {}'.format(err))
+            if 'Город не найден' in err.args:
+                query.message.reply_text(str(err))
+            else:
+                query.message.reply_text('По вашему запросу не найдено отелей')
+        else:
+            self._add_request_db(user_id, request_data, hotels)
+        finally:
+            query.bot.delete_message(chat_id=query.message.chat_id, message_id=id_msg_send)
+
+        return hotels
+
+    @staticmethod
     def _data_hotel_for_msg(hotel: dict) -> str:
         """
         Формирование описания отеля для пользователя.
@@ -488,57 +539,6 @@ class SearchHotelHandler(Handler):
             query.message.reply_text('Для этого отеля фото не найдено')
         else:
             query.message.reply_media_group(media=photo_group)
-
-    @staticmethod
-    def _add_request_db(user_id: int, request_data: dict, hotels: list):
-        """
-        Добавление строки в БД.
-        :param user_id: уникальный id пользователя,
-        :param request_data: запрос пользователя
-        :param hotels: список отелей.
-        """
-        hotels_dict = {}
-
-        for hotel in hotels:
-            hotels_dict.update({hotel.get('name'): hotel.get('url')})
-
-        hotel_json = dumps(hotels_dict)
-
-        DATABASE.create(
-            user_id=user_id,
-            key_table='user_requests',
-            command_request=request_data.get('command'),
-            city_request=request_data.get('query'),
-            hotels=hotel_json
-        )
-
-    def _valid_hotels(self, query: CallbackQuery, user_id: int, request_data: dict, id_msg_send: int):
-        """
-        Запрос отелей и отправка сообщений пользователю в случае ошибки, в случае успеха - запись в БД.
-        :param query: callback_query,
-        :param user_id: уникальный id пользователя,
-        :param request_data: словарь с данными запроса пользователя,
-        :param id_msg_send: id сообщения для удаления,
-        :return: обработанный список отелей от rapid
-        """
-        hotel_handler = RapidFacade()
-        hotels = []
-
-        try:
-            hotels = self._request_hotel(request_data, hotel_handler)
-        except ValueError as err:
-            print('Ошибка - отели не найдены {}'.format(err))
-            my_logger.warning('Ошибка - отели не найдены {}'.format(err))
-            if 'Город не найден' in err.args:
-                query.message.reply_text(str(err))
-            else:
-                query.message.reply_text('По вашему запросу не найдено отелей')
-        else:
-            self._add_request_db(user_id, request_data, hotels)
-        finally:
-            query.bot.delete_message(chat_id=query.message.chat_id, message_id=id_msg_send)
-
-        return hotels
 
     def __call__(self, update: Update, context: CallbackContext) -> int:
         """ Обрабатывает ответ на вопрос о поиске ответа и отправляет список отелей """

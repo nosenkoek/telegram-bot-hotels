@@ -1,11 +1,12 @@
 from abc import ABC, abstractmethod
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton
 
+BUTTON_NO_PHOTO = {'Без фото': 0}
+
 
 class Button(ABC):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args):
         self._buttons = args
-        self._two_line = kwargs
 
     @abstractmethod
     def keyboard(self):
@@ -22,6 +23,6 @@ class ButtonOneLine(Button):
 class ButtonTwoLines(Button):
     def keyboard(self):
         buttons_line_1 = [InlineKeyboardButton(button, callback_data=button) for button in self._buttons]
-        buttons_line_2 = [InlineKeyboardButton(name, callback_data=data) for name, data in self._two_line.items()]
+        buttons_line_2 = [InlineKeyboardButton(key, callback_data=value) for key, value in BUTTON_NO_PHOTO.items()]
         markup = InlineKeyboardMarkup([buttons_line_1, buttons_line_2])
         return markup

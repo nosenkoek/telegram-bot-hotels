@@ -1,96 +1,132 @@
+from settings import KEYS_BESTDEAL, KEYS_SORTPRICE, KEYS_FOR_BUTTON, KEYS_FOR_TEXT_MSG, KEYS_FOR_BUTTON_TEXT_MSG
+
 from bot.hadleres_message import HandlerFactory, Cancel
+from logger.logger import my_logger
 
 from telegram.ext import CommandHandler, MessageHandler, Filters, ConversationHandler, CallbackQueryHandler
-from abc import ABC, abstractmethod
+from abc import ABC
 
 pattern_regex = r'[cC]ancel'
 filter_text = (Filters.text & ~Filters.regex(pattern_regex))
 handler = HandlerFactory()
 
 
-class CommandConversationHandler(ABC):
-    """ Базовый класс для создания обработчика диалога с пользователем """
-    # TODO объединить в один словарь
-    keys = [
-        'city',
-        'check_in',
-        'check_out',
-        'people',
-        'hotel',
-        'photo'
-    ]
+class StateBuilder(ABC):
+    """ Базовый класс-строитель для динамического создания словаря состояния для обработчиков"""
+    def __init__(self, command, commands_cls, *args):
+        self.keys = args
+        self.state = {}
+        self.command = command
+        self.commands_cls = commands_cls(0)
+        self.cancel = Cancel()
 
-    def __init__(self, command, commands_cls):
-        self._command = command
-        self._commands_cls = commands_cls(0)
-        self._cancel = Cancel()
-        self._states = {}
+    def create_attr(self):
+        """
+        Добавление всех обработчиков в класс строителя в качестве атрибутов
+        """
+        for idx_step in range(1, len(self.keys)):
+            self.__setattr__(f'_{self.keys[idx_step]}', handler.create_handler(self.keys[idx_step], idx_step))
 
-        """ Динамическое создание словаря обработчиков для Conversation Handler"""
-        for idx, name_handler in enumerate(self.keys, 1):
-            self.__setattr__(f'_{name_handler}', handler.create_handler(name_handler, idx))
-
-            if name_handler == 'city':
-                self._states.update({
-                    self._commands_cls.successor:
-                        [MessageHandler(filter_text, getattr(self, f'_{name_handler}'))]
-                })
-            elif name_handler in ['prices', 'distance']:
-                self._states.update({
-                    getattr(self, f'_{self.keys[idx - 2]}').successor:
-                        [MessageHandler(filter_text, getattr(self, f'_{name_handler}'))]
-                })
-            elif name_handler in ['check_in', 'check_out', 'search']:
-                self._states.update({
-                    getattr(self, f'_{self.keys[idx - 2]}').successor: [
-                        CallbackQueryHandler(getattr(self, f'_{name_handler}')),
-                        MessageHandler(Filters.regex(pattern_regex), self._cancel)
-                    ]
-                })
-            else:
-                self._states.update({
-                    getattr(self, f'_{self.keys[idx - 2]}').successor: [
-                        MessageHandler(filter_text, getattr(self, f'_{name_handler}').message),
-                        CallbackQueryHandler(getattr(self, f'_{name_handler}'))
-                    ]
-                })
-
-        self._states.update({
-            getattr(self, '_search').successor: [CommandHandler(self._command, self._commands_cls)]
+    def command_handler(self):
+        """
+        Добавление в словарь первого и последнего обработчиков
+        """
+        self.state.update({
+            self.commands_cls.successor: [MessageHandler(filter_text, getattr(self, f'_{self.keys[1]}'))],
+            getattr(self, '_search').successor: [CommandHandler(self.command, self.commands_cls)]
         })
 
-    @abstractmethod
-    def __call__(self):
-        pass
+    def msg_handler(self, *args):
+        """
+        Добавление обработчиков только для текстовых сообщений
+        """
+        for step in args:
+            try:
+                idx_step = self.keys.index(step)
+            except ValueError as err:
+                my_logger.warning(f'{self.command}| Conversation Handler. {err}')
+            else:
+                self.state.update({
+                    getattr(self, f'_{self.keys[idx_step - 1]}').successor:
+                        [MessageHandler(filter_text, getattr(self, f'_{step}'))]
+                })
+
+    def query_handler(self, *args):
+        """
+        Добавление обработчиков только для кнопок
+        """
+        for step in args:
+            try:
+                idx_step = self.keys.index(step)
+            except ValueError as err:
+                my_logger.warning(f'{self.command}| Conversation Handler. {err}')
+            else:
+                self.state.update({
+                    getattr(self, f'_{self.keys[idx_step - 1]}').successor: [
+                        CallbackQueryHandler(getattr(self, f'_{step}')),
+                        MessageHandler(Filters.regex(pattern_regex), self.cancel)
+                    ]
+                })
+
+    def msg_query_handler(self, *args):
+        """
+        Добавление обработчиков для текстовых сообщений и кнопок
+        """
+        for step in args:
+            try:
+                idx_step = self.keys.index(step)
+            except ValueError as err:
+                my_logger.warning(f'{self.command}| Conversation Handler. {err}')
+            else:
+                self.state.update({
+                    getattr(self, f'_{self.keys[idx_step - 1]}').successor: [
+                        MessageHandler(filter_text, getattr(self, f'_{step}').message),
+                        CallbackQueryHandler(getattr(self, f'_{step}'))
+                    ]
+                })
 
 
-class SortPriceConversationHandler(CommandConversationHandler):
-    """ Базовый класс для создания обработчика диалога с пользователем по командам lowprice, highprice"""
-    def __init__(self, command, commands_cls):
-        self.keys.append('search')
-        super().__init__(command, commands_cls)
-        self.keys.remove('search')
+class ConversationDirector():
+    """ Класс-директор для создания обработчика диалога"""
+    def __init__(self, builder: StateBuilder):
+        self._builder = builder
 
-    def __call__(self):
+    def create_conversation_handler(self) -> ConversationHandler:
+        """
+        Создание обработчика диалога
+        :return: ConversationHandler
+        """
+        self._builder.create_attr()
+        self._builder.command_handler()
+        self._builder.msg_handler(*KEYS_FOR_TEXT_MSG)
+        self._builder.query_handler(*KEYS_FOR_BUTTON)
+        self._builder.msg_query_handler(*KEYS_FOR_BUTTON_TEXT_MSG)
+
         conversation_handler = ConversationHandler(
-            entry_points=[CommandHandler(self._command, self._commands_cls)],
-            states=self._states,
-            fallbacks=[MessageHandler(Filters.regex(pattern_regex), self._cancel)]
+            entry_points=[CommandHandler(self._builder.command, self._builder.commands_cls)],
+            states=self._builder.state,
+            fallbacks=[MessageHandler(Filters.regex(pattern_regex), self._builder.cancel)]
         )
         return conversation_handler
 
 
-class BestdealConversationHandler(CommandConversationHandler):
-    """ Класс для создания обработчика диалога с пользователем по командам bestdeal"""
+class SortPriceConversationHandler():
+    """ Создание обработчика диалога для lowprice и highprice. Внешний интерфейс"""
     def __init__(self, command, commands_cls):
-        self.keys.extend(['prices', 'distance', 'search'])
-        super().__init__(command, commands_cls)
-        self.keys.remove('prices'), self.keys.remove('distance'), self.keys.remove('search')
+        builder = StateBuilder(command, commands_cls, *KEYS_SORTPRICE)
+        self.director = ConversationDirector(builder)
 
-    def __call__(self):
-        conversation_handler = ConversationHandler(
-            entry_points=[CommandHandler(self._command, self._commands_cls)],
-            states=self._states,
-            fallbacks=[MessageHandler(Filters.regex(pattern_regex), self._cancel)]
-        )
+    def __call__(self) -> ConversationHandler:
+        conversation_handler = self.director.create_conversation_handler()
+        return conversation_handler
+
+
+class BestdealConversationHandler():
+    """ Создание обработчика диалога для bestdeal. Внешний интерфейс"""
+    def __init__(self, command, commands_cls):
+        builder = StateBuilder(command, commands_cls, *KEYS_BESTDEAL)
+        self.director = ConversationDirector(builder)
+
+    def __call__(self) -> ConversationHandler:
+        conversation_handler = self.director.create_conversation_handler()
         return conversation_handler

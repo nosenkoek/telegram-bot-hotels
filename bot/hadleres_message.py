@@ -1,6 +1,7 @@
 import requests
 
-from settings import TODAY_DATE, FORMAT_DATE, BUTTON_HOTEL, BUTTON_PHOTO, BUTTON_PEOPLE, DATABASE
+from settings import TODAY_DATE, FORMAT_DATE, BUTTON_HOTEL, BUTTON_PHOTO, BUTTON_PEOPLE, DATABASE, \
+    COUNT_MAX_PHOTO, COUNT_MAX_HOTEL
 
 from bot.decorator import CollectionCommand
 from bot.registry_request import Registry
@@ -17,8 +18,6 @@ from datetime import datetime, timedelta
 from re import findall
 from json import dumps
 from typing import List
-
-# todo посмотреть создание модулей
 
 
 class Handler(ABC):
@@ -237,7 +236,7 @@ class HotelCountHandler(Handler):
             if count_hotel < 0:
                 count_hotel = abs(count_hotel)
 
-            if count_hotel > 10 or not count_hotel:
+            if count_hotel > COUNT_MAX_HOTEL or not count_hotel:
                 raise ValueError('Введен 0 или больше 10')
         except ValueError as err:
             markup = BUTTON_HOTEL.keyboard()
@@ -321,9 +320,9 @@ class PhotoCountHandler(Handler, CheckDataMixin):
         try:
             count_photo = int(count_photo)
             if count_photo < 0:
-                count_photo = abs(count_photo)
+                count_photo = -count_photo
 
-            if count_photo > 5:
+            if count_photo > COUNT_MAX_PHOTO:
                 raise ValueError('Введено больше 5')
         except ValueError as err:
             markup = BUTTON_PHOTO.keyboard()
@@ -359,10 +358,15 @@ class PricesHandler(Handler):
             prices = findall(r'\d+', prices)
             if len(prices) != 2:
                 raise ValueError
+
+            prices = [int(price) for price in prices]
+
         except ValueError as err:
             my_logger.warning(f'Введено неверное значение {err}')
             update.message.reply_text('Введено неверное значение. Введите диапазон цен за сутки, руб.')
         else:
+            print(prices)
+            print(min(prices), max(prices))
             super().registry.update_data(user_id, {'priceMin': min(prices)})
             super().registry.update_data(user_id, {'priceMax': max(prices)})
 
@@ -519,7 +523,7 @@ class SearchHotelHandler(Handler):
         photo_group = []
         photo_url = hotel.get('photo')
 
-        if photo_url[0] == 'нет фото':
+        if not photo_url:
             raise ValueError('Нет фото')
 
         for url in hotel.get('photo'):
@@ -538,7 +542,11 @@ class SearchHotelHandler(Handler):
             my_logger.warning('Ошибка. Не найдено фото {}'.format(err))
             query.message.reply_text('Для этого отеля фото не найдено')
         else:
-            query.message.reply_media_group(media=photo_group)
+            try:
+                query.message.reply_media_group(media=photo_group)
+            except BadRequest as err:
+                query.message.reply_text('Ошибка сервера. Фото можно посмотреть на сайте')
+                my_logger.error('Ошибка. Не создана медиа-группа. {}'.format(err))
 
     def __call__(self, update: Update, context: CallbackContext) -> int:
         """ Обрабатывает ответ на вопрос о поиске ответа и отправляет список отелей """

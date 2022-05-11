@@ -149,7 +149,7 @@ class PhotoRequest(BaseRequest, RequestMixin):
         :return: response
         """
         response = self.request_get('https://hotels4.p.rapidapi.com/properties/get-hotel-photos', kwargs)
-        print('Success Photo', response.status_code)
+        print('Success Photo |', response.status_code)
         return response
 
 
@@ -329,7 +329,7 @@ class PhotoHandler(SearchValueMixin):
     def __init__(self, request: PhotoRequest):
         self._request = request
 
-    def handler(self, count_photo=COUNT_MAX_PHOTO, **kwargs) -> List[str]:
+    def handler(self, count_photo=COUNT_MAX_PHOTO, **kwargs) -> Optional[List[str]]:
         """
         Обработчик отклика с сайта отелей. Поиск фото отеля. Внешний интерфейс.
         :param count_photo: число фото, вводимое пользователем,
@@ -344,7 +344,7 @@ class PhotoHandler(SearchValueMixin):
             photo_response = self._search_substruct(loads(data.text), 'hotelImages')
         except JSONDecodeError as err:
             my_logger.exception('Ошибка - фото не найдено {}'.format(err))
-            return ['нет фото']
+            return None
 
         if not isinstance(photo_response, list):
             raise ValueError('Ошибка в структуре ответа на запроса фото отеля')
@@ -357,7 +357,7 @@ class PhotoHandler(SearchValueMixin):
             sizes = photo_item.get('sizes')
             sorted_sizes = sorted(sizes, key=lambda item: item['type'])
             for size in sorted_sizes:
-                if size.get('type') >= 3:
+                if size.get('type') >= 2:
                     size_suffix = size.get('suffix')
                     break
             else:

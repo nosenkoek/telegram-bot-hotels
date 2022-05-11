@@ -1,5 +1,5 @@
 from bot.command_handler import TelebotHandler
-from bot.conversation_handler_new import SortPriceConversationHandler, BestdealConversationHandler
+from bot.conversation_handler import SortPriceConversationHandler, BestdealConversationHandler
 from logger.logger import logger_all
 from settings import TOKEN
 
@@ -60,4 +60,3 @@ class TeleBotFactory(AbstractFactory):
         bot.add_handlers_commands()
         bot.start()
         return bot
-

@@ -30,13 +30,41 @@ BASE_REQUEST_HOTELS_API = {
 }
 
 COUNT_MAX_HOTEL = 10
-
 COUNT_MAX_PHOTO = 5
+COUNT_MAX_ACTION_HISTORY = 5
 
 KOEFF_MILES_KM = 1.60934
 
 BUTTON_PEOPLE = ButtonOneLine(1, 2, 3, 4)
 BUTTON_HOTEL = ButtonOneLine(3, 5, 7)
-BUTTON_PHOTO = ButtonTwoLines(1, 2, 3, 4, 5, no_photo=0)
+BUTTON_PHOTO = ButtonTwoLines(1, 2, 3, 4, 5)
 
 DATABASE = DatabaseHandler()
+
+KEYS_SORTPRICE = [
+            'command_cls',
+            'city',
+            'check_in',
+            'check_out',
+            'people',
+            'hotel',
+            'photo',
+            'search'
+]
+
+KEYS_BESTDEAL = [
+    'command_cls',
+    'city',
+    'check_in',
+    'check_out',
+    'people',
+    'hotel',
+    'photo',
+    'prices',
+    'distance',
+    'search'
+]
+
+KEYS_FOR_TEXT_MSG = ['prices', 'distance']
+KEYS_FOR_BUTTON = ['check_in', 'check_out', 'search']
+KEYS_FOR_BUTTON_TEXT_MSG = ['people', 'hotel', 'photo']

@@ -1,6 +1,6 @@
 from bot.decorator import CollectionCommand
 from logger.logger import logger_all
-from settings import DATABASE
+from settings import DATABASE, COUNT_MAX_ACTION_HISTORY
 
 from telegram import Update
 from telegram.ext import CallbackContext
@@ -34,7 +34,7 @@ class History(TelebotHandler):
     def __call__(self, update: Update, context: CallbackContext) -> None:
         data_requests = DATABASE.read_requests(user_id=update.message.from_user.id)
 
-        if len(data_requests) < 5:
+        if len(data_requests) < COUNT_MAX_ACTION_HISTORY:
             data_start = DATABASE.read_user(user_id=update.message.from_user.id)
             update.message.reply_text('Начало: {}'.format(data_start.date_request.strftime('%d.%m.%Y %H:%M')))
 

@@ -1,30 +1,77 @@
 [
     {
-        "id": 480122,
-        "name": "Safestay Pisa",
-        "address": "Via Filippo Corridoni 29",
-        "star": 0.0,
-        "rating": 8.6,
-        "distance": "1.9 км",
-        "price": 1274.16,
-        "total_price": 1274.16,
-        "url": "https://uk.hotels.com/ho480122",
+        "id": 263227,
+        "name": "Holiday Inn Express Barcelona - Molins de Rei, an IHG Hotel",
+        "address": "Carrer Del Primer De Maig 9",
+        "star": 3.0,
+        "rating": 7.8,
+        "distance": "12.7 км",
+        "price": 6997.06,
+        "total_price": 20991.18,
+        "url": "https://uk.hotels.com/ho263227",
         "photo": [
-            "https://exp.cdn-hotels.com/hotels/10000000/9410000/9403000/9402958/9d74ad24_b.jpg"
+            "https://exp.cdn-hotels.com/hotels/2000000/1360000/1353900/1353878/44947916_s.jpg",
+            "https://exp.cdn-hotels.com/hotels/2000000/1360000/1353900/1353878/03e3fadb_s.jpg"
         ]
     },
     {
-        "id": 388997,
-        "name": "Hostel Pisa Tower",
-        "address": "Via Piave 4",
-        "star": 0.0,
-        "rating": 9.2,
-        "distance": "0.3 км",
-        "price": 1337.44,
-        "total_price": 1337.44,
-        "url": "https://uk.hotels.com/ho388997",
+        "id": 229610,
+        "name": "Hotel SB BCN Events",
+        "address": "Ronda De Can Rabada 22-24",
+        "star": 4.5,
+        "rating": 8.0,
+        "distance": "19.3 км",
+        "price": 7765.63,
+        "total_price": 23296.89,
+        "url": "https://uk.hotels.com/ho229610",
         "photo": [
-            "https://exp.cdn-hotels.com/hotels/5000000/4570000/4569800/4569749/b995c878_b.jpg"
+            "https://exp.cdn-hotels.com/hotels/2000000/1160000/1157700/1157693/6d9fd157_s.jpg",
+            "https://exp.cdn-hotels.com/hotels/2000000/1160000/1157700/1157693/e0eed157_s.jpg"
+        ]
+    },
+    {
+        "id": 567211,
+        "name": "Mayerling Abamita Apartments",
+        "address": "Calle Ausias March, 25",
+        "star": 3.0,
+        "rating": 9.0,
+        "distance": "1.4 км",
+        "price": 9919.05,
+        "total_price": 29757.149999999998,
+        "url": "https://uk.hotels.com/ho567211",
+        "photo": [
+            "https://exp.cdn-hotels.com/hotels/14000000/13230000/13227600/13227589/99ce0181_s.jpg",
+            "https://exp.cdn-hotels.com/hotels/14000000/13230000/13227600/13227589/5922042c_s.jpg"
+        ]
+    },
+    {
+        "id": 533614,
+        "name": "Best Western Hotel Mediterraneo",
+        "address": "Passeig Maritim, 294",
+        "star": 4.0,
+        "rating": 8.6,
+        "distance": "20.9 км",
+        "price": 10023.56,
+        "total_price": 30070.68,
+        "url": "https://uk.hotels.com/ho533614",
+        "photo": [
+            "https://exp.cdn-hotels.com/hotels/1000000/20000/14700/14618/6446a2b4_s.jpg",
+            "https://exp.cdn-hotels.com/hotels/1000000/20000/14700/14618/c867cb65_s.jpg"
+        ]
+    },
+    {
+        "id": 262093,
+        "name": "Hotel Ciudad de Castelldefels",
+        "address": "Paseo De La Marina 212",
+        "star": 3.0,
+        "rating": 8.2,
+        "distance": "20.9 км",
+        "price": 10871.25,
+        "total_price": 32613.75,
+        "url": "https://uk.hotels.com/ho262093",
+        "photo": [
+            "https://exp.cdn-hotels.com/hotels/1000000/20000/11000/10918/d6ab6203_s.jpg",
+            "https://exp.cdn-hotels.com/hotels/1000000/20000/11000/10918/438fcecc_s.jpg"
         ]
     }
 ]

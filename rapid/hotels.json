@@ -2,322 +2,39 @@
     "result": "OK",
     "data": {
         "body": {
-            "header": "Pisa, Tuscany, Italy",
+            "header": "Barcelona, Barcelona, Catalonia, Spain",
             "query": {
                 "destination": {
-                    "id": "709345",
-                    "value": "Pisa, Tuscany, Italy",
-                    "resolvedLocation": "CITY:709345:UNKNOWN:UNKNOWN"
+                    "id": "444495",
+                    "value": "Barcelona, Barcelona, Catalonia, Spain",
+                    "resolvedLocation": "CITY:444495:UNKNOWN:UNKNOWN"
                 }
             },
             "searchResults": {
-                "totalCount": 4960,
+                "totalCount": 2303,
                 "results": [
                     {
-                        "id": 480122,
-                        "name": "Safestay Pisa",
-                        "starRating": 0.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "Via Filippo Corridoni 29",
-                            "extendedAddress": "",
-                            "locality": "Pisa",
-                            "postalCode": "",
-                            "region": "PI",
-                            "countryName": "Italy",
-                            "countryCode": "it",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 8.6,
-                            "rating": "8.6",
-                            "total": 134,
-                            "scale": 10,
-                            "badge": "fabulous",
-                            "badgeText": "Fabulous"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "1.2 miles"
-                            },
-                            {
-                                "label": "Pisa (PSA-Galileo Galilei)",
-                                "distance": "0.6 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "1,274 RUB",
-                                "exactCurrent": 1274.16,
-                                "fullyBundledPricePerStay": "total 1,476 RUB"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            },
-                            "type": "HC"
-                        },
-                        "neighbourhood": "Pisa City Centre",
-                        "deals": {},
-                        "messaging": {},
-                        "badging": {},
-                        "coordinate": {
-                            "lat": 43.707097,
-                            "lon": 10.404416
-                        },
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 9402958,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/10000000/9410000/9403000/9402958/5ea7962e_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 388997,
-                        "name": "Hostel Pisa Tower",
-                        "starRating": 0.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "Via Piave 4",
-                            "extendedAddress": "",
-                            "locality": "Pisa",
-                            "postalCode": "56123",
-                            "region": "PI",
-                            "countryName": "Italy",
-                            "countryCode": "it",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 9.2,
-                            "rating": "9.2",
-                            "total": 60,
-                            "scale": 10,
-                            "badge": "superb",
-                            "badgeText": "Superb"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "0.2 miles"
-                            },
-                            {
-                                "label": "Pisa (PSA-Galileo Galilei)",
-                                "distance": "1.8 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "1,337 RUB",
-                                "exactCurrent": 1337.44,
-                                "old": "1,408 RUB",
-                                "fullyBundledPricePerStay": "total 1,545 RUB"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            },
-                            "type": "EC"
-                        },
-                        "neighbourhood": "Pisa",
-                        "deals": {
-                            "secretPrice": {
-                                "dealText": "Save more with Secret Prices"
-                            },
-                            "priceReasoning": "DRR-443"
-                        },
-                        "messaging": {
-                            "scarcity": "4 left on our app"
-                        },
-                        "badging": {},
-                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
-                        "coordinate": {
-                            "lat": 43.72435,
-                            "lon": 10.39744
-                        },
-                        "roomsLeft": 4,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 4569749,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/5000000/4570000/4569800/4569749/b995c878_y.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 454749,
-                        "name": "Holiday House Ospedale B&B",
-                        "starRating": 0.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "via di Padule 17",
-                            "extendedAddress": "",
-                            "locality": "Pisa",
-                            "postalCode": "56124",
-                            "region": "PI",
-                            "countryName": "Italy",
-                            "countryCode": "it",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 6.4,
-                            "rating": "6.4",
-                            "total": 55,
-                            "scale": 10,
-                            "badge": "good",
-                            "badgeText": "Good"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "1.9 miles"
-                            },
-                            {
-                                "label": "Pisa (PSA-Galileo Galilei)",
-                                "distance": "1.7 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "2,582 RUB",
-                                "exactCurrent": 2582.26,
-                                "fullyBundledPricePerStay": "total 2,951 RUB"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            },
-                            "type": "HC"
-                        },
-                        "neighbourhood": "Pisa",
-                        "deals": {},
-                        "messaging": {
-                            "scarcity": "1 left on our app"
-                        },
-                        "badging": {},
-                        "coordinate": {
-                            "lat": 43.712008,
-                            "lon": 10.428247
-                        },
-                        "roomsLeft": 1,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 7994032,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/8000000/8000000/7994100/7994032/8b819e84_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 1213474944,
-                        "name": "Villa Liberty Il Lauro",
-                        "starRating": 0.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "Via Giuseppe Montanelli 170",
-                            "extendedAddress": "",
-                            "locality": "Pisa",
-                            "postalCode": "56121",
-                            "region": "Provincia di Pisa",
-                            "countryName": "Italy",
-                            "countryCode": "it",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 7.6,
-                            "rating": "7.6",
-                            "total": 6,
-                            "scale": 10,
-                            "badge": "good",
-                            "badgeText": "Good"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "1.6 miles"
-                            },
-                            {
-                                "label": "Pisa (PSA-Galileo Galilei)",
-                                "distance": "0.4 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "2,638 RUB",
-                                "exactCurrent": 2638.11,
-                                "old": "2,931 RUB",
-                                "fullyBundledPricePerStay": "total 5,595 RUB"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            },
-                            "type": "EC"
-                        },
-                        "neighbourhood": "Pisa",
-                        "deals": {
-                            "secretPrice": {
-                                "dealText": "Save more with Secret Prices"
-                            },
-                            "priceReasoning": "DRR-443"
-                        },
-                        "messaging": {
-                            "scarcity": "1 left on our app"
-                        },
-                        "badging": {},
-                        "pimmsAttributes": "DoubleStamps|Privatebeachv1|D13|TESCO",
-                        "coordinate": {
-                            "lat": 43.70228,
-                            "lon": 10.40573
-                        },
-                        "roomsLeft": 1,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 37889842,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/38000000/37890000/37889900/37889842/3ec3f21e_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 237461,
-                        "name": "Hotel Verdi Pisa",
+                        "id": 263227,
+                        "name": "Holiday Inn Express Barcelona - Molins de Rei, an IHG Hotel",
                         "starRating": 3.0,
                         "urls": {},
                         "address": {
-                            "streetAddress": "Piazza della Repubblica, 5",
+                            "streetAddress": "Carrer Del Primer De Maig 9",
                             "extendedAddress": "",
-                            "locality": "Pisa",
-                            "postalCode": "56100",
-                            "region": "PI",
-                            "countryName": "Italy",
-                            "countryCode": "it",
+                            "locality": "Molins de Rei",
+                            "postalCode": "08750",
+                            "region": "",
+                            "countryName": "Spain",
+                            "countryCode": "es",
                             "obfuscate": false
                         },
                         "welcomeRewards": {
                             "collect": true
                         },
                         "guestReviews": {
-                            "unformattedRating": 7.0,
-                            "rating": "7.0",
-                            "total": 410,
+                            "unformattedRating": 7.8,
+                            "rating": "7.8",
+                            "total": 1010,
                             "scale": 10,
                             "badge": "good",
                             "badgeText": "Good"
@@ -325,351 +42,61 @@
                         "landmarks": [
                             {
                                 "label": "City center",
-                                "distance": "0.7 miles"
+                                "distance": "7.9 miles"
                             },
                             {
-                                "label": "Pisa (PSA-Galileo Galilei)",
-                                "distance": "1.3 miles"
+                                "label": "Barcelona El Prat Airport (BCN)",
+                                "distance": "7.6 miles"
                             }
                         ],
                         "geoBullets": [],
                         "ratePlan": {
                             "price": {
-                                "current": "2,825 RUB",
-                                "exactCurrent": 2825.06,
-                                "old": "3,139 RUB",
-                                "fullyBundledPricePerStay": "total 3,218 RUB"
+                                "current": "6,997 RUB",
+                                "exactCurrent": 6997.06,
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 23,381 RUB for 3&nbsp;nights"
                             },
                             "features": {
-                                "freeCancellation": false,
+                                "freeCancellation": true,
                                 "paymentPreference": true,
                                 "noCCRequired": false
                             },
                             "type": "Dual"
                         },
-                        "neighbourhood": "Pisa City Centre",
-                        "deals": {
-                            "secretPrice": {
-                                "dealText": "Save more with Secret Prices"
-                            },
-                            "priceReasoning": "DRR-443"
-                        },
-                        "messaging": {
-                            "scarcity": "1 left on our app"
-                        },
-                        "badging": {},
-                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
-                        "coordinate": {
-                            "lat": 43.71615,
-                            "lon": 10.40587
-                        },
-                        "roomsLeft": 1,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 1396682,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/2000000/1400000/1396700/1396682/5c13befb_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 2127200160,
-                        "name": "B&B Gli Archi",
-                        "starRating": 0.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "Via Carlo Goldoni 4",
-                            "extendedAddress": "",
-                            "locality": "Pisa",
-                            "postalCode": "56127",
-                            "region": "Provincia di Pisa",
-                            "countryName": "Italy",
-                            "countryCode": "it",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 2.0,
-                            "rating": "2.0",
-                            "total": 1,
-                            "scale": 10
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "1.2 miles"
-                            },
-                            {
-                                "label": "Pisa (PSA-Galileo Galilei)",
-                                "distance": "1.8 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "3,027 RUB",
-                                "exactCurrent": 3026.95,
-                                "fullyBundledPricePerStay": "total 3,440 RUB"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            },
-                            "type": "EC"
-                        },
-                        "neighbourhood": "Pisa",
+                        "neighbourhood": "Molins de Rei",
                         "deals": {},
                         "messaging": {
                             "scarcity": "1 left on our app"
                         },
                         "badging": {},
-                        "pimmsAttributes": "D13|HRW",
+                        "pimmsAttributes": "DoubleStamps|TESCO",
                         "coordinate": {
-                            "lat": 43.720365,
-                            "lon": 10.417432
+                            "lat": 41.40434,
+                            "lon": 2.021517
                         },
                         "roomsLeft": 1,
                         "providerType": "LOCAL",
-                        "supplierHotelId": 66443755,
+                        "supplierHotelId": 1353878,
                         "isAlternative": false,
                         "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/67000000/66450000/66443800/66443755/97db089d_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/2000000/1360000/1353900/1353878/04e1b956_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
                         }
                     },
                     {
-                        "id": 883331552,
-                        "name": "Relais le Ortensie",
-                        "starRating": 0.0,
+                        "id": 229610,
+                        "name": "Hotel SB BCN Events",
+                        "starRating": 4.5,
                         "urls": {},
                         "address": {
-                            "streetAddress": "Via delle Torri,7",
+                            "streetAddress": "Ronda De Can Rabada 22-24",
                             "extendedAddress": "",
-                            "locality": "Pisa",
-                            "postalCode": "56124",
+                            "locality": "Castelldefels",
+                            "postalCode": "08860",
                             "region": "",
-                            "countryName": "Italy",
-                            "countryCode": "it",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 8.8,
-                            "rating": "8.8",
-                            "total": 10,
-                            "scale": 10,
-                            "badge": "fabulous",
-                            "badgeText": "Fabulous"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "2.5 miles"
-                            },
-                            {
-                                "label": "Pisa (PSA-Galileo Galilei)",
-                                "distance": "1.8 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "3,219 RUB",
-                                "exactCurrent": 3218.57,
-                                "old": "3,587 RUB",
-                                "fullyBundledPricePerStay": "total 3,651 RUB"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            },
-                            "type": "EC"
-                        },
-                        "neighbourhood": "Pisa",
-                        "deals": {
-                            "secretPrice": {
-                                "dealText": "Save more with Secret Prices"
-                            },
-                            "priceReasoning": "DRR-443"
-                        },
-                        "messaging": {
-                            "scarcity": "1 left on our app"
-                        },
-                        "badging": {},
-                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
-                        "coordinate": {
-                            "lat": 43.70375,
-                            "lon": 10.43553
-                        },
-                        "roomsLeft": 1,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 27572861,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/28000000/27580000/27572900/27572861/d82e3c69_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 1215887232,
-                        "name": "Welcome Bed and Breakfast",
-                        "starRating": 0.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "Via Carlo Matteucci 30b",
-                            "extendedAddress": "",
-                            "locality": "Pisa",
-                            "postalCode": "56124",
-                            "region": "Provincia di Pisa",
-                            "countryName": "Italy",
-                            "countryCode": "it",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 6.0,
-                            "rating": "6.0",
-                            "total": 12,
-                            "scale": 10,
-                            "badge": "good",
-                            "badgeText": "Good"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "1.5 miles"
-                            },
-                            {
-                                "label": "Pisa (PSA-Galileo Galilei)",
-                                "distance": "1.3 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "3,353 RUB",
-                                "exactCurrent": 3353.25,
-                                "fullyBundledPricePerStay": "total 3,799 RUB"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            },
-                            "type": "EC"
-                        },
-                        "neighbourhood": "Pisa",
-                        "deals": {},
-                        "messaging": {
-                            "scarcity": "2 left on our app"
-                        },
-                        "badging": {},
-                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
-                        "coordinate": {
-                            "lat": 43.710686,
-                            "lon": 10.418322
-                        },
-                        "roomsLeft": 2,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 37965226,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/38000000/37970000/37965300/37965226/4bfb2286_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 397633,
-                        "name": "Casa Betania",
-                        "starRating": 0.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "Via Pungilupo 25/a",
-                            "extendedAddress": "",
-                            "locality": "Pisa",
-                            "postalCode": "56124",
-                            "region": "PI",
-                            "countryName": "Italy",
-                            "countryCode": "it",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 8.2,
-                            "rating": "8.2",
-                            "total": 354,
-                            "scale": 10,
-                            "badge": "very-good",
-                            "badgeText": "Very Good"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "2.0 miles"
-                            },
-                            {
-                                "label": "Pisa (PSA-Galileo Galilei)",
-                                "distance": "1.9 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "3,443 RUB",
-                                "exactCurrent": 3443.25,
-                                "old": "3,866 RUB",
-                                "fullyBundledPricePerStay": "total 3,898 RUB"
-                            },
-                            "features": {
-                                "freeCancellation": false,
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            },
-                            "type": "EC"
-                        },
-                        "neighbourhood": "Pisa",
-                        "deals": {
-                            "secretPrice": {
-                                "dealText": "Save more with Secret Prices"
-                            },
-                            "priceReasoning": "DRR-443"
-                        },
-                        "messaging": {
-                            "scarcity": "2 left on our app"
-                        },
-                        "badging": {},
-                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
-                        "coordinate": {
-                            "lat": 43.71329,
-                            "lon": 10.432856
-                        },
-                        "roomsLeft": 2,
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 4781000,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/5000000/4790000/4781000/4781000/d431bde5_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 218402,
-                        "name": "B&B Hotel Pisa",
-                        "starRating": 3.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "Via Scornigiana 1",
-                            "extendedAddress": "",
-                            "locality": "Pisa",
-                            "postalCode": "56121",
-                            "region": "PI",
-                            "countryName": "Italy",
-                            "countryCode": "it",
+                            "countryName": "Spain",
+                            "countryCode": "es",
                             "obfuscate": false
                         },
                         "welcomeRewards": {
@@ -678,7 +105,7 @@
                         "guestReviews": {
                             "unformattedRating": 8.0,
                             "rating": "8.0",
-                            "total": 608,
+                            "total": 1000,
                             "scale": 10,
                             "badge": "very-good",
                             "badgeText": "Very Good"
@@ -686,19 +113,237 @@
                         "landmarks": [
                             {
                                 "label": "City center",
-                                "distance": "3.1 miles"
+                                "distance": "12 miles"
                             },
                             {
-                                "label": "Pisa (PSA-Galileo Galilei)",
-                                "distance": "1.8 miles"
+                                "label": "Barcelona El Prat Airport (BCN)",
+                                "distance": "4.7 miles"
                             }
                         ],
                         "geoBullets": [],
                         "ratePlan": {
                             "price": {
-                                "current": "3,890 RUB",
-                                "exactCurrent": 3890.16,
-                                "fullyBundledPricePerStay": "total 4,390 RUB"
+                                "current": "7,766 RUB",
+                                "exactCurrent": 7765.63,
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 26,207 RUB for 3&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": true,
+                                "paymentPreference": true,
+                                "noCCRequired": false
+                            },
+                            "type": "Dual"
+                        },
+                        "neighbourhood": "Castelldefels",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "coordinate": {
+                            "lat": 41.2819,
+                            "lon": 1.99006
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 1157693,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/2000000/1160000/1157700/1157693/6d9fd157_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 567211,
+                        "name": "Mayerling Abamita Apartments",
+                        "starRating": 3.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Calle Ausias March, 25",
+                            "extendedAddress": "",
+                            "locality": "Barcelona",
+                            "postalCode": "08010",
+                            "region": "",
+                            "countryName": "Spain",
+                            "countryCode": "es",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 9.0,
+                            "rating": "9.0",
+                            "total": 101,
+                            "scale": 10,
+                            "badge": "superb",
+                            "badgeText": "Superb"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "0.9 miles"
+                            },
+                            {
+                                "label": "Barcelona El Prat Airport (BCN)",
+                                "distance": "7.9 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "9,919 RUB",
+                                "exactCurrent": 9919.05,
+                                "old": "15,260 RUB",
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 34,065 RUB for 3&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": true,
+                                "paymentPreference": true,
+                                "noCCRequired": false
+                            },
+                            "type": "Dual"
+                        },
+                        "neighbourhood": "Dreta de l'Eixample",
+                        "deals": {
+                            "secretPrice": {
+                                "dealText": "Save more with Secret Prices"
+                            },
+                            "priceReasoning": "DRR-445"
+                        },
+                        "messaging": {
+                            "scarcity": "1 left on our app"
+                        },
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "coordinate": {
+                            "lat": 41.39102,
+                            "lon": 2.17516
+                        },
+                        "roomsLeft": 1,
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 13227589,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/14000000/13230000/13227600/13227589/e71ba4ef_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 533614,
+                        "name": "Best Western Hotel Mediterraneo",
+                        "starRating": 4.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Passeig Maritim, 294",
+                            "extendedAddress": "",
+                            "locality": "Castelldefels",
+                            "postalCode": "08860",
+                            "region": "",
+                            "countryName": "Spain",
+                            "countryCode": "es",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.6,
+                            "rating": "8.6",
+                            "total": 298,
+                            "scale": 10,
+                            "badge": "fabulous",
+                            "badgeText": "Fabulous"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "13 miles"
+                            },
+                            {
+                                "label": "Barcelona El Prat Airport (BCN)",
+                                "distance": "6.5 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "10,024 RUB",
+                                "exactCurrent": 10023.56,
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 33,658 RUB for 3&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": true,
+                                "paymentPreference": true,
+                                "noCCRequired": false
+                            },
+                            "type": "Dual"
+                        },
+                        "neighbourhood": "Castelldefels",
+                        "deals": {},
+                        "messaging": {
+                            "scarcity": "1 left on our app"
+                        },
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "coordinate": {
+                            "lat": 41.26572,
+                            "lon": 1.96214
+                        },
+                        "roomsLeft": 1,
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 14618,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/20000/14700/14618/6446a2b4_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 262093,
+                        "name": "Hotel Ciudad de Castelldefels",
+                        "starRating": 3.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Paseo De La Marina 212",
+                            "extendedAddress": "",
+                            "locality": "Castelldefels",
+                            "postalCode": "08860",
+                            "region": "",
+                            "countryName": "Spain",
+                            "countryCode": "es",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.2,
+                            "rating": "8.2",
+                            "total": 707,
+                            "scale": 10,
+                            "badge": "very-good",
+                            "badgeText": "Very Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "13 miles"
+                            },
+                            {
+                                "label": "Barcelona El Prat Airport (BCN)",
+                                "distance": "6.2 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "10,871 RUB",
+                                "exactCurrent": 10871.25,
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 36,165 RUB for 3&nbsp;nights"
                             },
                             "features": {
                                 "freeCancellation": false,
@@ -707,23 +352,398 @@
                             },
                             "type": "EC"
                         },
-                        "neighbourhood": "Pisa",
+                        "neighbourhood": "Castelldefels",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "coordinate": {
+                            "lat": 41.26723,
+                            "lon": 1.96686
+                        },
+                        "providerType": "MULTISOURCE",
+                        "supplierHotelId": 10918,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/20000/11000/10918/c41175f9_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 126943,
+                        "name": "NH Barcelona Stadium",
+                        "starRating": 4.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Travessera de les Corts, 150",
+                            "extendedAddress": "",
+                            "locality": "Barcelona",
+                            "postalCode": "08028",
+                            "region": "",
+                            "countryName": "Spain",
+                            "countryCode": "es",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.4,
+                            "rating": "8.4",
+                            "total": 845,
+                            "scale": 10,
+                            "badge": "very-good",
+                            "badgeText": "Very Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "2.3 miles"
+                            },
+                            {
+                                "label": "Barcelona El Prat Airport (BCN)",
+                                "distance": "6.0 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "11,705 RUB",
+                                "exactCurrent": 11705.08,
+                                "old": "13,006 RUB",
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 40,298 RUB for 3&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "EC"
+                        },
+                        "neighbourhood": "La Maternitat i Sant Ramon",
+                        "deals": {
+                            "specialDeal": {
+                                "dealText": "Mobile exclusive: save 10%"
+                            },
+                            "priceReasoning": "DRR-444"
+                        },
+                        "messaging": {
+                            "scarcity": "4 left on our app"
+                        },
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|showFrequentlyAskedQuestionsenUS|TESCO",
+                        "coordinate": {
+                            "lat": 41.38149,
+                            "lon": 2.12682
+                        },
+                        "roomsLeft": 4,
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 578500,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/580000/578500/578500/0cc5cb1b_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 106325,
+                        "name": "Expo Hotel Barcelona",
+                        "starRating": 4.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Carrer de Mallorca,1-23",
+                            "extendedAddress": "",
+                            "locality": "Barcelona",
+                            "postalCode": "08014",
+                            "region": "",
+                            "countryName": "Spain",
+                            "countryCode": "es",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 7.8,
+                            "rating": "7.8",
+                            "total": 1520,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "1.4 miles"
+                            },
+                            {
+                                "label": "Barcelona El Prat Airport (BCN)",
+                                "distance": "6.3 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "11,709 RUB",
+                                "exactCurrent": 11708.86,
+                                "old": "14,636 RUB",
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 40,311 RUB for 3&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": true,
+                                "paymentPreference": true,
+                                "noCCRequired": false
+                            },
+                            "type": "Dual"
+                        },
+                        "neighbourhood": "Hostafrancs",
+                        "deals": {
+                            "secretPrice": {
+                                "dealText": "Save more with Secret Prices"
+                            },
+                            "priceReasoning": "DRR-445"
+                        },
+                        "messaging": {
+                            "scarcity": "2 left on our app"
+                        },
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO|showGoldContentDescriptionHCOMUSenUS",
+                        "coordinate": {
+                            "lat": 41.37909,
+                            "lon": 2.14302
+                        },
+                        "roomsLeft": 2,
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 1487,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/10000/1500/1487/9644ebae_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 265233,
+                        "name": "Hotel ILUNION Barcelona",
+                        "starRating": 4.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Calle Ramon Turó 196-198",
+                            "extendedAddress": "",
+                            "locality": "Barcelona",
+                            "postalCode": "08005",
+                            "region": "",
+                            "countryName": "Spain",
+                            "countryCode": "es",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.2,
+                            "rating": "8.2",
+                            "total": 1112,
+                            "scale": 10,
+                            "badge": "very-good",
+                            "badgeText": "Very Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "2.2 miles"
+                            },
+                            {
+                                "label": "Barcelona El Prat Airport (BCN)",
+                                "distance": "9.3 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "12,099 RUB",
+                                "exactCurrent": 12098.92,
+                                "old": "17,793 RUB",
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 41,598 RUB for 3&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "EC"
+                        },
+                        "neighbourhood": "Poblenou",
+                        "deals": {
+                            "specialDeal": {
+                                "dealText": "Save 32%"
+                            },
+                            "priceReasoning": "DRR-446"
+                        },
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "coordinate": {
+                            "lat": 41.39916,
+                            "lon": 2.20194
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 1874136,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/2000000/1880000/1874200/1874136/4b5efcc6_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 130860,
+                        "name": "NH Barcelona Entenza",
+                        "starRating": 3.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Carrer de l'Ecuador, 20",
+                            "extendedAddress": "",
+                            "locality": "Barcelona",
+                            "postalCode": "08029",
+                            "region": "",
+                            "countryName": "Spain",
+                            "countryCode": "es",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.2,
+                            "rating": "8.2",
+                            "total": 471,
+                            "scale": 10,
+                            "badge": "very-good",
+                            "badgeText": "Very Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "1.7 miles"
+                            },
+                            {
+                                "label": "Barcelona El Prat Airport (BCN)",
+                                "distance": "6.6 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "12,195 RUB",
+                                "exactCurrent": 12194.88,
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 41,576 RUB for 3&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "EC"
+                        },
+                        "neighbourhood": "Les Corts",
                         "deals": {},
                         "messaging": {
                             "scarcity": "1 left on our app"
                         },
                         "badging": {},
-                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "pimmsAttributes": "DoubleStamps|D13|showFrequentlyAskedQuestionsenUS|TESCO",
                         "coordinate": {
-                            "lat": 43.687415,
-                            "lon": 10.432655
+                            "lat": 41.38564,
+                            "lon": 2.14041
                         },
                         "roomsLeft": 1,
                         "providerType": "LOCAL",
-                        "supplierHotelId": 1000797,
+                        "supplierHotelId": 523298,
                         "isAlternative": false,
                         "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/2000000/1010000/1000800/1000797/f1a8680c_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/530000/523300/523298/14b46eb6_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 229117,
+                        "name": "Sallés Hotel Pere IV",
+                        "starRating": 4.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "C/Pallars,128",
+                            "extendedAddress": "",
+                            "locality": "Barcelona",
+                            "postalCode": "08018",
+                            "region": "",
+                            "countryName": "Spain",
+                            "countryCode": "es",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.2,
+                            "rating": "8.2",
+                            "total": 1001,
+                            "scale": 10,
+                            "badge": "very-good",
+                            "badgeText": "Very Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "1.7 miles"
+                            },
+                            {
+                                "label": "Barcelona El Prat Airport (BCN)",
+                                "distance": "8.8 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "12,196 RUB",
+                                "exactCurrent": 12195.59,
+                                "old": "13,551 RUB",
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 41,917 RUB for 3&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": true,
+                                "paymentPreference": true,
+                                "noCCRequired": false
+                            },
+                            "type": "Dual"
+                        },
+                        "neighbourhood": "El Parc i la Llacuna del Poblenou",
+                        "deals": {
+                            "specialDeal": {
+                                "dealText": "Mobile exclusive: save 10%"
+                            },
+                            "priceReasoning": "DRR-444"
+                        },
+                        "messaging": {},
+                        "badging": {
+                            "hotelBadge": {
+                                "type": "vipBasic",
+                                "label": "VIP"
+                            }
+                        },
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "coordinate": {
+                            "lat": 41.39671,
+                            "lon": 2.19271
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 904455,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/910000/904500/904455/cd9dd2fc_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
                         }
                     }
                 ],
@@ -783,83 +803,83 @@
                                 "choices": [
                                     {
                                         "label": "City center",
-                                        "id": 709345.0
+                                        "id": 444495.0
                                     },
                                     {
-                                        "label": "Basilica of St. Peter the Apostle",
-                                        "id": 1730956.0
+                                        "label": "Barcelona Cathedral",
+                                        "id": 1655176.0
                                     },
                                     {
-                                        "label": "Church of Santa Caterina d'Alessandria",
-                                        "id": 1657276.0
+                                        "label": "Barcelona International Convention Centre",
+                                        "id": 1695581.0
                                     },
                                     {
-                                        "label": "Cisanello Hospital",
-                                        "id": 11129292.0
+                                        "label": "Barceloneta Beach",
+                                        "id": 1721240.0
                                     },
                                     {
-                                        "label": "Congress Palace",
-                                        "id": 1713246.0
+                                        "label": "Boqueria Market",
+                                        "id": 1711532.0
                                     },
                                     {
-                                        "label": "Golf and Country Club Cosmopolitan",
-                                        "id": 1686375.0
+                                        "label": "Camp Nou",
+                                        "id": 1655141.0
                                     },
                                     {
-                                        "label": "Knight's Square",
-                                        "id": 1657255.0
+                                        "label": "Casino Barcelona",
+                                        "id": 1752261.0
                                     },
                                     {
-                                        "label": "Leaning Tower",
-                                        "id": 1637377.0
+                                        "label": "Fira Barcelona",
+                                        "id": 1710381.0
                                     },
                                     {
-                                        "label": "Luna Park",
-                                        "id": 1657294.0
+                                        "label": "La Rambla",
+                                        "id": 501.0
                                     },
                                     {
-                                        "label": "Medici Palace",
-                                        "id": 1657256.0
+                                        "label": "Olympic Stadium",
+                                        "id": 1433.0
                                     },
                                     {
-                                        "label": "Mezzogiorno",
-                                        "id": 1734947.0
+                                        "label": "Palau Sant Jordi",
+                                        "id": 1747042.0
                                     },
                                     {
-                                        "label": "Piazza dei Miracoli",
-                                        "id": 1657283.0
+                                        "label": "Passeig de Gracia",
+                                        "id": 1094.0
                                     },
                                     {
-                                        "label": "Piazza del Duomo",
-                                        "id": 1735222.0
+                                        "label": "Placa d'Espanya",
+                                        "id": 1655147.0
                                     },
                                     {
-                                        "label": "Piazza Vittorio Emanuele II",
-                                        "id": 1730973.0
+                                        "label": "Placa de Catalunya",
+                                        "id": 450.0
                                     },
                                     {
-                                        "label": "Pisan University Hospital",
-                                        "id": 1718372.0
+                                        "label": "Port de Barcelona",
+                                        "id": 11130198.0
                                     },
                                     {
-                                        "label": "San Rossore Hospital",
-                                        "id": 1739770.0
+                                        "label": "Port Olimpic",
+                                        "id": 1655172.0
                                     },
                                     {
-                                        "label": "Sant'Anna School of Advanced Studies",
-                                        "id": 1713245.0
+                                        "label": "Port Vell",
+                                        "id": 1655167.0
                                     },
                                     {
-                                        "label": "Sunlight Park",
-                                        "id": 1793878.0
+                                        "label": "Rambla de Mar",
+                                        "id": 1655223.0
                                     },
                                     {
-                                        "label": "Torre dei Gualandi",
-                                        "id": 1657285.0
+                                        "label": "Rambla del Raval",
+                                        "id": 1903266.0
                                     },
                                     {
-                                        "label": "University of Pisa",
-                                        "id": 1657286.0
+                                        "label": "Sagrada Familia",
+                                        "id": 1274.0
                                     }
                                 ]
                             },
@@ -868,16 +888,84 @@
                                 "itemMeta": "stations",
                                 "choices": [
                                     {
-                                        "label": "Pisa Aeroporto Station",
-                                        "id": 143966208.0
+                                        "label": "Aeroport Station",
+                                        "id": 1702602.0
                                     },
                                     {
-                                        "label": "Pisa Central Station",
-                                        "id": 1706985.0
+                                        "label": "Bac de Roda Station",
+                                        "id": 1702394.0
                                     },
                                     {
-                                        "label": "Pisa San Rossore Station",
-                                        "id": 1706979.0
+                                        "label": "Barcelona L'Hospitalet de Llobregat Station",
+                                        "id": 1732991.0
+                                    },
+                                    {
+                                        "label": "Barcelona La Sagrera - Meridiana Station",
+                                        "id": 1733171.0
+                                    },
+                                    {
+                                        "label": "Barcelona North Bus Station",
+                                        "id": 1751316.0
+                                    },
+                                    {
+                                        "label": "Barcelona Paseo de Gracia Station",
+                                        "id": 1710191.0
+                                    },
+                                    {
+                                        "label": "Barcelona-Sants Station",
+                                        "id": 1710199.0
+                                    },
+                                    {
+                                        "label": "Castelldefels Station",
+                                        "id": 1733031.0
+                                    },
+                                    {
+                                        "label": "Clot Station",
+                                        "id": 1702355.0
+                                    },
+                                    {
+                                        "label": "Collblanc Station",
+                                        "id": 1702518.0
+                                    },
+                                    {
+                                        "label": "Europa - Fira Station",
+                                        "id": 1702595.0
+                                    },
+                                    {
+                                        "label": "Jaume I Station",
+                                        "id": 1702481.0
+                                    },
+                                    {
+                                        "label": "Passeig de Gracia Station",
+                                        "id": 1702380.0
+                                    },
+                                    {
+                                        "label": "Placa Catalunya Station",
+                                        "id": 1702537.0
+                                    },
+                                    {
+                                        "label": "Plaça de Catalunya Station",
+                                        "id": 1702354.0
+                                    },
+                                    {
+                                        "label": "Poble Sec Station",
+                                        "id": 1702370.0
+                                    },
+                                    {
+                                        "label": "Sants Station",
+                                        "id": 1702419.0
+                                    },
+                                    {
+                                        "label": "Tarragona Metro Station",
+                                        "id": 1702420.0
+                                    },
+                                    {
+                                        "label": "Universitat Station",
+                                        "id": 1702367.0
+                                    },
+                                    {
+                                        "label": "Urgell Station",
+                                        "id": 1702368.0
                                     }
                                 ]
                             },
@@ -886,8 +974,8 @@
                                 "itemMeta": "airports",
                                 "choices": [
                                     {
-                                        "label": "Pisa (PSA-Galileo Galilei)",
-                                        "id": 700303.0
+                                        "label": "Barcelona El Prat Airport (BCN)",
+                                        "id": 439721.0
                                     }
                                 ]
                             }
@@ -924,7 +1012,7 @@
                         "enhancedChoices": []
                     }
                 ],
-                "distanceOptionLandmarkId": 709345.0
+                "distanceOptionLandmarkId": 444495.0
             },
             "filters": {
                 "applied": false,
@@ -934,9 +1022,9 @@
                     },
                     "autosuggest": {
                         "additionalUrlParams": {
-                            "resolved-location": "CITY:709345:UNKNOWN:UNKNOWN",
-                            "q-destination": "Pisa, Tuscany, Italy",
-                            "destination-id": "709345"
+                            "resolved-location": "CITY:444495:UNKNOWN:UNKNOWN",
+                            "q-destination": "Barcelona, Barcelona, Catalonia, Spain",
+                            "destination-id": "444495"
                         }
                     }
                 },
@@ -975,83 +1063,83 @@
                     "items": [
                         {
                             "label": "City center",
-                            "value": "709345"
+                            "value": "444495"
                         },
                         {
-                            "label": "Pisa (PSA-Galileo Galilei)",
-                            "value": "700303"
+                            "label": "Barcelona El Prat Airport (BCN)",
+                            "value": "439721"
                         },
                         {
-                            "label": "Leaning Tower",
-                            "value": "1637377"
+                            "label": "Sagrada Familia",
+                            "value": "1274"
                         },
                         {
-                            "label": "Pisa Central Station",
-                            "value": "1706985"
+                            "label": "Rambla de Mar",
+                            "value": "1655223"
                         },
                         {
-                            "label": "Cisanello Hospital",
-                            "value": "11129292"
+                            "label": "Passeig de Gracia",
+                            "value": "1094"
                         },
                         {
-                            "label": "Pisan University Hospital",
-                            "value": "1718372"
+                            "label": "Barceloneta Beach",
+                            "value": "1721240"
                         },
                         {
-                            "label": "University of Pisa",
-                            "value": "1657286"
+                            "label": "Camp Nou",
+                            "value": "1655141"
                         },
                         {
-                            "label": "San Rossore Hospital",
-                            "value": "1739770"
+                            "label": "Placa Catalunya Station",
+                            "value": "1702537"
                         },
                         {
-                            "label": "Piazza dei Miracoli",
-                            "value": "1657283"
+                            "label": "Plaça de Catalunya Station",
+                            "value": "1702354"
                         },
                         {
-                            "label": "Church of Santa Caterina d'Alessandria",
-                            "value": "1657276"
+                            "label": "Rambla del Raval",
+                            "value": "1903266"
                         },
                         {
-                            "label": "Piazza del Duomo",
-                            "value": "1735222"
+                            "label": "Barcelona-Sants Station",
+                            "value": "1710199"
                         },
                         {
-                            "label": "Pisa San Rossore Station",
-                            "value": "1706979"
+                            "label": "Port de Barcelona",
+                            "value": "11130198"
                         },
                         {
-                            "label": "Luna Park",
-                            "value": "1657294"
+                            "label": "Placa d'Espanya",
+                            "value": "1655147"
                         },
                         {
-                            "label": "Medici Palace",
-                            "value": "1657256"
+                            "label": "Port Vell",
+                            "value": "1655167"
                         },
                         {
-                            "label": "Congress Palace",
-                            "value": "1713246"
+                            "label": "Boqueria Market",
+                            "value": "1711532"
                         },
                         {
-                            "label": "Knight's Square",
-                            "value": "1657255"
+                            "label": "Barcelona Cathedral",
+                            "value": "1655176"
                         },
                         {
-                            "label": "Mezzogiorno",
-                            "value": "1734947"
+                            "label": "Sants Station",
+                            "value": "1702419"
                         },
                         {
-                            "label": "Golf and Country Club Cosmopolitan",
-                            "value": "1686375"
+                            "label": "Fira Barcelona",
+                            "value": "1710381"
                         },
                         {
-                            "label": "Piazza Vittorio Emanuele II",
-                            "value": "1730973"
+                            "label": "Olympic Stadium",
+                            "value": "1433"
                         },
                         {
-                            "label": "Basilica of St. Peter the Apostle",
-                            "value": "1730956"
+                            "label": "La Rambla",
+                            "value": "501"
                         }
                     ],
                     "distance": []
@@ -1060,8 +1148,228 @@
                     "applied": false,
                     "items": [
                         {
-                            "label": "Pisa City Centre",
-                            "value": "10819306"
+                            "label": "Barceloneta",
+                            "value": "1768432"
+                        },
+                        {
+                            "label": "Gothic Quarter",
+                            "value": "131"
+                        },
+                        {
+                            "label": "Eixample",
+                            "value": "1649520"
+                        },
+                        {
+                            "label": "Gracia",
+                            "value": "1649519"
+                        },
+                        {
+                            "label": "El Born",
+                            "value": "1764457"
+                        },
+                        {
+                            "label": "La Sagrada Familia",
+                            "value": "10817029"
+                        },
+                        {
+                            "label": "Sants-Montjuic",
+                            "value": "1649518"
+                        },
+                        {
+                            "label": "Ciutat Vella",
+                            "value": "1649521"
+                        },
+                        {
+                            "label": "Sants",
+                            "value": "10816999"
+                        },
+                        {
+                            "label": "Les Corts",
+                            "value": "1649516"
+                        },
+                        {
+                            "label": "Diagonal Mar i el Front Maritim del Poblenou",
+                            "value": "1908530"
+                        },
+                        {
+                            "label": "Sant Marti",
+                            "value": "1649517"
+                        },
+                        {
+                            "label": "La Vila Olimpica del Poblenou",
+                            "value": "1906440"
+                        },
+                        {
+                            "label": "El Raval",
+                            "value": "1695319"
+                        },
+                        {
+                            "label": "Poblenou",
+                            "value": "1695322"
+                        },
+                        {
+                            "label": "La Ribera",
+                            "value": "1695320"
+                        },
+                        {
+                            "label": "El Poble-sec",
+                            "value": "1906438"
+                        },
+                        {
+                            "label": "Dreta de l'Eixample",
+                            "value": "1908545"
+                        },
+                        {
+                            "label": "Pedralbes",
+                            "value": "10817000"
+                        },
+                        {
+                            "label": "la Vila de Gràcia",
+                            "value": "10817002"
+                        },
+                        {
+                            "label": "Esquerra de l'Eixample",
+                            "value": "1908547"
+                        },
+                        {
+                            "label": "El Clot",
+                            "value": "10817061"
+                        },
+                        {
+                            "label": "Sant Antoni",
+                            "value": "10817030"
+                        },
+                        {
+                            "label": "Collblanc y La Torrassa",
+                            "value": "11056730"
+                        },
+                        {
+                            "label": "La Nova Esquerra de l'Eixample",
+                            "value": "10817010"
+                        },
+                        {
+                            "label": "Provençals del Poblenou",
+                            "value": "10817055"
+                        },
+                        {
+                            "label": "Sarria",
+                            "value": "1695170"
+                        },
+                        {
+                            "label": "Sant Gervasi – la Bonanova",
+                            "value": "10817034"
+                        },
+                        {
+                            "label": "El Besòs i el Maresme",
+                            "value": "10817078"
+                        },
+                        {
+                            "label": "L'Antiga Esquerra de l'Eixample",
+                            "value": "10816997"
+                        },
+                        {
+                            "label": "El Parc i la Llacuna del Poblenou",
+                            "value": "10817019"
+                        },
+                        {
+                            "label": "Sant Gervasi",
+                            "value": "1695323"
+                        },
+                        {
+                            "label": "el Fort Pienc",
+                            "value": "10816996"
+                        },
+                        {
+                            "label": "Les Tres Torres",
+                            "value": "10817015"
+                        },
+                        {
+                            "label": "La Bordeta",
+                            "value": "10817012"
+                        },
+                        {
+                            "label": "La Maternitat i Sant Ramon",
+                            "value": "10817013"
+                        },
+                        {
+                            "label": "La Marina del Prat Vermell",
+                            "value": "10817011"
+                        },
+                        {
+                            "label": "El Baix Guinardó",
+                            "value": "10817047"
+                        },
+                        {
+                            "label": "Navas",
+                            "value": "10817018"
+                        },
+                        {
+                            "label": "El Camp de l'Arpa del Clot",
+                            "value": "10817060"
+                        },
+                        {
+                            "label": "Sants-Badal",
+                            "value": "10817033"
+                        },
+                        {
+                            "label": "La Salut",
+                            "value": "10817001"
+                        },
+                        {
+                            "label": "El Guinardó",
+                            "value": "10817039"
+                        },
+                        {
+                            "label": "El Carmel",
+                            "value": "10817016"
+                        },
+                        {
+                            "label": "Hostafrancs",
+                            "value": "10816998"
+                        },
+                        {
+                            "label": "El Putget i Farró",
+                            "value": "10817035"
+                        },
+                        {
+                            "label": "el Camp d'en Grassot i Gràcia Nova",
+                            "value": "10817037"
+                        },
+                        {
+                            "label": "Vallcarca i els Penitents",
+                            "value": "10817036"
+                        },
+                        {
+                            "label": "La Font de la Guatlla",
+                            "value": "10817032"
+                        },
+                        {
+                            "label": "Sant Pere",
+                            "value": "10816995"
+                        },
+                        {
+                            "label": "El Coll",
+                            "value": "10817046"
+                        },
+                        {
+                            "label": "La Font d'en Fargues",
+                            "value": "10817048"
+                        },
+                        {
+                            "label": "Sant Martí de Provençals",
+                            "value": "10817056"
+                        },
+                        {
+                            "label": "Can Baró",
+                            "value": "10817038"
+                        },
+                        {
+                            "label": "Downtown Barcelona",
+                            "value": "1747049"
+                        },
+                        {
+                            "label": "El Port",
+                            "value": "553248635976398465"
                         }
                     ]
                 },
@@ -1083,14 +1391,6 @@
                         {
                             "label": "B&Bs",
                             "value": "5"
-                        },
-                        {
-                            "label": "Cabins and lodges",
-                            "value": "9"
-                        },
-                        {
-                            "label": "Caravan parks",
-                            "value": "21"
                         },
                         {
                             "label": "Chalets",
@@ -1121,12 +1421,8 @@
                             "value": "16"
                         },
                         {
-                            "label": "Inns",
-                            "value": "8"
-                        },
-                        {
-                            "label": "Resorts",
-                            "value": "3"
+                            "label": "Pensions",
+                            "value": "25"
                         },
                         {
                             "label": "Vacation homes",
@@ -1220,10 +1516,6 @@
                         {
                             "label": "Ski-in/ski-out",
                             "value": "535"
-                        },
-                        {
-                            "label": "Ski shuttle",
-                            "value": "531"
                         },
                         {
                             "label": "Ski storage",
@@ -1328,6 +1620,10 @@
                             "value": "1"
                         },
                         {
+                            "label": "Shopping",
+                            "value": "17"
+                        },
+                        {
                             "label": "Ski",
                             "value": "28"
                         },
@@ -1361,10 +1657,6 @@
                             "value": "fc"
                         },
                         {
-                            "label": "Book without card details",
-                            "value": "ncc"
-                        },
-                        {
                             "label": "Pay with Hotels.com gift card",
                             "value": "gc"
                         }
@@ -1393,12 +1685,12 @@
                 }
             },
             "miscellaneous": {
-                "pageViewBeaconUrl": "/taps/v1/PageView?deviceType=App-Phone&sort-order=PRICE&rooms=1&destRegionID=709345&hotelIds=480122,388997,454749,1213474944,237461,2127200160,883331552,1215887232,397633,218402&adults=1&userAgent=Hotels.com/Android%2080.0.1.9.release-80_0%20(80000660)&userGuid=9cf8f61a-7237-4074-b8a5-f7c3be235975&pageName=Hotel-Search&slots=HSR_A,HSR_B,HSR_C,HSR_D,HSR_E,HSR_F,HSR_G,HSR_H,HSR_I,HSR_J&checkIn=2022-05-04&children=0&culture=en_US&testVersionOverride=4961.0,904.0,7561.0,7215.0,8218.0,8711.0,8928.1,9008.0,8347.2,9004.0,8952.0,7992.2,8915.0,9729.0,9864.0,10155.0,10185.0,10473.0,10320.0,10361.0&domain=www.hotels.com&userIP=108.198.227.191&action=pageview&publisher=expedia&checkOut=2022-05-05&programId=1",
+                "pageViewBeaconUrl": "/taps/v1/PageView?deviceType=App-Phone&sort-order=PRICE&rooms=1&destRegionID=444495&hotelIds=263227,229610,567211,533614,262093,126943,106325,265233,130860,229117&adults=2&userAgent=Hotels.com/Android%2080.0.1.9.release-80_0%20(80000660)&userGuid=d2c414f5-6d56-42e9-a256-70c16dccbabb&pageName=Hotel-Search&slots=HSR_A,HSR_B,HSR_C,HSR_D,HSR_E,HSR_F,HSR_G,HSR_H,HSR_I,HSR_J&checkIn=2022-05-12&children=0&culture=en_US&testVersionOverride=4961.0,904.0,7561.0,7215.0,8218.0,8711.0,8928.1,9008.0,8347.2,9004.0,8952.0,7992.2,8915.0,9729.0,9864.0,10155.0,10185.0,10473.0,10320.0,10361.0&domain=www.hotels.com&userIP=127.0.0.1&action=pageview&publisher=expedia&checkOut=2022-05-15&programId=1",
                 "showLegalInfoForStrikethroughPrices": true,
                 "legalInfoForStrikethroughPrices": "The struck-out price is based on the property’s standard rate on our app, as determined and supplied by the property.",
                 "compressionMessaging": {
-                    "percentage": 87,
-                    "popularityMessage": "We are 87% booked! Pisa is popular for your travel dates."
+                    "percentage": 95,
+                    "popularityMessage": "We are 95% booked! Barcelona is popular for your travel dates."
                 }
             },
             "pageInfo": {
@@ -1414,50 +1706,50 @@
                 "omniture": {
                     "s.prop33": "D=v33",
                     "s.prop32": "D=v43",
-                    "s.prop74": "search result with dates | ms shown | N",
-                    "s.products": "LOCAL;9402958,LOCAL;4569749,LOCAL;7994032",
+                    "s.prop74": "search result with dates | ms shown | Y",
+                    "s.products": "LOCAL;1353878,MULTISOURCE;1157693,MULTISOURCE;13227589",
                     "s.eVar16": "Mob :: aApp",
                     "s.eVar40": "D=v0",
                     "s.eVar41": "RUB",
-                    "s.eVar63": "119b8b00-39d9-466c-baaf-78bbda89adca",
-                    "s.eVar42": "0|1|20220504|20220505",
+                    "s.eVar63": "0f49b003-93c2-424f-90ed-deed530b4c33",
+                    "s.eVar42": "1|3|20220512|20220515",
                     "s.eVar4": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
                     "s.eVar43": "en_US|HCOM_US|www.hotels.com",
-                    "s.eVar3": "1|0",
-                    "s.eVar22": "1|RUB|24:480122:1274.1600:1274.1600:0|24:388997:1407.8300:1337.4400:0|24:454749:2582.2600:2582.2600:0|24:1213474944:2931.2300:2638.1100:0|24:237461:3138.9600:2825.0600:0",
-                    "s.eVar2": "Pisa, Tuscany, Italy",
-                    "s.eVar23": "1|RUB|24:2127200160:3026.9500:3026.9500:0|24:883331552:3587.4600:3218.5700:0|24:1215887232:3353.2500:3353.2500:0|24:397633:3865.8000:3443.2500:0|24:218402:3890.1600:3890.1600:0",
+                    "s.eVar3": "2|0",
+                    "s.eVar22": "1|RUB|24:263227:6997.0600:6997.0600:0|24:229610:7765.6267:7765.6267:0|24:567211:15260.1233:9919.0533:0|24:533614:10023.5633:10023.5633:0|24:262093:10871.2533:10871.2533:0",
+                    "s.eVar2": "Barcelona, Barcelona, Catalonia, Spain",
+                    "s.eVar23": "1|RUB|24:126943:13005.6467:11705.0800:1|24:106325:14636.0733:11708.8567:0|24:265233:17792.5267:12098.9167:1|24:130860:12194.8767:12194.8767:0|24:229117:13550.7067:12195.5900:1",
                     "s.eVar24": "MCTC=20;TU=NA;PDID=NULL;MVT=",
-                    "s.eVar7": "0",
+                    "s.eVar7": "1",
                     "s.server": "www.hotels.com",
-                    "s.eVar6": "709345",
+                    "s.eVar6": "444495",
                     "s.prop29": "D=v42",
                     "s.eVar5": "1",
-                    "s.prop27": "9cf8f61a-7237-4074-b8a5-f7c3be235975",
+                    "s.prop27": "d2c414f5-6d56-42e9-a256-70c16dccbabb",
                     "s.eVar9": "Price - low to high",
                     "s.prop21": "0",
-                    "s.prop20": "1",
+                    "s.prop20": "2",
                     "s.eVar69": "Mob :: aApp",
                     "s.currencyCode": "RUB",
-                    "s.eVar26": "US:TX:FORTWORTH:623",
+                    "s.eVar26": "US:LA:SLIDELL:622",
                     "s.eVar29": "Mob :: aApp",
-                    "s.prop9": "4960",
+                    "s.prop9": "2303",
                     "s.eVar95": "Unknown",
-                    "s.prop7": "1558",
+                    "s.prop7": "545",
                     "s.eVar31": "D=v0",
                     "s.eVar32": "D=v0",
                     "s.eVar33": "search result with dates",
-                    "s.eVar34": "H1871:007.002,M376:000.000,M904:000.000,M3736:000.000,M4200:000.000,M4440.2,M4869:001.000,M4952:050.000,M4961:001.000,M5184:001.000,M5342:000.000,M5663:000.000,M6388:000.000,M6775:000.000,M6779:000.000,M7015.1,M7192:000.000,M7215:000.000,M7296:000.000,M7305:000.000,M7306:000.000,M7353:000.000,M7362.1,M7552:023.001,M7763:000.000,M7765.2,M7870:000.000,M7895:000.000,M8130:000.001,M8336:000.000,M8347:019.002,M8405:002.001,M8483:000.000,M8692:000.000,M8693:000.000,M8698:000.000,M8708:000.000,M8718:000.000,M8915:000.000,M8928:019.001,M8952:000.000,M8954:000.000,M8976:000.000,M8992:000.000,M9035:000.000,M9220:000.000,M9281:000.000,M9282:000.000,M9297:000.000,M9301:000.000,M9351:000.000,M9420:000.000,M9431:000.000,M9434:000.000,M9469:000.000,M9549:000.000,M9567.1,M9691:000.000,M9693:000.000,M9699:004.001,M9729:000.000,M9752:000.000,M9771.0,M9864:000.000,M9924:000.000,M9961:000.000,M9971:000.000,M10001:000.000,M10007:000.000,M10013:002.001,M10086:000.000,M10121:000.000,M10137:000.000,M10155:000.000,M10185:000.000,M10248:000.000,M10259:000.000,M10282:000.000,M10300:000.000,M10320:000.000,M10361:000.000,M10473:000.000,M10482:000.000,M9215:001.001",
+                    "s.eVar34": "H1871:007.002,M376:000.000,M904:000.000,M3736:000.000,M4200:000.000,M4440.2,M4869:001.000,M4952:050.001,M4961:001.000,M5184:001.000,M5342:000.000,M5663:000.000,M6388:000.000,M6775:000.000,M6779:000.000,M7015.1,M7192:000.000,M7215:000.000,M7296:000.000,M7305:000.000,M7306:000.000,M7353:000.000,M7362.1,M7552:023.001,M7763:000.000,M7765.2,M7870:000.000,M7895:000.000,M8336:000.000,M8347:019.002,M8405:002.001,M8483:000.000,M8692:000.000,M8693:000.000,M8698:000.000,M8708:000.000,M8718:000.000,M8915:000.000,M8928:019.001,M8952:000.000,M8954:000.000,M8976:000.000,M8992:000.000,M9035:000.000,M9220:000.000,M9281:000.000,M9282:000.000,M9297:000.000,M9301:000.000,M9351:000.000,M9420:000.000,M9431:000.000,M9469:000.000,M9549:000.000,M9567.1,M9691:000.000,M9693:000.000,M9699:004.001,M9729:000.000,M9752:000.000,M9771.0,M9864:000.000,M9924:000.000,M9961:000.000,M9971:000.000,M10001:000.000,M10007:000.000,M10013:002.001,M10086:000.000,M10121:000.000,M10137:000.000,M10155:000.000,M10185:000.000,M10248:000.000,M10259:000.000,M10282:000.000,M10300:000.000,M10320:000.000,M10361:000.000,M10473:000.000,M10482:000.000,M9215:001.000",
                     "s.eVar13": "389367",
                     "s.prop19": "1",
                     "s.events": "event324,event320",
                     "s.prop18": "D=v6",
                     "s.prop5": "389367",
-                    "s.prop15": "1",
-                    "s.prop3": "Pisa, Tuscany, Italy",
+                    "s.prop15": "3",
+                    "s.prop3": "Barcelona, Barcelona, Catalonia, Spain",
                     "s.prop14": "D=v7",
                     "s.prop36": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
-                    "s.eVar93": "aws.us-east-1.unknown",
+                    "s.eVar93": "aws.us-west-2.unknown",
                     "s.prop2": "Price - low to high"
                 }
             }

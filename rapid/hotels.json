@@ -1,0 +1,644 @@
+{
+    "result": "OK",
+    "data": {
+        "body": {
+            "header": "Gomel, Homiel Province, Belarus",
+            "query": {
+                "destination": {
+                    "id": "1643737",
+                    "value": "Gomel, Homiel Province, Belarus",
+                    "resolvedLocation": "CITY:1643737:UNKNOWN:UNKNOWN"
+                }
+            },
+            "searchResults": {
+                "totalCount": 10,
+                "results": [
+                    {
+                        "id": 1167559808,
+                        "name": "City Hotel",
+                        "starRating": 3.5,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Prospect Oktiabria, 46, Gomel, Belarus",
+                            "extendedAddress": "",
+                            "locality": "Gomel",
+                            "postalCode": "246029",
+                            "region": "Gomel",
+                            "countryName": "Belarus",
+                            "countryCode": "by",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.2,
+                            "rating": "8.2",
+                            "total": 7,
+                            "scale": 10,
+                            "badge": "very-good",
+                            "badgeText": "Very Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "2.3 miles"
+                            },
+                            {
+                                "label": "Palace of Rumyantsev-Paskevich",
+                                "distance": "3.3 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "1,372 RUB",
+                                "exactCurrent": 1372.04,
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 3,293 RUB for 2&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": true,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "HC"
+                        },
+                        "neighbourhood": "Saviecki District",
+                        "deals": {},
+                        "messaging": {
+                            "scarcity": "2 left on our app"
+                        },
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "coordinate": {
+                            "lat": 52.4057,
+                            "lon": 30.9423
+                        },
+                        "roomsLeft": 2,
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 36454994,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/37000000/36460000/36455000/36454994/27838162_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 1969854592,
+                        "name": "PaulMarie Apartments on Kozhara",
+                        "starRating": 3.5,
+                        "urls": {},
+                        "address": {
+                            "locality": "Gomel",
+                            "region": "Homielskaja voblasc",
+                            "countryName": "Belarus",
+                            "countryCode": "by",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "1.7 miles"
+                            },
+                            {
+                                "label": "Palace of Rumyantsev-Paskevich",
+                                "distance": "2.0 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "1,723 RUB",
+                                "exactCurrent": 1723.0,
+                                "old": "1,914 RUB",
+                                "info": "nightly price per unit",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 4,135 RUB for 2&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": true,
+                                "paymentPreference": true,
+                                "noCCRequired": false
+                            },
+                            "type": "Dual"
+                        },
+                        "neighbourhood": "Centraĺny District",
+                        "deals": {
+                            "secretPrice": {
+                                "dealText": "Save more with Secret Prices"
+                            },
+                            "priceReasoning": "DRR-443"
+                        },
+                        "messaging": {
+                            "scarcity": "1 left on our app"
+                        },
+                        "badging": {},
+                        "pimmsAttributes": "D13|HRW",
+                        "coordinate": {
+                            "lat": 52.45085,
+                            "lon": 31.000132
+                        },
+                        "roomsLeft": 1,
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 61526706,
+                        "vrBadge": "Apartment",
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/62000000/61530000/61526800/61526706/a584fbbe_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 1969909664,
+                        "name": "PaulMarie Apartments on Mazurova",
+                        "starRating": 3.5,
+                        "urls": {},
+                        "address": {
+                            "locality": "Gomel",
+                            "region": "Homielskaja voblasc",
+                            "countryName": "Belarus",
+                            "countryCode": "by",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "2.3 miles"
+                            },
+                            {
+                                "label": "Palace of Rumyantsev-Paskevich",
+                                "distance": "1.9 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "1,821 RUB",
+                                "exactCurrent": 1821.46,
+                                "old": "2,024 RUB",
+                                "info": "nightly price per unit",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total 4,372 RUB for 2&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": true,
+                                "paymentPreference": true,
+                                "noCCRequired": false
+                            },
+                            "type": "Dual"
+                        },
+                        "neighbourhood": "Centraĺny District",
+                        "deals": {
+                            "secretPrice": {
+                                "dealText": "Save more with Secret Prices"
+                            },
+                            "priceReasoning": "DRR-443"
+                        },
+                        "messaging": {
+                            "scarcity": "1 left on our app"
+                        },
+                        "badging": {},
+                        "pimmsAttributes": "D13|HRW",
+                        "coordinate": {
+                            "lat": 52.450778,
+                            "lon": 31.022655
+                        },
+                        "roomsLeft": 1,
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 61528427,
+                        "vrBadge": "Apartment",
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/62000000/61530000/61528500/61528427/727849da_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    }
+                ],
+                "pagination": {
+                    "currentPage": 1,
+                    "pageGroup": "EXPEDIA_IN_POLYGON",
+                    "nextPageStartIndex": 3,
+                    "nextPageNumber": 1,
+                    "nextPageGroup": "TPI_IN_POLYGON"
+                }
+            },
+            "sortResults": {
+                "options": [
+                    {
+                        "label": "Featured",
+                        "itemMeta": "popular",
+                        "choices": [
+                            {
+                                "label": "Featured",
+                                "value": "BEST_SELLER",
+                                "selected": false
+                            }
+                        ],
+                        "enhancedChoices": []
+                    },
+                    {
+                        "label": "Star rating",
+                        "itemMeta": "star",
+                        "choices": [
+                            {
+                                "label": "Stars (high to low)",
+                                "value": "STAR_RATING_HIGHEST_FIRST",
+                                "selected": false
+                            },
+                            {
+                                "label": "Stars (low to high)",
+                                "value": "STAR_RATING_LOWEST_FIRST",
+                                "selected": false
+                            }
+                        ],
+                        "enhancedChoices": []
+                    },
+                    {
+                        "label": "Distance",
+                        "itemMeta": "distance",
+                        "choices": [
+                            {
+                                "label": "Distance to city center",
+                                "value": "DISTANCE_FROM_LANDMARK",
+                                "selected": false
+                            }
+                        ],
+                        "enhancedChoices": [
+                            {
+                                "label": "Landmarks",
+                                "itemMeta": "landmarks",
+                                "choices": [
+                                    {
+                                        "label": "City center",
+                                        "id": 1643737.0
+                                    },
+                                    {
+                                        "label": "Art Gallery of G.H. Vashchanka",
+                                        "id": 1763537.0
+                                    },
+                                    {
+                                        "label": "Festyval'ny Park",
+                                        "id": 12508931.0
+                                    },
+                                    {
+                                        "label": "Palace of Rumyantsev-Paskevich",
+                                        "id": 1763530.0
+                                    },
+                                    {
+                                        "label": "Tsentralny Stadium",
+                                        "id": 1763538.0
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Guest rating",
+                        "itemMeta": "rating",
+                        "choices": [
+                            {
+                                "label": "Guest rating",
+                                "value": "GUEST_RATING",
+                                "selected": false
+                            }
+                        ],
+                        "enhancedChoices": []
+                    },
+                    {
+                        "label": "Price",
+                        "itemMeta": "price",
+                        "selectedChoiceLabel": "Price (low to high)",
+                        "choices": [
+                            {
+                                "label": "Price (high to low)",
+                                "value": "PRICE_HIGHEST_FIRST",
+                                "selected": false
+                            },
+                            {
+                                "label": "Price (low to high)",
+                                "value": "PRICE",
+                                "selected": true
+                            }
+                        ],
+                        "enhancedChoices": []
+                    }
+                ],
+                "distanceOptionLandmarkId": 1643737.0
+            },
+            "filters": {
+                "applied": false,
+                "name": {
+                    "item": {
+                        "value": ""
+                    },
+                    "autosuggest": {
+                        "additionalUrlParams": {
+                            "resolved-location": "CITY:1643737:UNKNOWN:UNKNOWN",
+                            "q-destination": "Gomel, Homiel Province, Belarus",
+                            "destination-id": "1643737"
+                        }
+                    }
+                },
+                "starRating": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "value": 5,
+                            "disabled": true
+                        },
+                        {
+                            "value": 4,
+                            "disabled": true
+                        },
+                        {
+                            "value": 3
+                        },
+                        {
+                            "value": 2
+                        },
+                        {
+                            "value": 1,
+                            "disabled": true
+                        }
+                    ]
+                },
+                "guestRating": {
+                    "range": {
+                        "min": {
+                            "defaultValue": 0.0
+                        },
+                        "max": {
+                            "defaultValue": 10.0
+                        }
+                    }
+                },
+                "landmarks": {
+                    "selectedOrder": [],
+                    "items": [
+                        {
+                            "label": "City center",
+                            "value": "1643737"
+                        },
+                        {
+                            "label": "Palace of Rumyantsev-Paskevich",
+                            "value": "1763530"
+                        },
+                        {
+                            "label": "Tsentralny Stadium",
+                            "value": "1763538"
+                        },
+                        {
+                            "label": "Art Gallery of G.H. Vashchanka",
+                            "value": "1763537"
+                        },
+                        {
+                            "label": "Festyval'ny Park",
+                            "value": "12508931"
+                        }
+                    ],
+                    "distance": []
+                },
+                "neighbourhood": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "label": "Centraĺny District",
+                            "value": "12510423"
+                        },
+                        {
+                            "label": "Saviecki District",
+                            "value": "656599352016011264"
+                        }
+                    ]
+                },
+                "accommodationType": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "label": "Apartments",
+                            "value": "15"
+                        },
+                        {
+                            "label": "Hotels",
+                            "value": "1"
+                        }
+                    ]
+                },
+                "facilities": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "label": "24-hour front desk",
+                            "value": "2063"
+                        },
+                        {
+                            "label": "Airport transfers",
+                            "value": "513"
+                        },
+                        {
+                            "label": "Bar",
+                            "value": "515"
+                        },
+                        {
+                            "label": "Bathtub in room",
+                            "value": "517"
+                        },
+                        {
+                            "label": "Business facilities",
+                            "value": "519"
+                        },
+                        {
+                            "label": "Connecting rooms available",
+                            "value": "523"
+                        },
+                        {
+                            "label": "Gym",
+                            "value": "2"
+                        },
+                        {
+                            "label": "Kitchen",
+                            "value": "32"
+                        },
+                        {
+                            "label": "Meeting Facilities",
+                            "value": "1"
+                        },
+                        {
+                            "label": "Non-smoking",
+                            "value": "529"
+                        },
+                        {
+                            "label": "Parking",
+                            "value": "134234112"
+                        },
+                        {
+                            "label": "Pet Friendly",
+                            "value": "64"
+                        },
+                        {
+                            "label": "Restaurant",
+                            "value": "256"
+                        },
+                        {
+                            "label": "Smoking areas",
+                            "value": "537"
+                        },
+                        {
+                            "label": "WiFi included",
+                            "value": "527"
+                        }
+                    ]
+                },
+                "accessibility": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "label": "Accessible parking",
+                            "value": "524288"
+                        },
+                        {
+                            "label": "In-room accessibility",
+                            "value": "1048576"
+                        },
+                        {
+                            "label": "Wheelchair accessible rooms",
+                            "value": "541"
+                        }
+                    ]
+                },
+                "themesAndTypes": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "label": "Business",
+                            "value": "14"
+                        },
+                        {
+                            "label": "Family-friendly",
+                            "value": "25"
+                        }
+                    ]
+                },
+                "price": {
+                    "label": "Nightly Price",
+                    "range": {
+                        "min": {
+                            "defaultValue": 0
+                        },
+                        "max": {
+                            "defaultValue": 25000
+                        },
+                        "increments": 250
+                    },
+                    "multiplier": 1
+                },
+                "paymentPreference": {
+                    "items": [
+                        {
+                            "label": "Free cancellation",
+                            "value": "fc"
+                        },
+                        {
+                            "label": "Pay with Hotels.com gift card",
+                            "value": "gc"
+                        }
+                    ]
+                },
+                "welcomeRewards": {
+                    "label": "Hotels.com® Rewards",
+                    "items": [
+                        {
+                            "label": "Collect stamps",
+                            "value": "collect"
+                        },
+                        {
+                            "label": "Redeem reward* nights",
+                            "value": "redeem"
+                        }
+                    ]
+                }
+            },
+            "pointOfSale": {
+                "currency": {
+                    "code": "RUB",
+                    "symbol": "RUB",
+                    "separators": ",.",
+                    "format": "{0} RUB"
+                }
+            },
+            "miscellaneous": {
+                "pageViewBeaconUrl": "/taps/v1/PageView?deviceType=App-Phone&sort-order=PRICE&rooms=1&destRegionID=1643737&hotelIds=1167559808,1969854592,1969909664&adults=2&userAgent=Hotels.com/Android%2080.0.1.9.release-80_0%20(80000660)&userGuid=8ab97a90-fa19-4cc5-afc6-96269c4e50c6&pageName=Hotel-Search&slots=HSR_A,HSR_B,HSR_C,HSR_D,HSR_E,HSR_F,HSR_G,HSR_H,HSR_I,HSR_J&checkIn=2022-05-27&children=0&culture=en_US&testVersionOverride=4961.0,904.0,7561.0,7215.0,8218.0,8711.0,8928.1,9008.0,8347.2,9004.0,8952.0,7992.2,8915.0,9729.0,9864.0,10155.0,10185.0,10473.0,10320.0,10361.0&domain=www.hotels.com&userIP=24.155.32.3&action=pageview&publisher=expedia&checkOut=2022-05-29&programId=1",
+                "showLegalInfoForStrikethroughPrices": true,
+                "legalInfoForStrikethroughPrices": "The struck-out price is based on the property’s standard rate on our app, as determined and supplied by the property.",
+                "compressionMessaging": {
+                    "percentage": 57,
+                    "popularityMessage": "We are 57% booked for your travel dates. Don’t wait until it’s too late, book now."
+                }
+            },
+            "pageInfo": {
+                "pageType": "dateful"
+            }
+        },
+        "common": {
+            "pointOfSale": {
+                "numberSeparators": ",.",
+                "brandName": "Hotels.com"
+            },
+            "tracking": {
+                "omniture": {
+                    "s.prop33": "D=v33",
+                    "s.prop32": "D=v43",
+                    "s.prop74": "search result with dates | ms not shown | NA",
+                    "s.products": "LOCAL;36454994,LOCAL;61526706,LOCAL;61528427",
+                    "s.eVar16": "Mob :: aApp",
+                    "s.eVar40": "D=v0",
+                    "s.eVar41": "RUB",
+                    "s.eVar63": "2ae42b4a-1247-49bb-bab9-42f26f44d2f9",
+                    "s.eVar42": "6|2|20220527|20220529",
+                    "s.eVar4": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
+                    "s.eVar43": "en_US|HCOM_US|www.hotels.com",
+                    "s.eVar3": "2|0",
+                    "s.eVar22": "1|RUB|24:1167559808:1372.0400:1372.0400:0|24:1969854592:1914.4400:1723.0000:0|24:1969909664:2023.8400:1821.4600:0",
+                    "s.eVar2": "Gomel, Homiel Province, Belarus",
+                    "s.eVar24": "MCTC=20;TU=NA;PDID=NULL;MVT=",
+                    "s.eVar7": "6",
+                    "s.server": "www.hotels.com",
+                    "s.eVar6": "1643737",
+                    "s.prop29": "D=v42",
+                    "s.eVar5": "1",
+                    "s.prop27": "8ab97a90-fa19-4cc5-afc6-96269c4e50c6",
+                    "s.eVar9": "Price - low to high",
+                    "s.prop21": "0",
+                    "s.prop20": "2",
+                    "s.eVar69": "Mob :: aApp",
+                    "s.currencyCode": "RUB",
+                    "s.eVar26": "US:TX:AUSTIN:635",
+                    "s.eVar29": "Mob :: aApp",
+                    "s.prop9": "10",
+                    "s.eVar95": "Unknown",
+                    "s.prop7": "7",
+                    "s.eVar31": "D=v0",
+                    "s.eVar32": "D=v0",
+                    "s.eVar33": "search result with dates",
+                    "s.eVar34": "H1871:007.002,M376:000.000,M904:000.000,M3736:000.000,M4200:000.000,M4440.2,M4869:001.000,M4952:050.001,M4961:001.000,M5184:001.000,M5342:000.000,M5663:000.000,M6388:000.000,M6775:000.000,M6779:000.000,M7015.1,M7192:000.000,M7215:000.000,M7296:000.000,M7305:000.000,M7306:000.000,M7353:000.000,M7362.1,M7552:023.001,M7763:000.000,M7765.2,M7870:000.000,M7895:000.000,M8130:000.001,M8336:000.000,M8347:019.002,M8405:002.001,M8483:000.000,M8692:000.000,M8693:000.000,M8698:000.000,M8708:000.000,M8718:000.000,M8915:000.000,M8928:019.001,M8952:000.000,M8976:000.000,M8992:000.000,M9035:000.000,M9220:000.000,M9281:000.000,M9282:000.000,M9297:000.000,M9301:000.000,M9351:000.000,M9420:000.000,M9431:000.000,M9434:000.000,M9469:000.000,M9508:000.000,M9549:000.000,M9567.1,M9691:000.000,M9693:000.000,M9699:004.001,M9729:000.000,M9752:000.000,M9771.0,M9864:000.000,M9924:000.000,M9961:000.000,M9971:000.000,M10001:000.000,M10007:000.000,M10013:002.001,M10086:000.000,M10121:000.000,M10137:000.000,M10155:000.000,M10185:000.000,M10248:000.000,M10259:000.000,M10282:000.000,M10300:000.000,M10320:000.000,M10361:000.000,M10473:000.000,M10482:000.000,M9215:001.001",
+                    "s.eVar13": "389367",
+                    "s.prop19": "1",
+                    "s.events": "event320,event318",
+                    "s.prop18": "D=v6",
+                    "s.prop5": "389367",
+                    "s.prop15": "2",
+                    "s.prop3": "Gomel, Homiel Province, Belarus",
+                    "s.prop14": "D=v7",
+                    "s.prop36": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
+                    "s.eVar93": "aws.us-east-1.unknown",
+                    "s.prop2": "Price - low to high"
+                }
+            }
+        }
+    }
+}

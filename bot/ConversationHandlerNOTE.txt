@@ -1,0 +1,14 @@
+self._command_cls.successor: [MessageHandler(filter_text, self._city]
+self._city.successor: [CallbackQueryHandler(self._check_in), MessageHandler(Filters.regex(pattern_regex), self._cancel)]
+self._check_in: [CallbackQueryHandler(self._check_out), MessageHandler(Filters.regex(pattern_regex), self._cancel)]
+self._check_out: [MessageHandler(filter_text, self._people.message), CallbackQueryHandler(self._people)]
+self._people: [MessageHandler(filter_text, self._hotel.message), CallbackQueryHandler(self._hotel)]
+self._hotel: [MessageHandler(filter_text, self._photo.message), CallbackQueryHandler(self._photo)]
+
+для lowprice/highprice:
+self._photo: [[CallbackQueryHandler(self._search), MessageHandler(Filters.regex(pattern_regex), self._cancel)]
+
+для bestdeal:
+self._photo:[MessageHandler(filter_text, self._prices]
+self._prices:[MessageHandler(filter_text, self._distance]
+self._distance:[MessageHandler(filter_text, self._search]

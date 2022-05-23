@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1167559808,
+        "name": "City Hotel",
+        "address": "Prospect Oktiabria, 46, Gomel, Belarus",
+        "star": 3.5,
+        "rating": 8.2,
+        "distance": "3.7 км",
+        "price": 1372.04,
+        "total_price": 2744.08,
+        "url": "https://uk.hotels.com/ho1167559808",
+        "photo": [
+            "https://exp.cdn-hotels.com/hotels/37000000/36460000/36455000/36454994/27838162_s.jpg",
+            "https://exp.cdn-hotels.com/hotels/37000000/36460000/36455000/36454994/456b88b2_s.jpg"
+        ]
+    },
+    {
+        "id": 1969854592,
+        "name": "PaulMarie Apartments on Kozhara",
+        "address": null,
+        "star": 3.5,
+        "rating": null,
+        "distance": "2.7 км",
+        "price": 1723.0,
+        "total_price": 3446.0,
+        "url": "https://uk.hotels.com/ho1969854592",
+        "photo": [
+            "https://exp.cdn-hotels.com/hotels/62000000/61530000/61526800/61526706/a584fbbe_s.jpg",
+            "https://exp.cdn-hotels.com/hotels/62000000/61530000/61526800/61526706/5e4d9579_s.jpg"
+        ]
+    },
+    {
+        "id": 1969909664,
+        "name": "PaulMarie Apartments on Mazurova",
+        "address": null,
+        "star": 3.5,
+        "rating": null,
+        "distance": "3.7 км",
+        "price": 1821.46,
+        "total_price": 3642.92,
+        "url": "https://uk.hotels.com/ho1969909664",
+        "photo": [
+            "https://exp.cdn-hotels.com/hotels/62000000/61530000/61528500/61528427/76f3f6c6_s.jpg",
+            "https://exp.cdn-hotels.com/hotels/62000000/61530000/61528500/61528427/727849da_s.jpg"
+        ]
+    }
+]

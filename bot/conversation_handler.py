@@ -1,7 +1,6 @@
 from settings import KEYS_BESTDEAL, KEYS_SORTPRICE, KEYS_FOR_BUTTON, KEYS_FOR_TEXT_MSG, KEYS_FOR_BUTTON_TEXT_MSG
 
 from bot.hadleres_message import HandlerFactory, Cancel
-from logger.logger import my_logger
 
 from telegram.ext import CommandHandler, MessageHandler, Filters, ConversationHandler, CallbackQueryHandler
 from abc import ABC
@@ -41,11 +40,9 @@ class StateBuilder(ABC):
         Добавление обработчиков только для текстовых сообщений
         """
         for step in args:
-            try:
+            if step in self.keys:
                 idx_step = self.keys.index(step)
-            except ValueError as err:
-                my_logger.warning(f'{self.command}| Conversation Handler. {err}')
-            else:
+
                 self.state.update({
                     getattr(self, f'_{self.keys[idx_step - 1]}').successor:
                         [MessageHandler(filter_text, getattr(self, f'_{step}'))]
@@ -56,11 +53,9 @@ class StateBuilder(ABC):
         Добавление обработчиков только для кнопок
         """
         for step in args:
-            try:
+            if step in self.keys:
                 idx_step = self.keys.index(step)
-            except ValueError as err:
-                my_logger.warning(f'{self.command}| Conversation Handler. {err}')
-            else:
+
                 self.state.update({
                     getattr(self, f'_{self.keys[idx_step - 1]}').successor: [
                         CallbackQueryHandler(getattr(self, f'_{step}')),
@@ -73,11 +68,9 @@ class StateBuilder(ABC):
         Добавление обработчиков для текстовых сообщений и кнопок
         """
         for step in args:
-            try:
+            if step in self.keys:
                 idx_step = self.keys.index(step)
-            except ValueError as err:
-                my_logger.warning(f'{self.command}| Conversation Handler. {err}')
-            else:
+
                 self.state.update({
                     getattr(self, f'_{self.keys[idx_step - 1]}').successor: [
                         MessageHandler(filter_text, getattr(self, f'_{step}').message),

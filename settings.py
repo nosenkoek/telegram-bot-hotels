@@ -9,6 +9,7 @@ FORMAT_DATE = '%Y-%m-%d'
 
 HEADERS = {
         "X-RapidAPI-Host": "hotels4.p.rapidapi.com",
+        # "X-RapidAPI-Key": "a9aad8794fmsh039fe95526d7dccp1b6e21jsn4ac292303c66"
         "X-RapidAPI-Key": "8313b0a0bdmshe9cafbcdf42438bp19c8c0jsnbe34dcb1db94"
 }
 

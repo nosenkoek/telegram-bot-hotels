@@ -1,77 +1,47 @@
 [
     {
-        "id": 263227,
-        "name": "Holiday Inn Express Barcelona - Molins de Rei, an IHG Hotel",
-        "address": "Carrer Del Primer De Maig 9",
-        "star": 3.0,
-        "rating": 7.8,
-        "distance": "12.7 км",
-        "price": 6997.06,
-        "total_price": 20991.18,
-        "url": "https://uk.hotels.com/ho263227",
-        "photo": [
-            "https://exp.cdn-hotels.com/hotels/2000000/1360000/1353900/1353878/44947916_s.jpg",
-            "https://exp.cdn-hotels.com/hotels/2000000/1360000/1353900/1353878/03e3fadb_s.jpg"
-        ]
-    },
-    {
-        "id": 229610,
-        "name": "Hotel SB BCN Events",
-        "address": "Ronda De Can Rabada 22-24",
-        "star": 4.5,
-        "rating": 8.0,
-        "distance": "19.3 км",
-        "price": 7765.63,
-        "total_price": 23296.89,
-        "url": "https://uk.hotels.com/ho229610",
-        "photo": [
-            "https://exp.cdn-hotels.com/hotels/2000000/1160000/1157700/1157693/6d9fd157_s.jpg",
-            "https://exp.cdn-hotels.com/hotels/2000000/1160000/1157700/1157693/e0eed157_s.jpg"
-        ]
-    },
-    {
-        "id": 567211,
-        "name": "Mayerling Abamita Apartments",
-        "address": "Calle Ausias March, 25",
-        "star": 3.0,
-        "rating": 9.0,
-        "distance": "1.4 км",
-        "price": 9919.05,
-        "total_price": 29757.149999999998,
-        "url": "https://uk.hotels.com/ho567211",
-        "photo": [
-            "https://exp.cdn-hotels.com/hotels/14000000/13230000/13227600/13227589/99ce0181_s.jpg",
-            "https://exp.cdn-hotels.com/hotels/14000000/13230000/13227600/13227589/5922042c_s.jpg"
-        ]
-    },
-    {
-        "id": 533614,
-        "name": "Best Western Hotel Mediterraneo",
-        "address": "Passeig Maritim, 294",
-        "star": 4.0,
-        "rating": 8.6,
-        "distance": "20.9 км",
-        "price": 10023.56,
-        "total_price": 30070.68,
-        "url": "https://uk.hotels.com/ho533614",
-        "photo": [
-            "https://exp.cdn-hotels.com/hotels/1000000/20000/14700/14618/6446a2b4_s.jpg",
-            "https://exp.cdn-hotels.com/hotels/1000000/20000/14700/14618/c867cb65_s.jpg"
-        ]
-    },
-    {
-        "id": 262093,
-        "name": "Hotel Ciudad de Castelldefels",
-        "address": "Paseo De La Marina 212",
-        "star": 3.0,
+        "id": 1167559808,
+        "name": "City Hotel",
+        "address": "Prospect Oktiabria, 46, Gomel, Belarus",
+        "star": 3.5,
         "rating": 8.2,
-        "distance": "20.9 км",
-        "price": 10871.25,
-        "total_price": 32613.75,
-        "url": "https://uk.hotels.com/ho262093",
+        "distance": "3.7 км",
+        "price": 1372.04,
+        "total_price": 2744.08,
+        "url": "https://uk.hotels.com/ho1167559808",
         "photo": [
-            "https://exp.cdn-hotels.com/hotels/1000000/20000/11000/10918/d6ab6203_s.jpg",
-            "https://exp.cdn-hotels.com/hotels/1000000/20000/11000/10918/438fcecc_s.jpg"
+            "https://exp.cdn-hotels.com/hotels/37000000/36460000/36455000/36454994/27838162_s.jpg",
+            "https://exp.cdn-hotels.com/hotels/37000000/36460000/36455000/36454994/456b88b2_s.jpg"
+        ]
+    },
+    {
+        "id": 1969854592,
+        "name": "PaulMarie Apartments on Kozhara",
+        "address": null,
+        "star": 3.5,
+        "rating": null,
+        "distance": "2.7 км",
+        "price": 1723.0,
+        "total_price": 3446.0,
+        "url": "https://uk.hotels.com/ho1969854592",
+        "photo": [
+            "https://exp.cdn-hotels.com/hotels/62000000/61530000/61526800/61526706/a584fbbe_s.jpg",
+            "https://exp.cdn-hotels.com/hotels/62000000/61530000/61526800/61526706/5e4d9579_s.jpg"
+        ]
+    },
+    {
+        "id": 1969909664,
+        "name": "PaulMarie Apartments on Mazurova",
+        "address": null,
+        "star": 3.5,
+        "rating": null,
+        "distance": "3.7 км",
+        "price": 1821.46,
+        "total_price": 3642.92,
+        "url": "https://uk.hotels.com/ho1969909664",
+        "photo": [
+            "https://exp.cdn-hotels.com/hotels/62000000/61530000/61528500/61528427/76f3f6c6_s.jpg",
+            "https://exp.cdn-hotels.com/hotels/62000000/61530000/61528500/61528427/727849da_s.jpg"
         ]
     }
 ]

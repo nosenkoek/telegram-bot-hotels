@@ -13,7 +13,7 @@ from abc import ABC, abstractmethod
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto, CallbackQuery
 from telegram.ext import CallbackContext, ConversationHandler
 from telegram.error import BadRequest
-from telegram_bot_calendar import DetailedTelegramCalendar, LSTEP
+from telegram_bot_calendar import DetailedTelegramCalendar
 from datetime import datetime, timedelta
 from re import findall
 from json import dumps
@@ -22,7 +22,7 @@ from typing import List
 
 class Handler(ABC):
     """
-     Базовый класс обработчик для 'диалога' с пользователем. Для цепочки обязанностей.
+     Базовый класс обработчик для 'диалога' с пользователем.
      Args:
          successor: номер текущего обработчика
      """
@@ -83,7 +83,7 @@ class CityHandle(Handler):
         user_id = update.message.from_user.id
 
         calendar, step = DetailedTelegramCalendar(min_date=TODAY_DATE, locale='ru').build()
-        send_msg = 'Введите дату начала поездки {}'.format(LSTEP[step])
+        send_msg = 'Введите дату начала поездки'
         msg_send = update.message.reply_text(send_msg, reply_markup=calendar)
 
         super().registry.update_data(user_id, {'query': city, 'id_message_send': msg_send.message_id})
@@ -102,14 +102,14 @@ class CheckInHandler(Handler):
         result, key, step = DetailedTelegramCalendar(min_date=TODAY_DATE, locale='ru').process(query.data)
 
         if not result and key:
-            query.edit_message_text(f'Введите дату начала поездки {LSTEP[step]}', reply_markup=key)
+            query.edit_message_text('Введите дату начала поездки', reply_markup=key)
         elif result:
             result_str = result.strftime(FORMAT_DATE)
             super().registry.update_data(user_id, {'checkIn': result_str})
 
             min_date = result + timedelta(days=1)
             calendar, step = DetailedTelegramCalendar(min_date=min_date, locale='ru').build()
-            query.edit_message_text(f'Введите дату окончания поездки {LSTEP[step]}', reply_markup=calendar)
+            query.edit_message_text('Введите дату окончания поездки', reply_markup=calendar)
             return self.successor
         else:
             my_logger.warning('Нажата пустая кнопка')
@@ -131,7 +131,7 @@ class CheckOutHandler(Handler):
         result, key, step = DetailedTelegramCalendar(min_date=min_date, locale='ru').process(query.data)
 
         if not result and key:
-            query.edit_message_text(f'Введите дату окончания поездки {LSTEP[step]}', reply_markup=key)
+            query.edit_message_text(f'Введите дату окончания поездки', reply_markup=key)
         elif result:
             result_str = result.strftime(FORMAT_DATE)
             super().registry.update_data(user_id, {'checkOut': result_str})
@@ -156,7 +156,7 @@ class PeopleHandler(Handler):
         Метод для создания кнопок и сообщения для пользователя.
         :return: send_msg - сообщение для пользователя, markup - объект кнопок
         """
-        send_msg = 'Выберете кол-во отелей или введите другое значение (не больше 10)'
+        send_msg = 'Выберете количество отелей или введите другое значение (не больше 10)'
         markup = BUTTON_HOTEL.keyboard()
         return send_msg, markup
 
@@ -360,13 +360,10 @@ class PricesHandler(Handler):
                 raise ValueError
 
             prices = [int(price) for price in prices]
-
         except ValueError as err:
             my_logger.warning(f'Введено неверное значение {err}')
             update.message.reply_text('Введено неверное значение. Введите диапазон цен за сутки, руб.')
         else:
-            print(prices)
-            print(min(prices), max(prices))
             super().registry.update_data(user_id, {'priceMin': min(prices)})
             super().registry.update_data(user_id, {'priceMax': max(prices)})
 

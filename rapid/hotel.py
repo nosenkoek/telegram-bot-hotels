@@ -26,7 +26,11 @@ class RequestMixin():
         :return: отклик в виде объекта Response
         """
 
-        response = requests.get(url=url, headers=HEADERS, params=request, timeout=15)
+        try:
+            response = requests.get(url=url, headers=HEADERS, params=request, timeout=30)
+        except TimeoutError as err:
+            logging.error(err)
+            raise ValueError('Ошибка сервера попробуйте позже')
 
         if response.status_code != 200:
             raise NameError('Ошибка кода отклика', response.status_code)
@@ -239,7 +243,7 @@ class HotelHandler(SearchValueMixin):
         data = self._request.context_request(command, **kwargs)
 
         if data is None:
-            raise TypeError('Ошибка запроса отелей')
+            raise ValueError('Ошибка запроса отелей')
 
         data = loads(data.text)
 

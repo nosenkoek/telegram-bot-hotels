@@ -2,3 +2,4 @@ python-telegram-bot
 peewee
 requests
 python-telegram-bot-calendar
+flake8

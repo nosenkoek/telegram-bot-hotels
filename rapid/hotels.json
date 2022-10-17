@@ -2,30 +2,30 @@
     "result": "OK",
     "data": {
         "body": {
-            "header": "Gomel, Homiel Province, Belarus",
+            "header": "Berlin, Germany",
             "query": {
                 "destination": {
-                    "id": "1643737",
-                    "value": "Gomel, Homiel Province, Belarus",
-                    "resolvedLocation": "CITY:1643737:UNKNOWN:UNKNOWN"
+                    "id": "332483",
+                    "value": "Berlin, Germany",
+                    "resolvedLocation": "CITY:332483:UNKNOWN:UNKNOWN"
                 }
             },
             "searchResults": {
-                "totalCount": 10,
+                "totalCount": 1384,
                 "results": [
                     {
-                        "id": 1167559808,
-                        "name": "City Hotel",
-                        "starRating": 3.5,
+                        "id": 387452,
+                        "name": "Heart of Gold Hostel Berlin",
+                        "starRating": 1.5,
                         "urls": {},
                         "address": {
-                            "streetAddress": "Prospect Oktiabria, 46, Gomel, Belarus",
+                            "streetAddress": "Johannisstr. 11",
                             "extendedAddress": "",
-                            "locality": "Gomel",
-                            "postalCode": "246029",
-                            "region": "Gomel",
-                            "countryName": "Belarus",
-                            "countryCode": "by",
+                            "locality": "Berlin",
+                            "postalCode": "10117",
+                            "region": "BE",
+                            "countryName": "Germany",
+                            "countryCode": "de",
                             "obfuscate": false
                         },
                         "welcomeRewards": {
@@ -34,7 +34,7 @@
                         "guestReviews": {
                             "unformattedRating": 8.2,
                             "rating": "8.2",
-                            "total": 7,
+                            "total": 183,
                             "scale": 10,
                             "badge": "very-good",
                             "badgeText": "Very Good"
@@ -42,21 +42,19 @@
                         "landmarks": [
                             {
                                 "label": "City center",
-                                "distance": "2.3 miles"
+                                "distance": "1.9 miles"
                             },
                             {
-                                "label": "Palace of Rumyantsev-Paskevich",
-                                "distance": "3.3 miles"
+                                "label": "Alexanderplatz",
+                                "distance": "0.9 miles"
                             }
                         ],
                         "geoBullets": [],
                         "ratePlan": {
                             "price": {
-                                "current": "1,372 RUB",
-                                "exactCurrent": 1372.04,
-                                "info": "nightly price per room",
-                                "additionalInfo": "This is the average nightly price for your dates.",
-                                "fullyBundledPricePerStay": "total 3,293 RUB for 2&nbsp;nights"
+                                "current": "1,238 RUB",
+                                "exactCurrent": 1237.94,
+                                "fullyBundledPricePerStay": "total 2,773 RUB"
                             },
                             "features": {
                                 "freeCancellation": true,
@@ -65,7 +63,290 @@
                             },
                             "type": "HC"
                         },
-                        "neighbourhood": "Saviecki District",
+                        "neighbourhood": "Oranienburgerstrasse",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "coordinate": {
+                            "lat": 52.524389,
+                            "lon": 13.391828
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 4538932,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/5000000/4540000/4539000/4538932/97ba584a_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 360098,
+                        "name": "Metropol Hostel Berlin",
+                        "starRating": 2.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Mehringdamm 32",
+                            "extendedAddress": "",
+                            "locality": "Berlin",
+                            "postalCode": "10961",
+                            "region": "BE",
+                            "countryName": "Germany",
+                            "countryCode": "de",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 6.4,
+                            "rating": "6.4",
+                            "total": 166,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "2.1 miles"
+                            },
+                            {
+                                "label": "Alexanderplatz",
+                                "distance": "2.2 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "1,513 RUB",
+                                "exactCurrent": 1512.8,
+                                "old": "1,719 RUB",
+                                "fullyBundledPricePerStay": "total 3,389 RUB"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "EC"
+                        },
+                        "neighbourhood": "Kreuzberg",
+                        "deals": {
+                            "secretPrice": {
+                                "dealText": "Save more with Secret Prices"
+                            },
+                            "priceReasoning": "DRR-443"
+                        },
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "coordinate": {
+                            "lat": 52.493649,
+                            "lon": 13.38806
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 3911650,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/4000000/3920000/3911700/3911650/6b44a839_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 549905,
+                        "name": "Hotel Karlshorst",
+                        "starRating": 3.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Treskowallee 89",
+                            "extendedAddress": "",
+                            "locality": "Berlin",
+                            "postalCode": "10318",
+                            "region": "BE",
+                            "countryName": "Germany",
+                            "countryCode": "de",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 6.4,
+                            "rating": "6.4",
+                            "total": 582,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "7.7 miles"
+                            },
+                            {
+                                "label": "Alexanderplatz",
+                                "distance": "5.4 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "2,496 RUB",
+                                "exactCurrent": 2496.23,
+                                "old": "3,120 RUB",
+                                "fullyBundledPricePerStay": "total 2,795 RUB"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "EC"
+                        },
+                        "neighbourhood": "Karlshorst",
+                        "deals": {
+                            "secretPrice": {
+                                "dealText": "Save more with Secret Prices"
+                            },
+                            "priceReasoning": "DRR-445"
+                        },
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "coordinate": {
+                            "lat": 52.484259,
+                            "lon": 13.526282
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 11331583,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/12000000/11340000/11331600/11331583/62d0a26b_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 213112,
+                        "name": "HappyGoLucky Hotel & Hostel",
+                        "starRating": 2.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Stuttgarter Platz 17",
+                            "extendedAddress": "",
+                            "locality": "Berlin",
+                            "postalCode": "10627",
+                            "region": "",
+                            "countryName": "Germany",
+                            "countryCode": "de",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 7.4,
+                            "rating": "7.4",
+                            "total": 209,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "2.2 miles"
+                            },
+                            {
+                                "label": "Alexanderplatz",
+                                "distance": "4.8 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "2,518 RUB",
+                                "exactCurrent": 2517.57,
+                                "old": "3,356 RUB",
+                                "fullyBundledPricePerStay": "total 2,819 RUB"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "HC"
+                        },
+                        "neighbourhood": "Charlottenburg",
+                        "deals": {
+                            "secretPrice": {
+                                "dealText": "Save more with Secret Prices"
+                            },
+                            "priceReasoning": "DRR-445"
+                        },
+                        "messaging": {
+                            "scarcity": "1 left on our app"
+                        },
+                        "badging": {},
+                        "coordinate": {
+                            "lat": 52.50525,
+                            "lon": 13.30082
+                        },
+                        "roomsLeft": 1,
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 1142537,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/2000000/1150000/1142600/1142537/be7fc0c4_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 558976,
+                        "name": "CLUB Lodges Berlin Mitte - Hostel",
+                        "starRating": 2.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Caroline-Michaelis-Straße 8",
+                            "extendedAddress": "",
+                            "locality": "Berlin",
+                            "postalCode": "10115",
+                            "region": "",
+                            "countryName": "Germany",
+                            "countryCode": "de",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 7.8,
+                            "rating": "7.8",
+                            "total": 211,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "2.0 miles"
+                            },
+                            {
+                                "label": "Alexanderplatz",
+                                "distance": "1.5 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "2,527 RUB",
+                                "exactCurrent": 2527.07,
+                                "fullyBundledPricePerStay": "total 2,830 RUB"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "EC"
+                        },
+                        "neighbourhood": "Mitte",
                         "deals": {},
                         "messaging": {
                             "scarcity": "2 left on our app"
@@ -73,27 +354,98 @@
                         "badging": {},
                         "pimmsAttributes": "DoubleStamps|D13|TESCO",
                         "coordinate": {
-                            "lat": 52.4057,
-                            "lon": 30.9423
+                            "lat": 52.53399,
+                            "lon": 13.3834
                         },
                         "roomsLeft": 2,
                         "providerType": "LOCAL",
-                        "supplierHotelId": 36454994,
+                        "supplierHotelId": 12750584,
                         "isAlternative": false,
                         "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/37000000/36460000/36455000/36454994/27838162_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/13000000/12760000/12750600/12750584/487724a4_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
                         }
                     },
                     {
-                        "id": 1969854592,
-                        "name": "PaulMarie Apartments on Kozhara",
-                        "starRating": 3.5,
+                        "id": 391514,
+                        "name": "Icke Apartments",
+                        "starRating": 2.0,
                         "urls": {},
                         "address": {
-                            "locality": "Gomel",
-                            "region": "Homielskaja voblasc",
-                            "countryName": "Belarus",
-                            "countryCode": "by",
+                            "streetAddress": "Danckelmannstr. 35",
+                            "extendedAddress": "",
+                            "locality": "Berlin",
+                            "postalCode": "14059",
+                            "region": "BE",
+                            "countryName": "Germany",
+                            "countryCode": "de",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 6.2,
+                            "rating": "6.2",
+                            "total": 114,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "2.5 miles"
+                            },
+                            {
+                                "label": "Alexanderplatz",
+                                "distance": "5.1 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "2,675 RUB",
+                                "exactCurrent": 2674.53,
+                                "fullyBundledPricePerStay": "total 4,739 RUB"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "EC"
+                        },
+                        "neighbourhood": "Charlottenburg",
+                        "deals": {},
+                        "messaging": {
+                            "scarcity": "2 left on our app"
+                        },
+                        "badging": {},
+                        "coordinate": {
+                            "lat": 52.511694,
+                            "lon": 13.291478
+                        },
+                        "roomsLeft": 2,
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 4618995,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/5000000/4620000/4619000/4618995/1a5b5e37_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 686046,
+                        "name": "BNB Hostel",
+                        "starRating": 2.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Obentrautstrasse 71/ Möckernstrasse",
+                            "extendedAddress": "",
+                            "locality": "Berlin",
+                            "postalCode": "10709",
+                            "region": "Berlin",
+                            "countryName": "Germany",
+                            "countryCode": "de",
                             "obfuscate": false
                         },
                         "welcomeRewards": {
@@ -102,129 +454,269 @@
                         "landmarks": [
                             {
                                 "label": "City center",
-                                "distance": "1.7 miles"
+                                "distance": "2.2 miles"
                             },
                             {
-                                "label": "Palace of Rumyantsev-Paskevich",
-                                "distance": "2.0 miles"
+                                "label": "Alexanderplatz",
+                                "distance": "4.9 miles"
                             }
                         ],
                         "geoBullets": [],
                         "ratePlan": {
                             "price": {
-                                "current": "1,723 RUB",
-                                "exactCurrent": 1723.0,
-                                "old": "1,914 RUB",
-                                "info": "nightly price per unit",
-                                "additionalInfo": "This is the average nightly price for your dates.",
-                                "fullyBundledPricePerStay": "total 4,135 RUB for 2&nbsp;nights"
+                                "current": "2,705 RUB",
+                                "exactCurrent": 2704.58,
+                                "old": "3,381 RUB",
+                                "fullyBundledPricePerStay": "total 3,642 RUB"
                             },
                             "features": {
                                 "freeCancellation": true,
-                                "paymentPreference": true,
+                                "paymentPreference": false,
                                 "noCCRequired": false
                             },
-                            "type": "Dual"
+                            "type": "HC"
                         },
-                        "neighbourhood": "Centraĺny District",
+                        "neighbourhood": "Charlottenburg",
                         "deals": {
                             "secretPrice": {
                                 "dealText": "Save more with Secret Prices"
                             },
-                            "priceReasoning": "DRR-443"
+                            "priceReasoning": "DRR-445"
                         },
                         "messaging": {
-                            "scarcity": "1 left on our app"
+                            "scarcity": "2 left on our app"
                         },
                         "badging": {},
-                        "pimmsAttributes": "D13|HRW",
                         "coordinate": {
-                            "lat": 52.45085,
-                            "lon": 31.000132
+                            "lat": 52.49908,
+                            "lon": 13.30312
                         },
-                        "roomsLeft": 1,
+                        "roomsLeft": 2,
                         "providerType": "LOCAL",
-                        "supplierHotelId": 61526706,
-                        "vrBadge": "Apartment",
+                        "supplierHotelId": 18085647,
                         "isAlternative": false,
                         "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/62000000/61530000/61526800/61526706/a584fbbe_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/19000000/18090000/18085700/18085647/812c514b_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
                         }
                     },
                     {
-                        "id": 1969909664,
-                        "name": "PaulMarie Apartments on Mazurova",
-                        "starRating": 3.5,
+                        "id": 137951,
+                        "name": "Comfort Hotel Lichtenberg",
+                        "starRating": 3.0,
                         "urls": {},
                         "address": {
-                            "locality": "Gomel",
-                            "region": "Homielskaja voblasc",
-                            "countryName": "Belarus",
-                            "countryCode": "by",
+                            "streetAddress": "Rhinstr. 159",
+                            "extendedAddress": "",
+                            "locality": "Berlin",
+                            "postalCode": "10315",
+                            "region": "BE",
+                            "countryName": "Germany",
+                            "countryCode": "de",
                             "obfuscate": false
                         },
                         "welcomeRewards": {
                             "collect": true
                         },
+                        "guestReviews": {
+                            "unformattedRating": 7.6,
+                            "rating": "7.6",
+                            "total": 473,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
                         "landmarks": [
                             {
                                 "label": "City center",
-                                "distance": "2.3 miles"
+                                "distance": "7.1 miles"
                             },
                             {
-                                "label": "Palace of Rumyantsev-Paskevich",
-                                "distance": "1.9 miles"
+                                "label": "Alexanderplatz",
+                                "distance": "4.5 miles"
                             }
                         ],
                         "geoBullets": [],
                         "ratePlan": {
                             "price": {
-                                "current": "1,821 RUB",
-                                "exactCurrent": 1821.46,
-                                "old": "2,024 RUB",
-                                "info": "nightly price per unit",
-                                "additionalInfo": "This is the average nightly price for your dates.",
-                                "fullyBundledPricePerStay": "total 4,372 RUB for 2&nbsp;nights"
+                                "current": "2,899 RUB",
+                                "exactCurrent": 2898.87,
+                                "fullyBundledPricePerStay": "total 3,246 RUB"
                             },
                             "features": {
                                 "freeCancellation": true,
-                                "paymentPreference": true,
+                                "paymentPreference": false,
                                 "noCCRequired": false
                             },
-                            "type": "Dual"
+                            "type": "EC"
                         },
-                        "neighbourhood": "Centraĺny District",
+                        "neighbourhood": "Lichtenberg",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|TESCO",
+                        "coordinate": {
+                            "lat": 52.53284,
+                            "lon": 13.51718
+                        },
+                        "providerType": "MULTISOURCE",
+                        "supplierHotelId": 430787,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/440000/430800/430787/248c086b_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 1703553792,
+                        "name": "NEOHOSTEL Berlin",
+                        "starRating": 2.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Grünauer Strasse 192",
+                            "extendedAddress": "",
+                            "locality": "Berlin",
+                            "postalCode": "12557",
+                            "region": "",
+                            "countryName": "Germany",
+                            "countryCode": "de",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 5.0,
+                            "rating": "5.0",
+                            "total": 12,
+                            "scale": 10
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "11 miles"
+                            },
+                            {
+                                "label": "Alexanderplatz",
+                                "distance": "9.1 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "2,922 RUB",
+                                "exactCurrent": 2922.22,
+                                "old": "3,438 RUB",
+                                "fullyBundledPricePerStay": "total 3,273 RUB"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "EC"
+                        },
+                        "neighbourhood": "Köpenick",
                         "deals": {
                             "secretPrice": {
                                 "dealText": "Save more with Secret Prices"
                             },
-                            "priceReasoning": "DRR-443"
+                            "priceReasoning": "DRR-445"
+                        },
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "D13",
+                        "coordinate": {
+                            "lat": 52.43144,
+                            "lon": 13.57107
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 53204806,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/54000000/53210000/53204900/53204806/f210d5c3_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 398527,
+                        "name": "Three Little Pigs Hostel Berlin",
+                        "starRating": 2.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Stresemannstr. 66",
+                            "extendedAddress": "",
+                            "locality": "Berlin",
+                            "postalCode": "10963",
+                            "region": "BE",
+                            "countryName": "Germany",
+                            "countryCode": "de",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.0,
+                            "rating": "8.0",
+                            "total": 217,
+                            "scale": 10,
+                            "badge": "very-good",
+                            "badgeText": "Very Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "1.6 miles"
+                            },
+                            {
+                                "label": "Alexanderplatz",
+                                "distance": "1.8 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "3,084 RUB",
+                                "exactCurrent": 3084.06,
+                                "old": "3,427 RUB",
+                                "fullyBundledPricePerStay": "total 3,454 RUB"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "EC"
+                        },
+                        "neighbourhood": "Kreuzberg",
+                        "deals": {
+                            "specialDeal": {
+                                "dealText": "Save 10%"
+                            },
+                            "priceReasoning": "DRR-446"
                         },
                         "messaging": {
                             "scarcity": "1 left on our app"
                         },
                         "badging": {},
-                        "pimmsAttributes": "D13|HRW",
+                        "pimmsAttributes": "DoubleStamps|D13",
                         "coordinate": {
-                            "lat": 52.450778,
-                            "lon": 31.022655
+                            "lat": 52.50288,
+                            "lon": 13.38448
                         },
                         "roomsLeft": 1,
                         "providerType": "LOCAL",
-                        "supplierHotelId": 61528427,
-                        "vrBadge": "Apartment",
+                        "supplierHotelId": 4801082,
                         "isAlternative": false,
                         "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/62000000/61530000/61528500/61528427/727849da_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/5000000/4810000/4801100/4801082/a54788bb_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
                         }
                     }
                 ],
                 "pagination": {
                     "currentPage": 1,
                     "pageGroup": "EXPEDIA_IN_POLYGON",
-                    "nextPageStartIndex": 3,
-                    "nextPageNumber": 1,
-                    "nextPageGroup": "TPI_IN_POLYGON"
+                    "nextPageStartIndex": 10,
+                    "nextPageNumber": 2,
+                    "nextPageGroup": "EXPEDIA_IN_POLYGON"
                 }
             },
             "sortResults": {
@@ -275,23 +767,179 @@
                                 "choices": [
                                     {
                                         "label": "City center",
-                                        "id": 1643737.0
+                                        "id": 332483.0
                                     },
                                     {
-                                        "label": "Art Gallery of G.H. Vashchanka",
-                                        "id": 1763537.0
+                                        "label": "Alexanderplatz",
+                                        "id": 37.0
                                     },
                                     {
-                                        "label": "Festyval'ny Park",
-                                        "id": 12508931.0
+                                        "label": "Brandenburg Gate",
+                                        "id": 1638543.0
                                     },
                                     {
-                                        "label": "Palace of Rumyantsev-Paskevich",
-                                        "id": 1763530.0
+                                        "label": "Charite",
+                                        "id": 1727310.0
                                     },
                                     {
-                                        "label": "Tsentralny Stadium",
-                                        "id": 1763538.0
+                                        "label": "Checkpoint Charlie",
+                                        "id": 1763937.0
+                                    },
+                                    {
+                                        "label": "Columbiahalle",
+                                        "id": 1713312.0
+                                    },
+                                    {
+                                        "label": "Estrel Convention Center",
+                                        "id": 1729125.0
+                                    },
+                                    {
+                                        "label": "Friedrichstrasse",
+                                        "id": 1701330.0
+                                    },
+                                    {
+                                        "label": "Gendarmenmarkt",
+                                        "id": 1659267.0
+                                    },
+                                    {
+                                        "label": "Hackescher Markt",
+                                        "id": 1713314.0
+                                    },
+                                    {
+                                        "label": "Kurfürstendamm",
+                                        "id": 1774355.0
+                                    },
+                                    {
+                                        "label": "Mercedes-Benz Arena",
+                                        "id": 1677828.0
+                                    },
+                                    {
+                                        "label": "Messe Berlin",
+                                        "id": 1726245.0
+                                    },
+                                    {
+                                        "label": "Museum Island",
+                                        "id": 1677646.0
+                                    },
+                                    {
+                                        "label": "Olympiastadion",
+                                        "id": 1659129.0
+                                    },
+                                    {
+                                        "label": "Potsdamer Platz",
+                                        "id": 1644509.0
+                                    },
+                                    {
+                                        "label": "Tempodrom",
+                                        "id": 1713542.0
+                                    },
+                                    {
+                                        "label": "Velodrom",
+                                        "id": 1677839.0
+                                    },
+                                    {
+                                        "label": "Waldbuhne",
+                                        "id": 1740364.0
+                                    },
+                                    {
+                                        "label": "Zoo Berlin",
+                                        "id": 1659244.0
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Train stations",
+                                "itemMeta": "stations",
+                                "choices": [
+                                    {
+                                        "label": "Alexanderplatz Station",
+                                        "id": 1702027.0
+                                    },
+                                    {
+                                        "label": "Berlin Central Station",
+                                        "id": 1713120.0
+                                    },
+                                    {
+                                        "label": "Berlin East Station",
+                                        "id": 1705313.0
+                                    },
+                                    {
+                                        "label": "Berlin Frankfurter Allee Station",
+                                        "id": 1701597.0
+                                    },
+                                    {
+                                        "label": "Berlin-Spandau Station",
+                                        "id": 1704990.0
+                                    },
+                                    {
+                                        "label": "Flughafen BER - Terminal 5 S-Bahn",
+                                        "id": 1790604.0
+                                    },
+                                    {
+                                        "label": "Friedrichstraße Station",
+                                        "id": 1705000.0
+                                    },
+                                    {
+                                        "label": "Heinrich-Heine-Street U-Bahn",
+                                        "id": 1701717.0
+                                    },
+                                    {
+                                        "label": "Kurfurstendamm U-Bahn",
+                                        "id": 1701511.0
+                                    },
+                                    {
+                                        "label": "Landsberger Allee Station",
+                                        "id": 1702148.0
+                                    },
+                                    {
+                                        "label": "Mehringdamm U-Bahn",
+                                        "id": 1701633.0
+                                    },
+                                    {
+                                        "label": "Olympiastadion S-Bahn",
+                                        "id": 1702189.0
+                                    },
+                                    {
+                                        "label": "Ostkreuz Station",
+                                        "id": 1702022.0
+                                    },
+                                    {
+                                        "label": "Potsdamer Place U-Bahn",
+                                        "id": 1701561.0
+                                    },
+                                    {
+                                        "label": "Potsdamer Platz Station",
+                                        "id": 1701949.0
+                                    },
+                                    {
+                                        "label": "Rosenthaler Place U-Bahn",
+                                        "id": 1701711.0
+                                    },
+                                    {
+                                        "label": "Savignyplatz S-Bahn",
+                                        "id": 1702039.0
+                                    },
+                                    {
+                                        "label": "Sonnenallee S-Bahn",
+                                        "id": 1702155.0
+                                    },
+                                    {
+                                        "label": "Wittenbergplatz U-Bahn",
+                                        "id": 1701517.0
+                                    },
+                                    {
+                                        "label": "Zoological Garden Station",
+                                        "id": 1705287.0
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Airports",
+                                "itemMeta": "airports",
+                                "choices": [
+                                    {
+                                        "label": "Berlin (BER-Brandenburg)",
+                                        "id": 776634368.0
                                     }
                                 ]
                             }
@@ -328,7 +976,7 @@
                         "enhancedChoices": []
                     }
                 ],
-                "distanceOptionLandmarkId": 1643737.0
+                "distanceOptionLandmarkId": 332483.0
             },
             "filters": {
                 "applied": false,
@@ -338,9 +986,9 @@
                     },
                     "autosuggest": {
                         "additionalUrlParams": {
-                            "resolved-location": "CITY:1643737:UNKNOWN:UNKNOWN",
-                            "q-destination": "Gomel, Homiel Province, Belarus",
-                            "destination-id": "1643737"
+                            "resolved-location": "CITY:332483:UNKNOWN:UNKNOWN",
+                            "q-destination": "Berlin, Germany",
+                            "destination-id": "332483"
                         }
                     }
                 },
@@ -348,12 +996,10 @@
                     "applied": false,
                     "items": [
                         {
-                            "value": 5,
-                            "disabled": true
+                            "value": 5
                         },
                         {
-                            "value": 4,
-                            "disabled": true
+                            "value": 4
                         },
                         {
                             "value": 3
@@ -362,8 +1008,7 @@
                             "value": 2
                         },
                         {
-                            "value": 1,
-                            "disabled": true
+                            "value": 1
                         }
                     ]
                 },
@@ -382,23 +1027,83 @@
                     "items": [
                         {
                             "label": "City center",
-                            "value": "1643737"
+                            "value": "332483"
                         },
                         {
-                            "label": "Palace of Rumyantsev-Paskevich",
-                            "value": "1763530"
+                            "label": "Alexanderplatz",
+                            "value": "37"
                         },
                         {
-                            "label": "Tsentralny Stadium",
-                            "value": "1763538"
+                            "label": "Mercedes-Benz Arena",
+                            "value": "1677828"
                         },
                         {
-                            "label": "Art Gallery of G.H. Vashchanka",
-                            "value": "1763537"
+                            "label": "Kurfürstendamm",
+                            "value": "1774355"
                         },
                         {
-                            "label": "Festyval'ny Park",
-                            "value": "12508931"
+                            "label": "Berlin Central Station",
+                            "value": "1713120"
+                        },
+                        {
+                            "label": "Brandenburg Gate",
+                            "value": "1638543"
+                        },
+                        {
+                            "label": "Messe Berlin",
+                            "value": "1726245"
+                        },
+                        {
+                            "label": "Potsdamer Platz",
+                            "value": "1644509"
+                        },
+                        {
+                            "label": "Zoo Berlin",
+                            "value": "1659244"
+                        },
+                        {
+                            "label": "Olympiastadion",
+                            "value": "1659129"
+                        },
+                        {
+                            "label": "Checkpoint Charlie",
+                            "value": "1763937"
+                        },
+                        {
+                            "label": "Charite",
+                            "value": "1727310"
+                        },
+                        {
+                            "label": "Friedrichstrasse",
+                            "value": "1701330"
+                        },
+                        {
+                            "label": "Hackescher Markt",
+                            "value": "1713314"
+                        },
+                        {
+                            "label": "Waldbuhne",
+                            "value": "1740364"
+                        },
+                        {
+                            "label": "Estrel Convention Center",
+                            "value": "1729125"
+                        },
+                        {
+                            "label": "Museum Island",
+                            "value": "1677646"
+                        },
+                        {
+                            "label": "Gendarmenmarkt",
+                            "value": "1659267"
+                        },
+                        {
+                            "label": "Tempodrom",
+                            "value": "1713542"
+                        },
+                        {
+                            "label": "Columbiahalle",
+                            "value": "1713312"
                         }
                     ],
                     "distance": []
@@ -407,12 +1112,304 @@
                     "applied": false,
                     "items": [
                         {
-                            "label": "Centraĺny District",
-                            "value": "12510423"
+                            "label": "Mitte",
+                            "value": "1662710"
                         },
                         {
-                            "label": "Saviecki District",
-                            "value": "656599352016011264"
+                            "label": "Unter den Linden",
+                            "value": "1713413"
+                        },
+                        {
+                            "label": "Oranienburgerstrasse",
+                            "value": "1713736"
+                        },
+                        {
+                            "label": "Adlershof",
+                            "value": "1691577"
+                        },
+                        {
+                            "label": "Diplomatic Quarter",
+                            "value": "1725595"
+                        },
+                        {
+                            "label": "Steglitz",
+                            "value": "1691636"
+                        },
+                        {
+                            "label": "Wedding",
+                            "value": "1691641"
+                        },
+                        {
+                            "label": "Charlottenburg",
+                            "value": "10871331"
+                        },
+                        {
+                            "label": "Kreuzberg",
+                            "value": "1701328"
+                        },
+                        {
+                            "label": "Friedrichshain",
+                            "value": "1662709"
+                        },
+                        {
+                            "label": "Prenzlauer Berg",
+                            "value": "1662712"
+                        },
+                        {
+                            "label": "Tegel",
+                            "value": "10979252"
+                        },
+                        {
+                            "label": "Spandau",
+                            "value": "1691634"
+                        },
+                        {
+                            "label": "Rudow",
+                            "value": "1691628"
+                        },
+                        {
+                            "label": "Schoeneberg",
+                            "value": "1713405"
+                        },
+                        {
+                            "label": "Tiergarten",
+                            "value": "1713049"
+                        },
+                        {
+                            "label": "Neukölln",
+                            "value": "1691615"
+                        },
+                        {
+                            "label": "Charlottenburg-Wilmersdorf",
+                            "value": "1701329"
+                        },
+                        {
+                            "label": "Köpenick",
+                            "value": "1691607"
+                        },
+                        {
+                            "label": "Lichtenberg",
+                            "value": "1670488"
+                        },
+                        {
+                            "label": "Friedrichshain-Kreuzberg",
+                            "value": "10871402"
+                        },
+                        {
+                            "label": "Moabit",
+                            "value": "10565091"
+                        },
+                        {
+                            "label": "Tempelhof",
+                            "value": "1701327"
+                        },
+                        {
+                            "label": "Wilmersdorf",
+                            "value": "1662711"
+                        },
+                        {
+                            "label": "Marzahn-Hellersdorf",
+                            "value": "10565090"
+                        },
+                        {
+                            "label": "West Berlin Centre",
+                            "value": "10871312"
+                        },
+                        {
+                            "label": "Gesundbrunnen",
+                            "value": "1713399"
+                        },
+                        {
+                            "label": "Berlin-Britz",
+                            "value": "11032851"
+                        },
+                        {
+                            "label": "Grunewald",
+                            "value": "10992283"
+                        },
+                        {
+                            "label": "Weissensee",
+                            "value": "1713661"
+                        },
+                        {
+                            "label": "Friedenau",
+                            "value": "1691594"
+                        },
+                        {
+                            "label": "Halensee",
+                            "value": "11118557"
+                        },
+                        {
+                            "label": "Mariendorf",
+                            "value": "1713403"
+                        },
+                        {
+                            "label": "Lichterfelde",
+                            "value": "1691610"
+                        },
+                        {
+                            "label": "Schoeneweide",
+                            "value": "1713406"
+                        },
+                        {
+                            "label": "Marzahn",
+                            "value": "1691613"
+                        },
+                        {
+                            "label": "Tempelhof-Schoeneberg",
+                            "value": "10788415"
+                        },
+                        {
+                            "label": "Dahlem",
+                            "value": "1713398"
+                        },
+                        {
+                            "label": "Westend",
+                            "value": "1790209"
+                        },
+                        {
+                            "label": "Hohenschoenhausen",
+                            "value": "1691600"
+                        },
+                        {
+                            "label": "Karlshorst",
+                            "value": "1691602"
+                        },
+                        {
+                            "label": "Niederschoenhausen",
+                            "value": "1691616"
+                        },
+                        {
+                            "label": "Siemensstadt",
+                            "value": "1691633"
+                        },
+                        {
+                            "label": "Grossziethen",
+                            "value": "1713420"
+                        },
+                        {
+                            "label": "Friedrichsfelde",
+                            "value": "1691595"
+                        },
+                        {
+                            "label": "Buckow",
+                            "value": "11118515"
+                        },
+                        {
+                            "label": "Schmargendorf",
+                            "value": "1691631"
+                        },
+                        {
+                            "label": "Lichtenrade",
+                            "value": "1691609"
+                        },
+                        {
+                            "label": "Altglienicke",
+                            "value": "1691578"
+                        },
+                        {
+                            "label": "Gruenau",
+                            "value": "1713401"
+                        },
+                        {
+                            "label": "Johannisthal",
+                            "value": "11118935"
+                        },
+                        {
+                            "label": "Rummelsburg",
+                            "value": "11118764"
+                        },
+                        {
+                            "label": "Kaulsdorf",
+                            "value": "1713402"
+                        },
+                        {
+                            "label": "Fennpfuhl",
+                            "value": "11118306"
+                        },
+                        {
+                            "label": "Hansaviertel",
+                            "value": "11118936"
+                        },
+                        {
+                            "label": "Bohnsdorf",
+                            "value": "1691582"
+                        },
+                        {
+                            "label": "Biesdorf",
+                            "value": "1691580"
+                        },
+                        {
+                            "label": "Niederschöneweide",
+                            "value": "11118513"
+                        },
+                        {
+                            "label": "Haselhorst",
+                            "value": "1691598"
+                        },
+                        {
+                            "label": "Wilhelmstadt",
+                            "value": "11118518"
+                        },
+                        {
+                            "label": "Mahlsdorf",
+                            "value": "1691612"
+                        },
+                        {
+                            "label": "Westfälisches Viertel",
+                            "value": "12462750"
+                        },
+                        {
+                            "label": "Plänterwald",
+                            "value": "11118342"
+                        },
+                        {
+                            "label": "Sprengelkiez",
+                            "value": "12474361"
+                        },
+                        {
+                            "label": "Victoriastadt",
+                            "value": "12464985"
+                        },
+                        {
+                            "label": "Schillerkiez",
+                            "value": "12462638"
+                        },
+                        {
+                            "label": "Gropiusstadt",
+                            "value": "11118344"
+                        },
+                        {
+                            "label": "Tegelort",
+                            "value": "12462748"
+                        },
+                        {
+                            "label": "Spandau",
+                            "value": "12462752"
+                        },
+                        {
+                            "label": "Bergmannkiez",
+                            "value": "12466962"
+                        },
+                        {
+                            "label": "Waltersdorf",
+                            "value": "12489853"
+                        },
+                        {
+                            "label": "Prinzenviertel",
+                            "value": "12458059"
+                        },
+                        {
+                            "label": "Brunnenviertel",
+                            "value": "12469748"
+                        },
+                        {
+                            "label": "Gleimviertel",
+                            "value": "12467458"
+                        },
+                        {
+                            "label": "Konradshoehe",
+                            "value": "1691606"
                         }
                     ]
                 },
@@ -420,12 +1417,64 @@
                     "applied": false,
                     "items": [
                         {
+                            "label": "Agritourism",
+                            "value": "40"
+                        },
+                        {
+                            "label": "Apart-hotels",
+                            "value": "20"
+                        },
+                        {
                             "label": "Apartments",
                             "value": "15"
                         },
                         {
+                            "label": "B&Bs",
+                            "value": "5"
+                        },
+                        {
+                            "label": "Castles",
+                            "value": "27"
+                        },
+                        {
+                            "label": "Chalets",
+                            "value": "10"
+                        },
+                        {
+                            "label": "Cottages",
+                            "value": "11"
+                        },
+                        {
+                            "label": "Guest houses",
+                            "value": "30"
+                        },
+                        {
+                            "label": "Hostels",
+                            "value": "12"
+                        },
+                        {
                             "label": "Hotels",
                             "value": "1"
+                        },
+                        {
+                            "label": "Houseboats",
+                            "value": "16"
+                        },
+                        {
+                            "label": "Motels",
+                            "value": "7"
+                        },
+                        {
+                            "label": "Pensions",
+                            "value": "25"
+                        },
+                        {
+                            "label": "Vacation homes",
+                            "value": "4"
+                        },
+                        {
+                            "label": "Villas",
+                            "value": "14"
                         }
                     ]
                 },
@@ -449,16 +1498,36 @@
                             "value": "517"
                         },
                         {
+                            "label": "Breakfast included",
+                            "value": "2048"
+                        },
+                        {
                             "label": "Business facilities",
                             "value": "519"
+                        },
+                        {
+                            "label": "Childcare",
+                            "value": "521"
                         },
                         {
                             "label": "Connecting rooms available",
                             "value": "523"
                         },
                         {
+                            "label": "Cribs available",
+                            "value": "525"
+                        },
+                        {
+                            "label": "Electric vehicle charging point",
+                            "value": "1073743315"
+                        },
+                        {
                             "label": "Gym",
                             "value": "2"
+                        },
+                        {
+                            "label": "Internet Access",
+                            "value": "8"
                         },
                         {
                             "label": "Kitchen",
@@ -481,12 +1550,20 @@
                             "value": "64"
                         },
                         {
+                            "label": "Pool",
+                            "value": "128"
+                        },
+                        {
                             "label": "Restaurant",
                             "value": "256"
                         },
                         {
                             "label": "Smoking areas",
                             "value": "537"
+                        },
+                        {
+                            "label": "Spa",
+                            "value": "539"
                         },
                         {
                             "label": "WiFi included",
@@ -498,12 +1575,32 @@
                     "applied": false,
                     "items": [
                         {
+                            "label": "Accessibility equipment for the deaf",
+                            "value": "2097152"
+                        },
+                        {
+                            "label": "Accessible bathroom",
+                            "value": "131072"
+                        },
+                        {
                             "label": "Accessible parking",
                             "value": "524288"
                         },
                         {
+                            "label": "Accessible path of travel",
+                            "value": "65536"
+                        },
+                        {
+                            "label": "Braille or raised signage",
+                            "value": "4194304"
+                        },
+                        {
                             "label": "In-room accessibility",
                             "value": "1048576"
+                        },
+                        {
+                            "label": "Roll-in shower",
+                            "value": "262144"
                         },
                         {
                             "label": "Wheelchair accessible rooms",
@@ -515,12 +1612,52 @@
                     "applied": false,
                     "items": [
                         {
+                            "label": "Adventure",
+                            "value": "18"
+                        },
+                        {
+                            "label": "Beach",
+                            "value": "6"
+                        },
+                        {
+                            "label": "Boutique",
+                            "value": "4"
+                        },
+                        {
                             "label": "Business",
                             "value": "14"
                         },
                         {
                             "label": "Family-friendly",
                             "value": "25"
+                        },
+                        {
+                            "label": "Golf",
+                            "value": "26"
+                        },
+                        {
+                            "label": "Historic",
+                            "value": "2"
+                        },
+                        {
+                            "label": "Hot Springs",
+                            "value": "22"
+                        },
+                        {
+                            "label": "LGBTQ Welcoming",
+                            "value": "21"
+                        },
+                        {
+                            "label": "Luxury",
+                            "value": "15"
+                        },
+                        {
+                            "label": "Romantic",
+                            "value": "1"
+                        },
+                        {
+                            "label": "Spa Hotel",
+                            "value": "27"
                         }
                     ]
                 },
@@ -540,7 +1677,7 @@
                 "paymentPreference": {
                     "items": [
                         {
-                            "label": "Free cancellation",
+                            "label": "Fully refundable",
                             "value": "fc"
                         },
                         {
@@ -572,12 +1709,12 @@
                 }
             },
             "miscellaneous": {
-                "pageViewBeaconUrl": "/taps/v1/PageView?deviceType=App-Phone&sort-order=PRICE&rooms=1&destRegionID=1643737&hotelIds=1167559808,1969854592,1969909664&adults=2&userAgent=Hotels.com/Android%2080.0.1.9.release-80_0%20(80000660)&userGuid=8ab97a90-fa19-4cc5-afc6-96269c4e50c6&pageName=Hotel-Search&slots=HSR_A,HSR_B,HSR_C,HSR_D,HSR_E,HSR_F,HSR_G,HSR_H,HSR_I,HSR_J&checkIn=2022-05-27&children=0&culture=en_US&testVersionOverride=4961.0,904.0,7561.0,7215.0,8218.0,8711.0,8928.1,9008.0,8347.2,9004.0,8952.0,7992.2,8915.0,9729.0,9864.0,10155.0,10185.0,10473.0,10320.0,10361.0&domain=www.hotels.com&userIP=24.155.32.3&action=pageview&publisher=expedia&checkOut=2022-05-29&programId=1",
+                "pageViewBeaconUrl": "/taps/v1/PageView?deviceType=App-Phone&sort-order=PRICE&rooms=1&destRegionID=332483&hotelIds=387452,360098,549905,213112,558976,391514,686046,137951,1703553792,398527&adults=2&userAgent=Hotels.com/Android%2080.0.1.9.release-80_0%20(80000660)&userGuid=fef13e11-f958-4962-9d9a-887b385ff5ce&pageName=Hotel-Search&slots=HSR_A,HSR_B,HSR_C,HSR_D,HSR_E,HSR_F,HSR_G,HSR_H,HSR_I,HSR_J&checkIn=2022-11-10&children=0&culture=en_US&testVersionOverride=4961.0,904.0,7561.0,7215.0,8218.0,8711.0,8928.1,9008.0,8347.2,9004.0,8952.0,7992.2,8915.0,9729.0,9864.0,10155.0,10185.0,10473.0,10320.0,10361.0&domain=www.hotels.com&userIP=127.0.0.1&action=pageview&publisher=expedia&checkOut=2022-11-11&programId=1",
                 "showLegalInfoForStrikethroughPrices": true,
                 "legalInfoForStrikethroughPrices": "The struck-out price is based on the property’s standard rate on our app, as determined and supplied by the property.",
                 "compressionMessaging": {
-                    "percentage": 57,
-                    "popularityMessage": "We are 57% booked for your travel dates. Don’t wait until it’s too late, book now."
+                    "percentage": 58,
+                    "popularityMessage": "We are 58% booked for your travel dates. Don’t wait until it’s too late, book now."
                 }
             },
             "pageInfo": {
@@ -593,49 +1730,50 @@
                 "omniture": {
                     "s.prop33": "D=v33",
                     "s.prop32": "D=v43",
-                    "s.prop74": "search result with dates | ms not shown | NA",
-                    "s.products": "LOCAL;36454994,LOCAL;61526706,LOCAL;61528427",
+                    "s.prop74": "search result with dates | ms shown | Y",
+                    "s.products": "LOCAL;4538932,MULTISOURCE;3911650,MULTISOURCE;11331583",
                     "s.eVar16": "Mob :: aApp",
                     "s.eVar40": "D=v0",
                     "s.eVar41": "RUB",
-                    "s.eVar63": "2ae42b4a-1247-49bb-bab9-42f26f44d2f9",
-                    "s.eVar42": "6|2|20220527|20220529",
+                    "s.eVar63": "65e86cfd-75c7-4549-8ea3-01c9c377c556",
+                    "s.eVar42": "30|1|20221110|20221111",
                     "s.eVar4": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
                     "s.eVar43": "en_US|HCOM_US|www.hotels.com",
                     "s.eVar3": "2|0",
-                    "s.eVar22": "1|RUB|24:1167559808:1372.0400:1372.0400:0|24:1969854592:1914.4400:1723.0000:0|24:1969909664:2023.8400:1821.4600:0",
-                    "s.eVar2": "Gomel, Homiel Province, Belarus",
+                    "s.eVar22": "1|RUB|24:387452:1237.9400:1237.9400:0|24:360098:1719.0900:1512.8000:0|24:549905:3120.2900:2496.2300:0|24:213112:3356.3500:2517.5700:0|24:558976:2527.0700:2527.0700:0",
+                    "s.eVar2": "Berlin, Germany",
+                    "s.eVar23": "1|RUB|24:391514:2674.5300:2674.5300:0|24:686046:3380.8700:2704.5800:0|24:137951:2898.8700:2898.8700:0|24:1703553792:3437.9000:2922.2200:0|24:398527:3426.7300:3084.0600:1",
                     "s.eVar24": "MCTC=20;TU=NA;PDID=NULL;MVT=",
-                    "s.eVar7": "6",
+                    "s.eVar7": "30",
                     "s.server": "www.hotels.com",
-                    "s.eVar6": "1643737",
+                    "s.eVar6": "332483",
                     "s.prop29": "D=v42",
                     "s.eVar5": "1",
-                    "s.prop27": "8ab97a90-fa19-4cc5-afc6-96269c4e50c6",
+                    "s.prop27": "fef13e11-f958-4962-9d9a-887b385ff5ce",
                     "s.eVar9": "Price - low to high",
                     "s.prop21": "0",
                     "s.prop20": "2",
                     "s.eVar69": "Mob :: aApp",
                     "s.currencyCode": "RUB",
-                    "s.eVar26": "US:TX:AUSTIN:635",
+                    "s.eVar26": "US:IL:PEORIA:675",
                     "s.eVar29": "Mob :: aApp",
-                    "s.prop9": "10",
+                    "s.prop9": "1384",
                     "s.eVar95": "Unknown",
-                    "s.prop7": "7",
+                    "s.prop7": "883",
                     "s.eVar31": "D=v0",
                     "s.eVar32": "D=v0",
                     "s.eVar33": "search result with dates",
-                    "s.eVar34": "H1871:007.002,M376:000.000,M904:000.000,M3736:000.000,M4200:000.000,M4440.2,M4869:001.000,M4952:050.001,M4961:001.000,M5184:001.000,M5342:000.000,M5663:000.000,M6388:000.000,M6775:000.000,M6779:000.000,M7015.1,M7192:000.000,M7215:000.000,M7296:000.000,M7305:000.000,M7306:000.000,M7353:000.000,M7362.1,M7552:023.001,M7763:000.000,M7765.2,M7870:000.000,M7895:000.000,M8130:000.001,M8336:000.000,M8347:019.002,M8405:002.001,M8483:000.000,M8692:000.000,M8693:000.000,M8698:000.000,M8708:000.000,M8718:000.000,M8915:000.000,M8928:019.001,M8952:000.000,M8976:000.000,M8992:000.000,M9035:000.000,M9220:000.000,M9281:000.000,M9282:000.000,M9297:000.000,M9301:000.000,M9351:000.000,M9420:000.000,M9431:000.000,M9434:000.000,M9469:000.000,M9508:000.000,M9549:000.000,M9567.1,M9691:000.000,M9693:000.000,M9699:004.001,M9729:000.000,M9752:000.000,M9771.0,M9864:000.000,M9924:000.000,M9961:000.000,M9971:000.000,M10001:000.000,M10007:000.000,M10013:002.001,M10086:000.000,M10121:000.000,M10137:000.000,M10155:000.000,M10185:000.000,M10248:000.000,M10259:000.000,M10282:000.000,M10300:000.000,M10320:000.000,M10361:000.000,M10473:000.000,M10482:000.000,M9215:001.001",
+                    "s.eVar34": "H1871:007.002,M376:000.000,M904:000.000,M3736:000.000,M4200:000.000,M4440.2,M4869:001.000,M4952:050.000,M4961:001.000,M5184:001.000,M5342:000.000,M5663:000.000,M6388:000.000,M6775:000.000,M6779:000.000,M7015.1,M7192:000.000,M7215:000.000,M7296:000.000,M7305:000.000,M7306:000.000,M7353:000.000,M7362.1,M7552:023.001,M7763:000.000,M7765.2,M7870:000.000,M7895:000.000,M8336:000.000,M8347:019.002,M8405:002.001,M8483:000.000,M8692:000.000,M8693:000.000,M8698:000.000,M8708:000.000,M8718:000.000,M8915:000.000,M8928:019.001,M8952:000.000,M8954:000.000,M8976:000.000,M8992:000.000,M9035:000.000,M9220:000.000,M9281:000.000,M9282:000.000,M9297:000.000,M9301:000.000,M9351:000.000,M9420:000.000,M9431:000.000,M9469:000.000,M9549:000.000,M9567.1,M9691:000.000,M9693:000.000,M9699:004.001,M9729:000.000,M9752:000.000,M9771.0,M9864:000.000,M9924:000.000,M9961:000.000,M9971:000.000,M10001:000.000,M10007:000.000,M10013:002.001,M10086:000.000,M10121:000.000,M10137:000.000,M10155:000.000,M10185:000.000,M10248:000.000,M10259:000.000,M10282:000.000,M10300:000.000,M10320:000.000,M10361:000.000,M10473:000.000,M10482:000.000,M9215:001.000",
                     "s.eVar13": "389367",
                     "s.prop19": "1",
-                    "s.events": "event320,event318",
+                    "s.events": "event324,event320",
                     "s.prop18": "D=v6",
                     "s.prop5": "389367",
-                    "s.prop15": "2",
-                    "s.prop3": "Gomel, Homiel Province, Belarus",
+                    "s.prop15": "1",
+                    "s.prop3": "Berlin, Germany",
                     "s.prop14": "D=v7",
                     "s.prop36": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
-                    "s.eVar93": "aws.us-east-1.unknown",
+                    "s.eVar93": "aws.us-west-2.unknown",
                     "s.prop2": "Price - low to high"
                 }
             }

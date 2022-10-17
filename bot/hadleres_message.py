@@ -1,6 +1,7 @@
 import requests
 
-from settings import TODAY_DATE, FORMAT_DATE, BUTTON_HOTEL, BUTTON_PHOTO, BUTTON_PEOPLE, DATABASE, \
+from settings import TODAY_DATE, FORMAT_DATE, BUTTON_HOTEL, BUTTON_PHOTO, \
+    BUTTON_PEOPLE, DATABASE, \
     COUNT_MAX_PHOTO, COUNT_MAX_HOTEL
 
 from bot.decorator import CollectionCommand
@@ -10,7 +11,8 @@ from logger.logger import logger_all, my_logger
 from rapid.hotel_handler import RapidFacade
 
 from abc import ABC, abstractmethod
-from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto, CallbackQuery
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, \
+    InputMediaPhoto, CallbackQuery
 from telegram.ext import CallbackContext, ConversationHandler
 from telegram.error import BadRequest
 from telegram_bot_calendar import DetailedTelegramCalendar
@@ -44,10 +46,13 @@ class BaseSearchHandler(Handler):
         user_id = update.message.from_user.id
 
         super().registry.add_new_id(user_id)
-        super().registry.update_data(user_id, {'command': self.__class__.__name__.lower()})
+        super().registry.update_data(user_id, {
+            'command': self.__class__.__name__.lower()
+        })
 
         send_msg = '{} запущен. Для отмены введите cancel' \
-                   '\nВведите город, в который вы хотите поехать'.format(self.__class__.__name__.lower())
+                   '\nВведите город, в который вы хотите поехать'\
+            .format(self.__class__.__name__.lower())
         update.message.reply_text(send_msg)
         return self.successor
 
@@ -82,11 +87,14 @@ class CityHandle(Handler):
         city = update.message.text
         user_id = update.message.from_user.id
 
-        calendar, step = DetailedTelegramCalendar(min_date=TODAY_DATE, locale='ru').build()
+        calendar, step = DetailedTelegramCalendar(
+            min_date=TODAY_DATE, locale='ru').build()
         send_msg = 'Введите дату начала поездки'
         msg_send = update.message.reply_text(send_msg, reply_markup=calendar)
 
-        super().registry.update_data(user_id, {'query': city, 'id_message_send': msg_send.message_id})
+        super().registry.update_data(user_id,
+                                     {'query': city,
+                                      'id_message_send': msg_send.message_id})
         return self.successor
 
 
@@ -99,17 +107,22 @@ class CheckInHandler(Handler):
         query = update.callback_query
         user_id = query.from_user.id
 
-        result, key, step = DetailedTelegramCalendar(min_date=TODAY_DATE, locale='ru').process(query.data)
+        result, key, step = DetailedTelegramCalendar(min_date=TODAY_DATE,
+                                                     locale='ru').process(
+            query.data)
 
         if not result and key:
-            query.edit_message_text('Введите дату начала поездки', reply_markup=key)
+            query.edit_message_text('Введите дату начала поездки',
+                                    reply_markup=key)
         elif result:
             result_str = result.strftime(FORMAT_DATE)
             super().registry.update_data(user_id, {'checkIn': result_str})
 
             min_date = result + timedelta(days=1)
-            calendar, step = DetailedTelegramCalendar(min_date=min_date, locale='ru').build()
-            query.edit_message_text('Введите дату окончания поездки', reply_markup=calendar)
+            calendar, step = DetailedTelegramCalendar(min_date=min_date,
+                                                      locale='ru').build()
+            query.edit_message_text('Введите дату окончания поездки',
+                                    reply_markup=calendar)
             return self.successor
         else:
             my_logger.warning('Нажата пустая кнопка')
@@ -128,19 +141,24 @@ class CheckOutHandler(Handler):
         check_in = datetime.strptime(check_in, FORMAT_DATE)
         min_date = check_in.date() + timedelta(days=1)
 
-        result, key, step = DetailedTelegramCalendar(min_date=min_date, locale='ru').process(query.data)
+        result, key, step = DetailedTelegramCalendar(min_date=min_date,
+                                                     locale='ru').process(
+            query.data)
 
         if not result and key:
-            query.edit_message_text(f'Введите дату окончания поездки', reply_markup=key)
+            query.edit_message_text('Введите дату окончания поездки',
+                                    reply_markup=key)
         elif result:
             result_str = result.strftime(FORMAT_DATE)
             super().registry.update_data(user_id, {'checkOut': result_str})
             markup = BUTTON_PEOPLE.keyboard()
 
             query.delete_message()
-            msg_send = query.message.reply_text('Введите количество проживающих в 1 номере (не больше 4)',
-                                                reply_markup=markup)
-            super().registry.update_data(user_id, {'id_message_send': msg_send.message_id})
+            msg_send = query.message.reply_text(
+                'Введите количество проживающих в 1 номере (не больше 4)',
+                reply_markup=markup)
+            super().registry.update_data(user_id, {
+                'id_message_send': msg_send.message_id})
             return self.successor
         else:
             my_logger.warning('Нажата пустая кнопка')
@@ -156,7 +174,8 @@ class PeopleHandler(Handler):
         Метод для создания кнопок и сообщения для пользователя.
         :return: send_msg - сообщение для пользователя, markup - объект кнопок
         """
-        send_msg = 'Выберете количество отелей или введите другое значение (не больше 10)'
+        send_msg = 'Выберете количество отелей или ' \
+                   'введите другое значение (не больше 10)'
         markup = BUTTON_HOTEL.keyboard()
         return send_msg, markup
 
@@ -175,7 +194,8 @@ class PeopleHandler(Handler):
         """ Хэндлер для обработки текстового сообщения """
         user_id = update.message.from_user.id
         id_msg_send = super().registry.get_data(user_id).get('id_message_send')
-        update.message.bot.delete_message(chat_id=update.message.chat_id, message_id=id_msg_send)
+        update.message.bot.delete_message(chat_id=update.message.chat_id,
+                                          message_id=id_msg_send)
         count_people = update.message.text
         send_msg, markup = self._answer()
         try:
@@ -189,14 +209,19 @@ class PeopleHandler(Handler):
             markup = BUTTON_PEOPLE.keyboard()
             update.message.delete()
             msg_send = update.message.reply_text(
-                'Введено неверное значение. Введите количество проживающих в 1 номере (не больше 4)',
+                'Введено неверное значение. '
+                'Введите количество проживающих в 1 номере (не больше 4)',
                 reply_markup=markup
             )
-            super().registry.update_data(user_id, {'id_message_send': msg_send.message_id})
+            super().registry.update_data(user_id, {
+                'id_message_send': msg_send.message_id})
             my_logger.warning(f'Введено неверное значение {err}')
         else:
             msg_send = update.message.reply_text(send_msg, reply_markup=markup)
-            super().registry.update_data(user_id, {'adults1': count_people, 'id_message_send': msg_send.message_id})
+            super().registry.update_data(user_id,
+                                         {'adults1': count_people,
+                                          'id_message_send':
+                                              msg_send.message_id})
             return self.successor
 
 
@@ -229,7 +254,8 @@ class HotelCountHandler(Handler):
         """ Хэндлер для обработки текстового сообщения  """
         user_id = update.message.from_user.id
         id_msg_send = super().registry.get_data(user_id).get('id_message_send')
-        update.message.bot.delete_message(chat_id=update.message.chat_id, message_id=id_msg_send)
+        update.message.bot.delete_message(chat_id=update.message.chat_id,
+                                          message_id=id_msg_send)
         count_hotel = update.message.text
         try:
             count_hotel = int(count_hotel)
@@ -242,15 +268,20 @@ class HotelCountHandler(Handler):
             markup = BUTTON_HOTEL.keyboard()
             update.message.delete()
             msg_send = update.message.reply_text(
-                'Введено неверное значение. Выберете кол-во отелей или введите другое значение (не больше 10)',
+                'Введено неверное значение. Выберете кол-во отелей '
+                'или введите другое значение (не больше 10)',
                 reply_markup=markup
             )
-            super().registry.update_data(user_id, {'id_message_send': msg_send.message_id})
+            super().registry.update_data(user_id, {
+                'id_message_send': msg_send.message_id})
             my_logger.warning(f'Введено неверное значение {err}')
         else:
             send_msg, markup = self._answer()
             msg_send = update.message.reply_text(send_msg, reply_markup=markup)
-            super().registry.update_data(user_id, {'count_hotel': count_hotel, 'id_message_send': msg_send.message_id})
+            super().registry.update_data(user_id,
+                                         {'count_hotel': count_hotel,
+                                          'id_message_send':
+                                              msg_send.message_id})
             return self.successor
 
 
@@ -258,7 +289,8 @@ class CheckDataMixin():
     @staticmethod
     def _answer(request_data: dict) -> (str, InlineKeyboardMarkup, str):
         """
-        Создание кнопок и формирование сообщения пользователю для проверки введенных данных.
+        Создание кнопок и формирование сообщения пользователю
+        для проверки введенных данных.
         :return: send_msg - сообщение, markup - объект кнопок
         """
         data = [
@@ -271,8 +303,11 @@ class CheckDataMixin():
         ]
 
         if request_data.get('command') == 'bestdeal':
-            data.append('Диапазон цен: {} - {}'.format(request_data.get('priceMin'), request_data.get('priceMax')))
-            data.append('Удаленность от центра: {} км'.format(request_data.get('distance')))
+            data.append(
+                'Диапазон цен: {} - {}'.format(request_data.get('priceMin'),
+                                               request_data.get('priceMax')))
+            data.append('Удаленность от центра: {} км'.format(
+                request_data.get('distance')))
 
         data_msg = '\n'.join(data)
         send_msg = 'Проверьте данные:\n{}'.format(data_msg)
@@ -297,24 +332,29 @@ class PhotoCountHandler(Handler, CheckDataMixin):
         super().registry.update_data(user_id, {'count_photo': count_photo})
         query.delete_message()
 
-        if super().registry.get_data(user_id).get('command') in ['lowprice', 'highprice']:
-            send_msg, markup, msg_start = self._answer(super().registry.get_data(user_id))
+        if super().registry.get_data(user_id).get('command') in ['lowprice',
+                                                                 'highprice']:
+            send_msg, markup, msg_start = self._answer(
+                super().registry.get_data(user_id))
             print(super().registry.get_data(user_id))
 
             query.message.reply_text(send_msg)
             msg_send = query.message.reply_text(msg_start, reply_markup=markup)
 
         else:
-            msg_send = query.message.reply_text('Введите диапазон цен за сутки, руб.')
+            msg_send = query.message.reply_text(
+                'Введите диапазон цен за сутки, руб.')
 
-        super().registry.update_data(user_id, {'id_message_send': msg_send.message_id})
+        super().registry.update_data(user_id,
+                                     {'id_message_send': msg_send.message_id})
         return self.successor
 
     def message(self, update: Update, context: CallbackContext) -> int:
         """ Хэндлер для обработки текстового сообщения """
         user_id = update.message.from_user.id
         id_msg_send = super().registry.get_data(user_id).get('id_message_send')
-        update.message.bot.delete_message(chat_id=update.message.chat_id, message_id=id_msg_send)
+        update.message.bot.delete_message(chat_id=update.message.chat_id,
+                                          message_id=id_msg_send)
         count_photo = update.message.text
 
         try:
@@ -328,15 +368,19 @@ class PhotoCountHandler(Handler, CheckDataMixin):
             markup = BUTTON_PHOTO.keyboard()
             update.message.delete()
             msg_send = update.message.reply_text(
-                'Введено неверное значение. Выберете количество фото (не больше 5)',
+                'Введено неверное значение. '
+                'Выберете количество фото (не больше 5)',
                 reply_markup=markup
             )
-            super().registry.update_data(user_id, {'id_message_send': msg_send.message_id})
+            super().registry.update_data(user_id, {
+                'id_message_send': msg_send.message_id})
             my_logger.warning(f'Введено неверное значение {err}')
         else:
             super().registry.update_data(user_id, {'count_photo': count_photo})
-            if super().registry.get_data(user_id).get('command') in ['lowprice', 'highprice']:
-                send_msg, markup, msg_start = self._answer(super().registry.get_data(user_id))
+            if super().registry.get_data(user_id).get('command') \
+                    in ['lowprice', 'highprice']:
+                send_msg, markup, msg_start = self._answer(
+                    super().registry.get_data(user_id))
                 print(super().registry.get_data(user_id))
                 update.message.reply_text(send_msg)
                 update.message.reply_text(msg_start, reply_markup=markup)
@@ -362,12 +406,15 @@ class PricesHandler(Handler):
             prices = [int(price) for price in prices]
         except ValueError as err:
             my_logger.warning(f'Введено неверное значение {err}')
-            update.message.reply_text('Введено неверное значение. Введите диапазон цен за сутки, руб.')
+            update.message.reply_text(
+                'Введено неверное значение. '
+                'Введите диапазон цен за сутки, руб.')
         else:
             super().registry.update_data(user_id, {'priceMin': min(prices)})
             super().registry.update_data(user_id, {'priceMax': max(prices)})
 
-            update.message.reply_text('Введите максимальную удаленность от центра, км')
+            update.message.reply_text(
+                'Введите максимальную удаленность от центра, км')
             return self.successor
 
 
@@ -390,10 +437,13 @@ class DistanceHandler(Handler, CheckDataMixin):
                 raise ValueError('Введен 0')
         except ValueError as err:
             my_logger.warning(f'Введено неверное значение {err}')
-            update.message.reply_text('Введено неверное значение. Введите максимальную удаленность от центра, км')
+            update.message.reply_text(
+                'Введено неверное значение. '
+                'Введите максимальную удаленность от центра, км')
         else:
             super().registry.update_data(user_id, {'distance': distance})
-            send_msg, markup, msg_start = self._answer(super().registry.get_data(user_id))
+            send_msg, markup, msg_start = self._answer(
+                super().registry.get_data(user_id))
             print(super().registry.get_data(user_id))
             update.message.reply_text(send_msg)
             update.message.reply_text(msg_start, reply_markup=markup)
@@ -403,6 +453,7 @@ class DistanceHandler(Handler, CheckDataMixin):
 @logger_all()
 class SearchHotelHandler(Handler):
     """ Обработка полученных данных от пользователя и поиск отелей """
+
     @staticmethod
     def _send_msg_waiting(query: CallbackQuery) -> int:
         """
@@ -412,7 +463,8 @@ class SearchHotelHandler(Handler):
         """
         try:
             msg_send = query.message.reply_animation(
-                animation='https://tenor.com/view/where-are-you-chick-searching-looking-gif-14978088',
+                animation='https://tenor.com/view/'
+                          'where-are-you-chick-searching-looking-gif-14978088',
             )
         except BadRequest as err:
             msg_send = query.message.reply_text('Ищем отели')
@@ -435,7 +487,8 @@ class SearchHotelHandler(Handler):
         count_hotels = param_request.pop('count_hotel')
         count_photo = param_request.pop('count_photo')
 
-        hotels = hotel_handler.handler(command, city, count_hotels, count_photo, **param_request)
+        hotels = hotel_handler.handler(command, city, count_hotels,
+                                       count_photo, **param_request)
         return hotels
 
     @staticmethod
@@ -461,9 +514,11 @@ class SearchHotelHandler(Handler):
             hotels=hotel_json
         )
 
-    def _valid_hotels(self, query: CallbackQuery, user_id: int, request_data: dict, id_msg_send: int):
+    def _valid_hotels(self, query: CallbackQuery, user_id: int,
+                      request_data: dict, id_msg_send: int):
         """
-        Запрос отелей и отправка сообщений пользователю в случае ошибки, в случае успеха - запись в БД.
+        Запрос отелей и отправка сообщений пользователю в случае ошибки,
+        в случае успеха - запись в БД.
         :param query: callback_query,
         :param user_id: уникальный id пользователя,
         :param request_data: словарь с данными запроса пользователя,
@@ -485,7 +540,8 @@ class SearchHotelHandler(Handler):
         else:
             self._add_request_db(user_id, request_data, hotels)
         finally:
-            query.bot.delete_message(chat_id=query.message.chat_id, message_id=id_msg_send)
+            query.bot.delete_message(chat_id=query.message.chat_id,
+                                     message_id=id_msg_send)
 
         return hotels
 
@@ -542,11 +598,14 @@ class SearchHotelHandler(Handler):
             try:
                 query.message.reply_media_group(media=photo_group)
             except BadRequest as err:
-                query.message.reply_text('Ошибка сервера. Фото можно посмотреть на сайте')
-                my_logger.error('Ошибка. Не создана медиа-группа. {}'.format(err))
+                query.message.reply_text(
+                    'Ошибка сервера. Фото можно посмотреть на сайте')
+                my_logger.error(
+                    'Ошибка. Не создана медиа-группа. {}'.format(err))
 
     def __call__(self, update: Update, context: CallbackContext) -> int:
-        """ Обрабатывает ответ на вопрос о поиске ответа и отправляет список отелей """
+        """ Обрабатывает ответ на вопрос о поиске ответа
+        и отправляет список отелей """
         query = update.callback_query
         user_id = query.from_user.id
         answer = query.data
@@ -561,18 +620,23 @@ class SearchHotelHandler(Handler):
             id_msg_send = self._send_msg_waiting(query)
 
             try:
-                hotels = self._valid_hotels(query, user_id, request_data, id_msg_send)
+                hotels = self._valid_hotels(query, user_id, request_data,
+                                            id_msg_send)
 
                 for hotel in hotels:
                     send_msg = self._data_hotel_for_msg(hotel)
-                    query.message.reply_text(send_msg, disable_web_page_preview=True, parse_mode='HTML')
+                    query.message.reply_text(send_msg,
+                                             disable_web_page_preview=True,
+                                             parse_mode='HTML')
 
                     if count_photo:
                         self._send_photo(query, hotel)
             except requests.ReadTimeout as timeout_err:
-                my_logger.exception('Ошибка ReadTimeout: {}'.format(timeout_err))
+                my_logger.exception(
+                    'Ошибка ReadTimeout: {}'.format(timeout_err))
                 print('Ошибка ReadTimeout:', timeout_err)
-                query.message.reply_text('Долгое ожидание ответа с сервера. Попробуйте позднее')
+                query.message.reply_text(
+                    'Долгое ожидание ответа с сервера. Попробуйте позднее')
             except requests.HTTPError as http_err:
                 my_logger.exception('Ошибка HTTP: {}'.format(http_err))
                 print('Ошибка HTTP:', http_err)
@@ -608,16 +672,19 @@ class HandlerFactory():
 @logger_all()
 class Cancel():
     """ Класс для отмены выполнения команды """
+
     def __call__(self, update: Update, context: CallbackContext):
         print('Cancel run')
         user_id = update.message.from_user.id
         try:
-            id_msg_send = Handler.registry.get_data(user_id).pop('id_message_send')
+            id_msg_send = Handler.registry.get_data(user_id).pop(
+                'id_message_send')
         except KeyError as err:
             print('Cancel. Нет сообщения для удаления', err)
             my_logger.warning(f'Cancel. Нет сообщения для удаления. {err}')
         else:
-            update.message.bot.delete_message(chat_id=update.message.chat_id, message_id=id_msg_send)
+            update.message.bot.delete_message(chat_id=update.message.chat_id,
+                                              message_id=id_msg_send)
         update.message.reply_text('Отмена')
         Handler.registry.delete_data(user_id)
         return ConversationHandler.END

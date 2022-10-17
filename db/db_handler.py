@@ -26,7 +26,8 @@ class ReadUsers(Strategy):
         with conn_db.atomic():
             query = table.get(table.user_id == user_id)
 
-        send_msg = 'Начало: {}'.format(query.date_request.strftime('%d.%m.%Y %H:%M'))
+        send_msg = 'Начало: {}'.format(query.date_request
+                                       .strftime('%d.%m.%Y %H:%M'))
         return send_msg
 
 
@@ -49,7 +50,9 @@ class ReadRequests(Strategy):
 
         for request in query:
             data = [
-                '{} - {}'.format(request.date_request.strftime('%d.%m.%Y %H:%M'), request.command_request),
+                '{} - {}'.format(
+                    request.date_request.strftime('%d.%m.%Y %H:%M'),
+                    request.command_request),
                 '<b>{}</b>'.format(request.city_request)
             ]
 
@@ -98,7 +101,8 @@ class Database():
         :param key_table: ключ для работы с таблицей,
         :param user_id: уникальный id пользователя,
         :param kwargs: название колонок и их значения для создания строки,
-        :return: возвращает результат чтения таблицы из БД или None при создании строки.
+        :return: возвращает результат чтения таблицы из БД или
+        None при создании строки.
         """
         result = self.strategy.__call__(
             user_id=user_id,
@@ -133,7 +137,9 @@ class DatabaseHandler():
         :param key_table: ключ выбора таблицы
         :param kwargs: параметры дл создания строки
         """
-        self._STRATEGY[0].__call__(user_id=user_id, table=self._TABLE.get(key_table), **kwargs)
+        self._STRATEGY[0].__call__(user_id=user_id,
+                                   table=self._TABLE.get(key_table),
+                                   **kwargs)
 
     def read_user(self, user_id) -> str:
         """
@@ -141,14 +147,17 @@ class DatabaseHandler():
         :param user_id: уникальный id пользователя,
         :return: строка о начале работы пользователя с ботом
         """
-        result = self._STRATEGY[1].__call__(user_id=user_id, table=self._TABLE.get('users'))
+        result = self._STRATEGY[1].__call__(user_id=user_id,
+                                            table=self._TABLE.get('users'))
         return result
 
     def read_requests(self, user_id) -> List[str]:
         """
         Получение 5 последних записей в БД о запросах пользователя.
         :param user_id: уникальный id пользователя,
-        :return: список подготовленных сообщений, с временем, командой и городом запроса, а также отелей и их url
+        :return: список подготовленных сообщений, с временем, командой и
+        городом запроса, а также отелей и их url
         """
-        result = self._STRATEGY[2].__call__(user_id=user_id, table=self._TABLE.get('user_requests'))
+        result = self._STRATEGY[2].__call__(
+            user_id=user_id, table=self._TABLE.get('user_requests'))
         return result

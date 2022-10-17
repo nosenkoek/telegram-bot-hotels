@@ -1,4 +1,5 @@
-from peewee import SqliteDatabase, Model, PrimaryKeyField, CharField, DateTimeField, SQL
+from peewee import SqliteDatabase, Model, PrimaryKeyField, CharField, \
+    DateTimeField, SQL
 from datetime import datetime
 from os import path
 

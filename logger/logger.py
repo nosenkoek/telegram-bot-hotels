@@ -47,7 +47,8 @@ def logger_all():
     @wraps(logger)
     def decorate(cls):
         for method_name in dir(cls):
-            if method_name.startswith('__') is False or method_name == '__call__':
+            if method_name.startswith('__') is False \
+                    or method_name == '__call__':
                 current_method = getattr(cls, method_name)
                 decorate_method = logger(current_method, cls.__name__)
                 setattr(cls, method_name, decorate_method)

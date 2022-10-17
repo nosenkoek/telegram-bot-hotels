@@ -1,5 +1,6 @@
 from bot.command_handler import TelebotHandler
-from bot.conversation_handler import SortPriceConversationHandler, BestdealConversationHandler
+from bot.conversation_handler import SortPriceConversationHandler, \
+    BestdealConversationHandler
 from logger.logger import logger_all
 from settings import TOKEN
 
@@ -31,20 +32,23 @@ class TeleBot():
     def add_handlers_commands(self) -> None:
         """ Регистрация обработчиков команд бота """
         dispatcher = self.updater.dispatcher
-        # для отключения предупреждения о per_message=False в ConversationHandler
+        # для отключения предупреждения о per_message=False в
+        # ConversationHandler
         filterwarnings(action="ignore", message=r".*CallbackQueryHandler")
 
         for commands, commands_cls in self.handler.COMMANDS.items():
             if commands in ['lowprice', 'highprice']:
-                """ Добавление функции разговора при запросах 'lowprice', 'highprice' """
-                handler_price = SortPriceConversationHandler(commands, commands_cls)
+                handler_price = SortPriceConversationHandler(commands,
+                                                             commands_cls)
                 dispatcher.add_handler(handler_price())
             elif commands == 'bestdeal':
-                handler_price = BestdealConversationHandler(commands, commands_cls)
+                handler_price = BestdealConversationHandler(commands,
+                                                            commands_cls)
                 dispatcher.add_handler(handler_price())
             else:
                 """ Добавление обработки остальных реализованных команд """
-                dispatcher.add_handler(CommandHandler(commands, commands_cls()))
+                dispatcher.add_handler(CommandHandler(commands,
+                                                      commands_cls()))
 
     def start(self) -> None:
         """ Запуск бота """

@@ -1,5 +1,6 @@
-from rapid.hotel import HotelRequest, LocationRequest, PhotoRequest, HotelHandler, LocationHandler, PhotoHandler
-from logger.logger import logger_all, my_logger
+from rapid.hotel import HotelRequest, LocationRequest, PhotoRequest, \
+    HotelHandler, LocationHandler, PhotoHandler
+from logger.logger import logger_all
 
 from typing import List
 from json import dump
@@ -17,7 +18,8 @@ class RapidFacade():
         self.hotels = HotelHandler(self.hotel_request)
         self.photo = PhotoHandler(self.photo_request)
 
-    def handler(self, command: str, city: str, count_hotel: int, count_photo: int,  **kwargs) -> List:
+    def handler(self, command: str, city: str, count_hotel: int,
+                count_photo: int,  **kwargs) -> List:
         city_id = self.location.handler(query=city)
         if city_id is None:
             raise ValueError('Отель не найден')
@@ -45,18 +47,3 @@ class RapidFacade():
             dump(hotels_data, file, ensure_ascii=False, indent=4)
 
         return hotels_data
-
-
-if __name__ == '__main__':
-    rapid_handler = RapidFacade()
-    # Работа с милями (с eu_US) и км (с ru_RU) Причем правильная стоимость именно в eu_US
-    try:
-        data = rapid_handler.handler('bestdeal', 'ыыы', 3, 0,
-                                     checkIn='2022-04-06', checkOut='2022-03-08',
-                                     priceMin='1000', priceMax='3000', distance=0.1)
-    except ValueError as err:
-        print('Ошибка', err)
-        my_logger.exception('Ошибка. {}'.format(err))
-    except NameError as err:
-        print('Ошибка', err)
-        my_logger.exception('Ошибка в запросе {}'.format(err))

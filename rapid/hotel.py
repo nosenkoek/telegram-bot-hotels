@@ -1,5 +1,5 @@
-from settings import BASE_REQUEST_HOTELS_API, BASE_REQUEST_LOCATION_API, HEADERS, \
-    KOEFF_MILES_KM, COUNT_MAX_PHOTO, COUNT_MAX_HOTEL
+from settings import BASE_REQUEST_HOTELS_API, BASE_REQUEST_LOCATION_API, \
+    HEADERS, KOEFF_MILES_KM, COUNT_MAX_PHOTO, COUNT_MAX_HOTEL
 
 from logger.logger import logger_all, my_logger
 
@@ -27,7 +27,8 @@ class RequestMixin():
         """
 
         try:
-            response = requests.get(url=url, headers=HEADERS, params=request, timeout=30)
+            response = requests.get(url=url, headers=HEADERS,
+                                    params=request, timeout=30)
         except TimeoutError as err:
             logging.error(err)
             raise ValueError('Ошибка сервера попробуйте позже')
@@ -40,7 +41,8 @@ class RequestMixin():
 class SearchValueMixin():
     """ Миксин для поиска подструктуры по ключу"""
 
-    def _search_substruct(self, struct: Union[Dict, List], key_result: str) -> Union[None, List, str]:
+    def _search_substruct(self, struct: Union[Dict, List], key_result: str) \
+            -> Union[None, List, str]:
         """ Функция для поиска подструктуры по ключу """
         if isinstance(struct, dict):
             if key_result in struct.keys():
@@ -74,7 +76,9 @@ class BodyRequestHotel(ABC, RequestMixin):
         self.REQUEST.update(**kwargs)
 
         print(self.REQUEST)
-        response = self.request_get('https://hotels4.p.rapidapi.com/properties/list', self.REQUEST)
+        response = self.request_get(
+            'https://hotels4.p.rapidapi.com/properties/list', self.REQUEST
+        )
         print('Success Hotels |', response.status_code)
         return response
 
@@ -97,14 +101,16 @@ class HighPriceRequestHotel(BodyRequestHotel):
 
 @logger_all()
 class BestDealRequestHotel(BodyRequestHotel):
-    """ Дочерний класс запроса bestdeal. Сортировка по DISTANCE_FROM_LANDMARK"""
+    """ Дочерний класс запроса bestdeal.
+    Сортировка по DISTANCE_FROM_LANDMARK"""
 
     def __init__(self):
         self.REQUEST = {'sortOrder': 'DISTANCE_FROM_LANDMARK'}
 
 
 class BaseRequest(ABC):
-    """ Абстрактный класс для запросов (DIP - принцип инверсии зависимостей) """
+    """ Абстрактный класс для запросов
+    (DIP - принцип инверсии зависимостей) """
 
     @abstractmethod
     def context_request(self, *args, **kwargs):
@@ -134,11 +140,14 @@ class LocationRequest(BaseRequest, RequestMixin):
     def context_request(self, **kwargs) -> requests.Response:
         """
         Метод для запроса списка локаций.
-        :param kwargs: дополнительный настраиваемый параметр для поиска (query),
+        :param kwargs: дополнительный параметр для поиска (query),
         :return: response
         """
         self.REQUEST.update(**kwargs)
-        response = self.request_get('https://hotels4.p.rapidapi.com/locations/v2/search', self.REQUEST)
+        response = self.request_get(
+            'https://hotels4.p.rapidapi.com/locations/v2/search',
+            self.REQUEST
+        )
         return response
 
 
@@ -152,7 +161,10 @@ class PhotoRequest(BaseRequest, RequestMixin):
         :param kwargs: параметр для поиска фото (id отеля),
         :return: response
         """
-        response = self.request_get('https://hotels4.p.rapidapi.com/properties/get-hotel-photos', kwargs)
+        response = self.request_get(
+            'https://hotels4.p.rapidapi.com/properties/get-hotel-photos',
+            kwargs
+        )
         print('Success Photo |', response.status_code)
         return response
 
@@ -176,7 +188,8 @@ class HotelHandler(SearchValueMixin):
         :return: количество ночей
         """
         check_in, check_out = kwargs.get('checkIn'), kwargs.get('checkOut')
-        check_in, check_out = datetime.strptime(check_in, '%Y-%m-%d'), datetime.strptime(check_out, '%Y-%m-%d')
+        check_in = datetime.strptime(check_in, '%Y-%m-%d')
+        check_out = datetime.strptime(check_out, '%Y-%m-%d')
 
         count_night = check_out - check_in
         count_night = count_night.days
@@ -201,7 +214,8 @@ class HotelHandler(SearchValueMixin):
         """
         landmarks = self._search_substruct(hotel, 'landmarks')
         landmarks_filter = list(filter(
-            lambda item: item.get('label') in ['Центр города', 'City center', city], landmarks)
+            lambda item: item.get('label')
+            in ['Центр города', 'City center', city], landmarks)
         )
 
         if len(landmarks_filter):
@@ -231,12 +245,15 @@ class HotelHandler(SearchValueMixin):
             return False
         return True
 
-    def handler(self, command: str, count_hotel=COUNT_MAX_HOTEL, **kwargs) -> List[Dict[str, Any]]:
+    def handler(self, command: str, count_hotel=COUNT_MAX_HOTEL, **kwargs) \
+            -> List[Dict[str, Any]]:
         """
         Обработчик отклика с сайта отелей. Внешний интерфейс.
-        :param command: команда по сортировке отеля (bestdeal, highprice, lowprice),
+        :param command: команда по сортировке отеля (bestdeal, highprice,
+        lowprice),
         :param count_hotel: количество отелей введенное пользователем,
-        :param kwargs: дополнительные параметры для поиска отеля. обязательно destinationId
+        :param kwargs: дополнительные параметры для поиска отеля.
+        обязательно destinationId
         :return hotels: подготовленный список отелей для отправки
 
         """
@@ -260,7 +277,10 @@ class HotelHandler(SearchValueMixin):
         if hotels_response is None:
             return hotels
 
-        hotels_filter = filter(lambda item: self._search_substruct(item, 'exactCurrent'), hotels_response)
+        hotels_filter = filter(
+            lambda item: self._search_substruct(item, 'exactCurrent'),
+            hotels_response
+        )
 
         for hotel in hotels_filter:
             if len(hotels) >= count_hotel:
@@ -285,7 +305,8 @@ class HotelHandler(SearchValueMixin):
                     'name': self._search_substruct(hotel, 'name'),
                     'address': self._search_substruct(hotel, 'streetAddress'),
                     'star': self._search_substruct(hotel, 'starRating'),
-                    'rating': self._search_substruct(hotel, 'unformattedRating'),
+                    'rating': self._search_substruct(hotel,
+                                                     'unformattedRating'),
                     'distance': f'{distance:.1f} км',
                     'price': price,
                     'total_price': total_price,
@@ -333,7 +354,8 @@ class PhotoHandler(SearchValueMixin):
     def __init__(self, request: PhotoRequest):
         self._request = request
 
-    def handler(self, count_photo=COUNT_MAX_PHOTO, **kwargs) -> Optional[List[str]]:
+    def handler(self, count_photo=COUNT_MAX_PHOTO, **kwargs) \
+            -> Optional[List[str]]:
         """
         Обработчик отклика с сайта отелей. Поиск фото отеля. Внешний интерфейс.
         :param count_photo: число фото, вводимое пользователем,
@@ -345,7 +367,8 @@ class PhotoHandler(SearchValueMixin):
         photo = []
 
         try:
-            photo_response = self._search_substruct(loads(data.text), 'hotelImages')
+            photo_response = self._search_substruct(loads(data.text),
+                                                    'hotelImages')
         except JSONDecodeError as err:
             my_logger.exception('Ошибка - фото не найдено {}'.format(err))
             return None
@@ -384,7 +407,9 @@ if __name__ == '__main__':
     hotel_request = HotelRequest()
     hotel_handler = HotelHandler(hotel_request)
 
-    data_hotel = hotel_handler.handler(command='bestdeal', count_hotel=10, destinationId=city_id)
+    data_hotel = hotel_handler.handler(command='bestdeal',
+                                       count_hotel=10,
+                                       destinationId=city_id)
 
     with open('result.txt', 'w', encoding='utf-8') as file:
         dump(data_hotel, file, ensure_ascii=False, indent=4)
